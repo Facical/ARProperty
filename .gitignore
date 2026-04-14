@@ -1,14 +1,10 @@
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-dist/
-build/
-.venv/
-venv/
-env/
-.pytest_cache/
-htmlcov/
+# Java / Gradle
+*.class
+*.jar
+*.war
+backend/build/
+backend/.gradle/
+backend/out/
 
 # IDE
 .idea/
@@ -16,6 +12,9 @@ htmlcov/
 *.swp
 *.swo
 *.iml
+.classpath
+.project
+.settings/
 
 # OS
 .DS_Store
@@ -36,7 +35,6 @@ secrets/
 *.apk
 *.aab
 *.dex
-*.class
 *.aar
 android/local.properties
 android/.gradle/
@@ -56,8 +54,11 @@ data/raw/*.xlsx
 data/raw/*.xml
 !data/raw/.gitkeep
 
-# Byte-compiled
+# Python (데이터 수집 스크립트용)
+__pycache__/
 *.pyc
+.venv/
+venv/
 
 # 개인 문서 (로컬에만 보관)
 *.hwp

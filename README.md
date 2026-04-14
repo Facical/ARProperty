@@ -9,9 +9,8 @@
 ```
 ARProperty/
 ├── android/          # 프론트엔드 (Android Kotlin)
-├── backend/          # 백엔드 (FastAPI + PostgreSQL)
+├── backend/          # 백엔드 (Spring Boot + PostgreSQL)
 ├── data/             # 데이터 수집 스크립트
-├── docs/             # 프로젝트 문서
 └── docker-compose.yml
 ```
 
@@ -43,28 +42,33 @@ ARProperty/
 
 ---
 
-## 백엔드 (FastAPI + PostgreSQL)
+## 백엔드 (Spring Boot + PostgreSQL)
 
 | 항목 | 내용 |
 |------|------|
-| 프레임워크 | FastAPI (Python 3.11+) |
-| DB | PostgreSQL 16 + PostGIS 3.4 |
-| 캐시 | Redis 7 |
+| 프레임워크 | Spring Boot 3.3 (Java 17) |
+| 빌드 | Gradle |
+| DB | PostgreSQL 16 + PostGIS 3.4 (Hibernate Spatial) |
+| 캐시 | Redis 7 (Spring Data Redis) |
 | 컨테이너 | Docker + docker-compose |
 
 ### 백엔드 실행
 
 ```bash
-# 1. 환경변수 설정
-cp backend/.env.example backend/.env
-# .env에 실제 API 키 입력
+# 1. Docker로 DB + Redis 실행
+docker-compose up -d db redis
 
-# 2. Docker로 실행
-docker-compose up -d
+# 2. 환경변수 설정 후 로컬 실행
+# (application-example.yml 참고하여 환경변수 설정)
+cd backend
+./gradlew bootRun
 
 # 3. 확인
-# API: http://localhost:8000/health
-# Swagger UI: http://localhost:8000/docs
+# API: http://localhost:8080/health
+
+# 또는 전체 Docker로 실행
+docker-compose up -d
+# API: http://localhost:8080/health
 ```
 
 ### 주요 API
@@ -87,7 +91,7 @@ docker-compose up -d
 
 ### 백엔드 담당
 
-- **R3 엄태원**: FastAPI 서버, 공공데이터 7종 연동, DB 설계, 편의시설 점수화 엔진
+- **R3 엄태원**: Spring Boot 서버, 공공데이터 7종 연동, DB 설계, 편의시설 점수화 엔진
 
 ---
 

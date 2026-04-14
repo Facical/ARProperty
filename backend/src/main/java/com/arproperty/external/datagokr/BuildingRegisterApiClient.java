@@ -1,0 +1,3 @@
+package com.arproperty.external.datagokr;
+
+/** 건축물대장 표제부/층별개요 API 클라이언트 (JSON/XML) */

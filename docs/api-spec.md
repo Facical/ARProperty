@@ -2,7 +2,7 @@
 
 > 버전: v1.0 (초안)
 > 작성일: 2026-04-14
-> 백엔드: FastAPI (Python)
+> 백엔드: Spring Boot (Java 17)
 > Base URL: `http://localhost:8000`
 
 ---

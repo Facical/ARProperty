@@ -7,12 +7,15 @@ build/
 .venv/
 venv/
 env/
+.pytest_cache/
+htmlcov/
 
 # IDE
 .idea/
 .vscode/
 *.swp
 *.swo
+*.iml
 
 # OS
 .DS_Store
@@ -20,8 +23,45 @@ Thumbs.db
 
 # Environment / Secrets
 .env
+.env.*
+!.env.example
 *.key
 credentials.json
+secrets/
 
 # Logs
 *.log
+
+# Android
+*.apk
+*.aab
+*.dex
+*.class
+*.aar
+android/local.properties
+android/.gradle/
+android/build/
+android/app/build/
+android/captures/
+android/.externalNativeBuild/
+android/.cxx/
+
+# Docker
+docker-compose.override.yml
+
+# Data files (large)
+data/raw/*.csv
+data/raw/*.json
+data/raw/*.xlsx
+data/raw/*.xml
+!data/raw/.gitkeep
+
+# Byte-compiled
+*.pyc
+
+# 개인 문서 (로컬에만 보관)
+*.hwp
+*.pdf
+CLAUDE.md
+구미_AR_부동산_프로젝트_통합문서.md
+역할_분담표.md

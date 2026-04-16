@@ -43,6 +43,7 @@ android/app/build/
 android/captures/
 android/.externalNativeBuild/
 android/.cxx/
+!android/gradle/wrapper/gradle-wrapper.jar
 
 # Docker
 docker-compose.override.yml

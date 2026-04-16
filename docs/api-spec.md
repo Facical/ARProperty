@@ -1,109 +1,119 @@
-# ARProperty REST API 명세서
+# ARProperty API Spec
 
-> 버전: v1.0 (초안)
-> 작성일: 2026-04-14
-> 백엔드: Spring Boot (Java 17)
-> Base URL: `http://localhost:8000`
+> 버전: v1.1
+> 목적: 프론트엔드와 백엔드가 공유하는 계약 문서
+> 로컬 Base URL: `http://localhost:8080`
+> 경로 규칙: `/api/v1/...` (`/health` 제외)
 
----
+이 문서는 응답 형식과 필드 계약을 정의합니다. 실제 구현 진행 상태는 [README.md](../README.md)의 `현재 저장소 상태`를 기준으로 확인합니다.
 
-## 공통 사항
+## 공통 규칙
 
-### 응답 형식
+### 응답 래퍼
 
-모든 응답은 아래 래퍼로 감싼다.
+성공 응답:
 
-**성공 응답**:
 ```json
 {
   "status": "success",
-  "data": { ... },
+  "data": {},
   "meta": {
-    "total_count": 150,
     "page": 1,
-    "page_size": 20
+    "page_size": 20,
+    "total_count": 1
   }
 }
 ```
 
-**에러 응답**:
+에러 응답:
+
 ```json
 {
   "status": "error",
   "error": {
-    "code": "BUILDING_NOT_FOUND",
-    "message": "건물을 찾을 수 없습니다"
+    "code": "INVALID_PARAMETER",
+    "message": "year must be between 2006 and 2100"
   }
 }
 ```
 
-### 에러 코드
+### 필드 규칙
+
+- JSON 필드명은 모두 `snake_case`를 사용합니다.
+- 날짜는 `YYYY-MM-DD`, 일시는 ISO-8601 UTC 문자열을 사용합니다.
+- 가격 단위는 `만원`, 거리 단위는 `m`, 면적 단위는 `m2`입니다.
+- 목록형 응답은 `page`, `page_size`, `total_count`를 `meta`에 포함합니다.
+- `page` 기본값은 `1`, `page_size` 기본값은 `20`, 최대값은 `100`입니다.
+
+### 공통 에러 코드
 
 | 코드 | HTTP Status | 설명 |
 |------|-------------|------|
+| `INVALID_PARAMETER` | 400 | 필수 파라미터 누락 또는 형식 오류 |
+| `INVALID_COORDINATES` | 400 | 위도/경도 범위 오류 |
 | `BUILDING_NOT_FOUND` | 404 | 건물 ID에 해당하는 데이터 없음 |
 | `COMPLEX_NOT_FOUND` | 404 | 단지 ID에 해당하는 데이터 없음 |
-| `INVALID_COORDINATES` | 400 | 위도/경도 값이 유효 범위 밖 |
-| `INVALID_PARAMETER` | 400 | 필수 파라미터 누락 또는 형식 오류 |
-| `EXTERNAL_API_ERROR` | 502 | 외부 공공데이터 API 호출 실패 |
+| `UNSUPPORTED_PRESET` | 400 | 지원하지 않는 편의시설 가중치 프리셋 |
+| `EXTERNAL_API_ERROR` | 502 | 외부 API 호출 실패 |
 | `INTERNAL_ERROR` | 500 | 서버 내부 오류 |
 
-### 인증
+## 엔드포인트 상태
 
-초기 개발 단계에서는 인증 없이 운영한다. 공공데이터 API 키는 서버에서만 관리한다.
+| 메서드 | 경로 | 단계 | 상태 |
+|--------|------|------|------|
+| `GET` | `/health` | 공통 | 기준 확정 |
+| `GET` | `/api/v1/buildings/nearby` | MVP | 기준 확정 |
+| `GET` | `/api/v1/buildings/{building_id}` | Phase 2 | 기준 확정 |
+| `GET` | `/api/v1/buildings/{building_id}/trades` | MVP | 기준 확정 |
+| `GET` | `/api/v1/complexes` | Phase 2 | 기준 확정 |
+| `GET` | `/api/v1/complexes/{complex_id}` | Phase 2 | 기준 확정 |
+| `GET` | `/api/v1/complexes/{complex_id}/buildings` | Phase 2 | 기준 확정 |
+| `GET` | `/api/v1/complexes/{complex_id}/trades` | Phase 2 | 기준 확정 |
+| `GET` | `/api/v1/livability/{building_id}` | Phase 4 | 기준 확정 |
+| `GET` | `/api/v1/livability/compare` | Phase 4 | 기준 확정 |
+| `GET` | `/api/v1/infra/nearby` | Phase 4 | planned |
 
-### 페이지네이션
+## 1. Health
 
-리스트 API는 `page`와 `page_size` 쿼리 파라미터를 지원한다.
-- `page`: 페이지 번호 (기본값: 1)
-- `page_size`: 페이지당 항목 수 (기본값: 20, 최대: 100)
+### `GET /health`
 
----
+서비스와 주요 의존성 상태를 반환합니다.
 
-## 엔드포인트 상세
-
----
-
-### 1. 헬스체크
-
-#### `GET /health`
-
-서버 및 DB 연결 상태 확인.
-
-**응답 예시**:
 ```json
 {
   "status": "success",
   "data": {
     "server": "ok",
     "database": "ok",
+    "redis": "ok",
     "version": "0.1.0"
   }
 }
 ```
 
----
+## 2. Building APIs
 
-### 2. 건물 API
+### `GET /api/v1/buildings/nearby`
 
-#### `GET /api/v1/buildings/nearby`
+사용자 좌표 기준으로 주변 아파트 동 목록을 조회합니다.
 
-주변 건물 목록 조회 (PostGIS 반경 검색).
-
-**파라미터**:
+#### Query Parameters
 
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
-| `lat` | float | O | 위도 (36.05~36.25) |
-| `lon` | float | O | 경도 (128.20~128.50) |
-| `radius` | int | X | 반경(m), 기본값 500, 최대 2000 |
-| `min_price` | int | X | 최소 거래가(만원) |
-| `max_price` | int | X | 최대 거래가(만원) |
-| `min_area` | float | X | 최소 전용면적(m2) |
-| `max_area` | float | X | 최대 전용면적(m2) |
-| `min_grade` | string | X | 최소 편의시설 등급 (S/A/B/C/D/F) |
+| `lat` | float | O | 위도 |
+| `lon` | float | O | 경도 |
+| `radius` | int | X | 반경(m), 기본값 `500`, 최대 `2000` |
+| `min_price` | int | X | 최소 거래가 |
+| `max_price` | int | X | 최대 거래가 |
+| `min_area` | float | X | 최소 전용면적 |
+| `max_area` | float | X | 최대 전용면적 |
+| `min_grade` | string | X | 최소 편의시설 등급 (`S`, `A`, `B`, `C`, `D`, `F`) |
+| `page` | int | X | 페이지 번호 |
+| `page_size` | int | X | 페이지 크기 |
 
-**응답 예시**:
+#### Response Example
+
 ```json
 {
   "status": "success",
@@ -116,7 +126,7 @@
       "lat": 36.1195,
       "lon": 128.3445,
       "ground_floors": 25,
-      "recent_trade": {
+      "latest_trade": {
         "deal_amount": 58000,
         "exclusive_area": 84.0,
         "floor": 15,
@@ -129,6 +139,8 @@
     }
   ],
   "meta": {
+    "page": 1,
+    "page_size": 20,
     "total_count": 15,
     "center_lat": 36.1195,
     "center_lon": 128.3445,
@@ -137,13 +149,12 @@
 }
 ```
 
----
+### `GET /api/v1/buildings/{building_id}`
 
-#### `GET /api/v1/buildings/{building_id}`
+특정 동의 상세 정보를 반환합니다.
 
-건물 상세 정보 조회.
+#### Response Example
 
-**응답 예시**:
 ```json
 {
   "status": "success",
@@ -178,21 +189,21 @@
 }
 ```
 
----
+### `GET /api/v1/buildings/{building_id}/trades`
 
-#### `GET /api/v1/buildings/{building_id}/trades`
+건물 단위 거래 이력을 조회합니다.
 
-건물별 거래 이력 조회.
-
-**파라미터**:
+#### Query Parameters
 
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
-| `type` | string | X | 거래유형: 매매, 전세, 월세 (미지정 시 전체) |
-| `limit` | int | X | 조회 건수 (기본값: 20, 최대: 100) |
-| `year` | int | X | 특정 년도 필터 |
+| `type` | string | X | `매매`, `전세`, `월세` |
+| `year` | int | X | 특정 연도 필터 |
+| `page` | int | X | 페이지 번호 |
+| `page_size` | int | X | 페이지 크기 |
 
-**응답 예시**:
+#### Response Example
+
 ```json
 {
   "status": "success",
@@ -223,27 +234,30 @@
     }
   ],
   "meta": {
+    "page": 1,
+    "page_size": 20,
     "total_count": 45
   }
 }
 ```
 
----
+## 3. Complex APIs
 
-### 3. 단지 API
+### `GET /api/v1/complexes`
 
-#### `GET /api/v1/complexes`
+단지 목록을 조회합니다.
 
-법정동 내 단지 목록 조회.
-
-**파라미터**:
+#### Query Parameters
 
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
-| `dong_code` | string | X | 법정동코드 10자리 (예: 4719012800) |
-| `name` | string | X | 단지명 검색 (부분 일치) |
+| `dong_code` | string | X | 법정동코드 10자리 |
+| `name` | string | X | 단지명 부분 검색 |
+| `page` | int | X | 페이지 번호 |
+| `page_size` | int | X | 페이지 크기 |
 
-**응답 예시**:
+#### Response Example
+
 ```json
 {
   "status": "success",
@@ -259,24 +273,52 @@
     }
   ],
   "meta": {
+    "page": 1,
+    "page_size": 20,
     "total_count": 25
   }
 }
 ```
 
----
+### `GET /api/v1/complexes/{complex_id}`
 
-#### `GET /api/v1/complexes/{complex_id}`
+특정 단지의 메타데이터를 조회합니다.
 
-단지 상세 정보 조회.
+#### Response Example
 
----
+```json
+{
+  "status": "success",
+  "data": {
+    "complex_id": 10,
+    "kapt_code": "A12345678",
+    "complex_name": "구미 래미안",
+    "road_address": "경상북도 구미시 옥계북로 100",
+    "parcel_address": "경상북도 구미시 옥계동 100",
+    "households": 850,
+    "building_count": 8,
+    "completion_date": "2015-06-20",
+    "constructor": "삼성물산",
+    "heating_type": "지역난방",
+    "parking_count": 1200,
+    "elevator_count": 16
+  }
+}
+```
 
-#### `GET /api/v1/complexes/{complex_id}/buildings`
+### `GET /api/v1/complexes/{complex_id}/buildings`
 
-단지 내 동 목록 조회.
+특정 단지에 속한 동 목록을 반환합니다.
 
-**응답 예시**:
+#### Query Parameters
+
+| 이름 | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `page` | int | X | 페이지 번호 |
+| `page_size` | int | X | 페이지 크기 |
+
+#### Response Example
+
 ```json
 {
   "status": "success",
@@ -297,39 +339,70 @@
       "lat": 36.1198,
       "lon": 128.3450
     }
-  ]
+  ],
+  "meta": {
+    "page": 1,
+    "page_size": 20,
+    "total_count": 8
+  }
 }
 ```
 
----
+### `GET /api/v1/complexes/{complex_id}/trades`
 
-#### `GET /api/v1/complexes/{complex_id}/trades`
+단지 전체 거래 이력을 조회합니다.
 
-단지 전체 거래 이력 조회.
-
-**파라미터**:
+#### Query Parameters
 
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
-| `type` | string | X | 매매/전세/월세 |
-| `year` | int | X | 년도 |
-| `month` | int | X | 월 |
+| `type` | string | X | `매매`, `전세`, `월세` |
+| `year` | int | X | 특정 연도 필터 |
+| `month` | int | X | 특정 월 필터 |
+| `page` | int | X | 페이지 번호 |
+| `page_size` | int | X | 페이지 크기 |
 
----
+#### Response Example
 
-### 4. 편의시설 점수 API
+```json
+{
+  "status": "success",
+  "data": [
+    {
+      "trade_id": 1234,
+      "building_id": 42,
+      "dong_name": "101동",
+      "floor": 15,
+      "exclusive_area": 84.0,
+      "deal_amount": 58000,
+      "deposit": null,
+      "monthly_rent": null,
+      "deal_date": "2026-03-15",
+      "trade_type": "매매"
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "page_size": 20,
+    "total_count": 120
+  }
+}
+```
 
-#### `GET /api/v1/livability/{building_id}`
+## 4. Livability APIs
 
-건물별 편의시설 종합 점수 + 카테고리별 상세.
+### `GET /api/v1/livability/{building_id}`
 
-**파라미터**:
+건물별 생활 인프라 종합 점수와 카테고리별 상세 정보를 반환합니다.
+
+#### Query Parameters
 
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
-| `preset` | string | X | 가중치 프리셋: default, childcare, worker, senior (기본값: default) |
+| `preset` | string | X | `default`, `childcare`, `worker`, `senior` |
 
-**응답 예시**:
+#### Response Example
+
 ```json
 {
   "status": "success",
@@ -341,26 +414,21 @@
     "categories": {
       "medical": {
         "score": 95.0,
-        "weight": 0.20,
+        "weight": 0.2,
+        "count_500m": 5,
         "nearest": [
           {
             "name": "구미제일의원",
             "sub_category": "hospital",
             "distance_m": 120,
             "walk_minutes": 2
-          },
-          {
-            "name": "참좋은약국",
-            "sub_category": "pharmacy",
-            "distance_m": 180,
-            "walk_minutes": 2
           }
-        ],
-        "count_500m": 5
+        ]
       },
       "education": {
         "score": 78.0,
-        "weight": 0.20,
+        "weight": 0.2,
+        "count_500m": 3,
         "nearest": [
           {
             "name": "옥계초등학교",
@@ -368,32 +436,31 @@
             "distance_m": 350,
             "walk_minutes": 4
           }
-        ],
-        "count_500m": 3
+        ]
       },
       "convenience": {
         "score": 88.0,
-        "weight": 0.20,
-        "nearest": [],
-        "count_500m": 7
+        "weight": 0.2,
+        "count_500m": 7,
+        "nearest": []
       },
       "transport": {
         "score": 72.0,
-        "weight": 0.20,
-        "nearest": [],
-        "count_500m": 3
+        "weight": 0.2,
+        "count_500m": 3,
+        "nearest": []
       },
       "safety": {
         "score": 92.0,
-        "weight": 0.10,
-        "nearest": [],
-        "count_500m": 12
+        "weight": 0.1,
+        "count_500m": 12,
+        "nearest": []
       },
       "leisure": {
         "score": 65.0,
-        "weight": 0.10,
-        "nearest": [],
-        "count_500m": 2
+        "weight": 0.1,
+        "count_500m": 2,
+        "nearest": []
       }
     },
     "calculated_at": "2026-04-10T12:00:00Z"
@@ -401,20 +468,19 @@
 }
 ```
 
----
+### `GET /api/v1/livability/compare`
 
-#### `GET /api/v1/livability/compare`
+건물 2~3개의 생활 인프라 점수를 비교합니다.
 
-건물 간 편의시설 점수 비교.
-
-**파라미터**:
+#### Query Parameters
 
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
-| `building_ids` | string | O | 쉼표 구분 건물 ID (2~3개, 예: 42,43,44) |
-| `preset` | string | X | 가중치 프리셋 (기본값: default) |
+| `building_ids` | string | O | 쉼표 구분 건물 ID 목록 |
+| `preset` | string | X | `default`, `childcare`, `worker`, `senior` |
 
-**응답 예시**:
+#### Response Example
+
 ```json
 {
   "status": "success",
@@ -449,22 +515,27 @@
 }
 ```
 
----
+## 5. Infra API
 
-#### `GET /api/v1/infra/nearby`
+### `GET /api/v1/infra/nearby`
 
-주변 편의시설 목록 조회.
+> 상태: `planned`
 
-**파라미터**:
+지도 뷰 또는 생활 인프라 상세 화면에서 주변 시설 목록을 조회하기 위한 API입니다.
+
+#### Query Parameters
 
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|------|------|
 | `lat` | float | O | 위도 |
 | `lon` | float | O | 경도 |
-| `radius` | int | X | 반경(m), 기본값 1000 |
-| `category` | string | X | 카테고리: medical, education, convenience, transport, safety, leisure |
+| `radius` | int | X | 반경(m), 기본값 `1000` |
+| `category` | string | X | `medical`, `education`, `convenience`, `transport`, `safety`, `leisure` |
+| `page` | int | X | 페이지 번호 |
+| `page_size` | int | X | 페이지 크기 |
 
-**응답 예시**:
+#### Response Example
+
 ```json
 {
   "status": "success",
@@ -474,89 +545,17 @@
       "category": "medical",
       "sub_category": "hospital",
       "name": "구미제일의원",
-      "lat": 36.1200,
-      "lon": 128.3450,
+      "lat": 36.12,
+      "lon": 128.345,
       "address": "경상북도 구미시 옥계북로 50",
       "distance_m": 120,
       "data_source": "kakao"
     }
   ],
   "meta": {
+    "page": 1,
+    "page_size": 20,
     "total_count": 35
   }
 }
 ```
-
----
-
-### 5. 지오코딩 API
-
-#### `GET /api/v1/geocode`
-
-주소 -> 좌표 변환 (Vworld 프록시).
-
-**파라미터**:
-
-| 이름 | 타입 | 필수 | 설명 |
-|------|------|------|------|
-| `address` | string | O | 검색할 주소 |
-
-**응답 예시**:
-```json
-{
-  "status": "success",
-  "data": {
-    "lat": 36.1195,
-    "lon": 128.3445,
-    "address": "경상북도 구미시 옥계북로 100"
-  }
-}
-```
-
----
-
-#### `GET /api/v1/reverse-geocode`
-
-좌표 -> 주소 변환 (Vworld 프록시).
-
-**파라미터**:
-
-| 이름 | 타입 | 필수 | 설명 |
-|------|------|------|------|
-| `lat` | float | O | 위도 |
-| `lon` | float | O | 경도 |
-
-**응답 예시**:
-```json
-{
-  "status": "success",
-  "data": {
-    "road_address": "경상북도 구미시 옥계북로 100",
-    "parcel_address": "경상북도 구미시 옥계동 123-4",
-    "legal_dong_code": "4719012800",
-    "dong_name": "옥계동"
-  }
-}
-```
-
----
-
-## 가중치 프리셋 정의
-
-| 프리셋 | 의료 | 교육 | 생활편의 | 교통 | 안전 | 여가 |
-|--------|------|------|----------|------|------|------|
-| `default` | 20% | 20% | 20% | 20% | 10% | 10% |
-| `childcare` | 15% | 30% | 15% | 15% | 20% | 5% |
-| `worker` | 10% | 5% | 25% | 35% | 10% | 15% |
-| `senior` | 35% | 5% | 25% | 20% | 10% | 5% |
-
-## 등급 기준
-
-| 점수 | 등급 |
-|------|------|
-| 90~100 | S |
-| 75~89 | A |
-| 60~74 | B |
-| 45~59 | C |
-| 30~44 | D |
-| 0~29 | F |

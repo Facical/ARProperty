@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.iml
 .gradle
 /local.properties
@@ -13,3 +14,74 @@
 .externalNativeBuild
 .cxx
 local.properties
+=======
+# Java / Gradle
+*.class
+*.jar
+*.war
+backend/build/
+backend/.gradle/
+backend/out/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.iml
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+*.key
+credentials.json
+secrets/
+
+# Logs
+*.log
+
+# Android
+*.apk
+*.aab
+*.dex
+*.aar
+android/local.properties
+android/.gradle/
+android/build/
+android/app/build/
+android/captures/
+android/.externalNativeBuild/
+android/.cxx/
+!android/gradle/wrapper/gradle-wrapper.jar
+
+# Docker
+docker-compose.override.yml
+
+# Data files (large)
+data/raw/*.csv
+data/raw/*.json
+data/raw/*.xlsx
+data/raw/*.xml
+!data/raw/.gitkeep
+
+# Python (데이터 수집 스크립트용)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 개인 문서 (로컬에만 보관)
+*.hwp
+*.pdf
+CLAUDE.md
+구미_AR_부동산_프로젝트_통합문서.md
+역할_분담표.md
+>>>>>>> 5a6376ff69008512a50d25c9d6ec3eb12457d222

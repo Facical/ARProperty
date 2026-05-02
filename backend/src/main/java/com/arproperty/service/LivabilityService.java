@@ -1,0 +1,3 @@
+package com.arproperty.service;
+
+/** 편의시설 점수화 엔진 (거리 기반 점수, 가중치 프리셋, 등급 계산) */

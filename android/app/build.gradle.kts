@@ -101,5 +101,10 @@ dependencies {
     implementation(libs.arsceneview)
     implementation(libs.google.material)
 
+    // 카카오 공통 모듈
+    implementation("com.kakao.sdk:v2-common:2.20.6")
+    // 카카오 지도
+    implementation("com.kakao.maps.open:android:2.13.1")
+
     testImplementation(libs.junit4)
 }

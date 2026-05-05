@@ -5,6 +5,8 @@
 backend/build/
 backend/.gradle/
 backend/out/
+.gradle/
+!backend/gradle/wrapper/gradle-wrapper.jar
 
 # IDE
 .idea/
@@ -65,5 +67,6 @@ venv/
 *.hwp
 *.pdf
 CLAUDE.md
+.claude/
 구미_AR_부동산_프로젝트_통합문서.md
 역할_분담표.md

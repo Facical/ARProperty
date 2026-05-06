@@ -30,9 +30,11 @@ import com.arproperty.android.core.common.arRequiredPermissions
 import com.arproperty.android.core.common.hasAllPermissions
 import com.arproperty.android.core.designsystem.NotSupportedState
 import com.arproperty.android.core.designsystem.PermissionRequiredState
+import com.arproperty.android.BuildConfig
 import com.google.ar.core.ArCoreApk
 import com.google.ar.core.Config
 import com.google.ar.core.TrackingFailureReason
+import com.google.ar.core.TrackingState
 import io.github.sceneview.ar.ARScene
 
 data class ArUiState(
@@ -114,6 +116,11 @@ fun ArRoute(
 private fun ArCameraScene() {
     var trackingState by remember { mutableStateOf("초기화 대기") }
     var trackingFailure by remember { mutableStateOf<TrackingFailureReason?>(null) }
+    var geospatialStatus by remember {
+        mutableStateOf(
+            if (BuildConfig.HAS_GEOSPATIAL_API_KEY) "Geospatial: 활성 대기" else "Geospatial: 키 없음 (비활성)",
+        )
+    }
 
     Box(
         modifier = Modifier
@@ -122,14 +129,32 @@ private fun ArCameraScene() {
     ) {
         ARScene(
             modifier = Modifier.fillMaxSize(),
-            sessionConfiguration = { _, config ->
+            sessionConfiguration = { session, config ->
                 config.focusMode = Config.FocusMode.AUTO
+                if (BuildConfig.HAS_GEOSPATIAL_API_KEY &&
+                    session.isGeospatialModeSupported(Config.GeospatialMode.ENABLED)
+                ) {
+                    config.geospatialMode = Config.GeospatialMode.ENABLED
+                }
             },
             onTrackingFailureChanged = { reason ->
                 trackingFailure = reason
             },
-            onSessionUpdated = { _, frame ->
+            onSessionUpdated = { session, frame ->
                 trackingState = frame.camera.trackingState.name
+                if (BuildConfig.HAS_GEOSPATIAL_API_KEY) {
+                    val earth = session.earth
+                    geospatialStatus = when {
+                        earth == null -> "Geospatial: earth 미초기화"
+                        earth.trackingState == TrackingState.TRACKING -> {
+                            val pose = earth.cameraGeospatialPose
+                            "lat=%.5f lng=%.5f alt=%.1fm".format(
+                                pose.latitude, pose.longitude, pose.altitude,
+                            )
+                        }
+                        else -> "Earth: ${earth.trackingState.name}"
+                    }
+                }
             },
         )
 
@@ -143,6 +168,10 @@ private fun ArCameraScene() {
             Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)) {
                 Text(
                     text = "Tracking: $trackingState",
+                    style = MaterialTheme.typography.bodySmall,
+                )
+                Text(
+                    text = geospatialStatus,
                     style = MaterialTheme.typography.bodySmall,
                 )
                 trackingFailure?.let {

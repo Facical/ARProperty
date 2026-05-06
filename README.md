@@ -59,7 +59,7 @@ pip install -r requirements.txt
 
 - `backend/`에 Spring Boot 애플리케이션 소스가 아직 없어서 `./gradlew bootRun`은 현재 기준으로 실행 대상이 아닙니다.
 - `docker-compose up -d`로 전체 스택을 올리는 흐름도 백엔드 소스가 커밋되기 전에는 완료되지 않습니다.
-- Android 앱은 skeleton 수준이라 실제 ARCore 세션, 실데이터 상세 UI, 점수 비교 화면은 아직 placeholder입니다.
+- Android 앱은 ARCore 세션 라이프사이클(생성/일시정지/재개/종료)까지 연결되어 있지만, 카메라 프레임 렌더링과 실데이터 상세 UI, 점수 비교 화면은 아직 placeholder입니다.
 
 ## 협업 기준
 

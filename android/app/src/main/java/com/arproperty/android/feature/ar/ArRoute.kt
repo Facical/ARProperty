@@ -22,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
@@ -36,6 +37,13 @@ import com.google.ar.core.Config
 import com.google.ar.core.TrackingFailureReason
 import com.google.ar.core.TrackingState
 import io.github.sceneview.ar.ARScene
+import io.github.sceneview.ar.node.AnchorNode
+import io.github.sceneview.math.Position
+import io.github.sceneview.math.Size
+import io.github.sceneview.node.CubeNode
+import io.github.sceneview.rememberEngine
+import io.github.sceneview.rememberMaterialLoader
+import io.github.sceneview.rememberNodes
 
 data class ArUiState(
     val sampleBuildingId: Int = 42,
@@ -112,6 +120,9 @@ fun ArRoute(
     }
 }
 
+private const val OKGYE_DEMO_LATITUDE = 36.13
+private const val OKGYE_DEMO_LONGITUDE = 128.34
+
 @Composable
 private fun ArCameraScene() {
     var trackingState by remember { mutableStateOf("초기화 대기") }
@@ -121,6 +132,15 @@ private fun ArCameraScene() {
             if (BuildConfig.HAS_GEOSPATIAL_API_KEY) "Geospatial: 활성 대기" else "Geospatial: 키 없음 (비활성)",
         )
     }
+    var anchorStatus by remember {
+        mutableStateOf(
+            if (BuildConfig.HAS_GEOSPATIAL_API_KEY) "Anchor: Earth tracking 대기" else "Anchor: Geospatial 비활성",
+        )
+    }
+
+    val engine = rememberEngine()
+    val materialLoader = rememberMaterialLoader(engine)
+    val childNodes = rememberNodes()
 
     Box(
         modifier = Modifier
@@ -129,6 +149,9 @@ private fun ArCameraScene() {
     ) {
         ARScene(
             modifier = Modifier.fillMaxSize(),
+            engine = engine,
+            materialLoader = materialLoader,
+            childNodes = childNodes,
             sessionConfiguration = { session, config ->
                 config.focusMode = Config.FocusMode.AUTO
                 if (BuildConfig.HAS_GEOSPATIAL_API_KEY &&
@@ -142,17 +165,42 @@ private fun ArCameraScene() {
             },
             onSessionUpdated = { session, frame ->
                 trackingState = frame.camera.trackingState.name
-                if (BuildConfig.HAS_GEOSPATIAL_API_KEY) {
-                    val earth = session.earth
-                    geospatialStatus = when {
-                        earth == null -> "Geospatial: earth 미초기화"
-                        earth.trackingState == TrackingState.TRACKING -> {
-                            val pose = earth.cameraGeospatialPose
-                            "lat=%.5f lng=%.5f alt=%.1fm".format(
-                                pose.latitude, pose.longitude, pose.altitude,
-                            )
-                        }
-                        else -> "Earth: ${earth.trackingState.name}"
+                if (!BuildConfig.HAS_GEOSPATIAL_API_KEY) return@ARScene
+                val earth = session.earth
+                if (earth == null) {
+                    geospatialStatus = "Geospatial: earth 미초기화"
+                    return@ARScene
+                }
+                if (earth.trackingState != TrackingState.TRACKING) {
+                    geospatialStatus = "Earth: ${earth.trackingState.name}"
+                    return@ARScene
+                }
+                val pose = earth.cameraGeospatialPose
+                geospatialStatus = "lat=%.5f lng=%.5f alt=%.1fm".format(
+                    pose.latitude, pose.longitude, pose.altitude,
+                )
+                if (childNodes.isEmpty()) {
+                    runCatching {
+                        val anchor = earth.createAnchor(
+                            OKGYE_DEMO_LATITUDE,
+                            OKGYE_DEMO_LONGITUDE,
+                            pose.altitude,
+                            0f, 0f, 0f, 1f,
+                        )
+                        val anchorNode = AnchorNode(engine = engine, anchor = anchor)
+                        val cube = CubeNode(
+                            engine = engine,
+                            size = Size(1f, 1f, 1f),
+                            center = Position(0f, 0f, 0f),
+                            materialInstance = materialLoader.createColorInstance(color = Color.Red),
+                        )
+                        anchorNode.addChildNode(cube)
+                        childNodes += anchorNode
+                        anchorStatus = "Anchor: 옥계동 데모 (%.5f, %.5f) placed".format(
+                            OKGYE_DEMO_LATITUDE, OKGYE_DEMO_LONGITUDE,
+                        )
+                    }.onFailure {
+                        anchorStatus = "Anchor 실패: ${it::class.simpleName}"
                     }
                 }
             },
@@ -172,6 +220,10 @@ private fun ArCameraScene() {
                 )
                 Text(
                     text = geospatialStatus,
+                    style = MaterialTheme.typography.bodySmall,
+                )
+                Text(
+                    text = anchorStatus,
                     style = MaterialTheme.typography.bodySmall,
                 )
                 trackingFailure?.let {

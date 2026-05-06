@@ -95,6 +95,7 @@ dependencies {
     implementation(libs.maps.compose)
     implementation(libs.play.services.location)
     implementation(libs.arcore)
+    implementation(libs.arsceneview)
     implementation(libs.google.material)
 
     testImplementation(libs.junit4)

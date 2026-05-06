@@ -3,19 +3,24 @@ package com.arproperty.android.feature.ar
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -25,13 +30,15 @@ import com.arproperty.android.core.common.arRequiredPermissions
 import com.arproperty.android.core.common.hasAllPermissions
 import com.arproperty.android.core.designsystem.NotSupportedState
 import com.arproperty.android.core.designsystem.PermissionRequiredState
-import com.arproperty.android.core.designsystem.PlaceholderCard
+import com.arproperty.android.BuildConfig
 import com.google.ar.core.ArCoreApk
+import com.google.ar.core.Config
+import com.google.ar.core.TrackingFailureReason
+import com.google.ar.core.TrackingState
+import io.github.sceneview.ar.ARScene
 
 data class ArUiState(
     val sampleBuildingId: Int = 42,
-    val introTitle: String = "AR 탐색 화면",
-    val introBody: String = "이 화면은 카메라, 위치, ARCore 지원 여부를 확인한 뒤 향후 건물 오버레이가 올라갈 자리를 제공합니다.",
 )
 
 class ArViewModel : ViewModel() {
@@ -88,15 +95,7 @@ fun ArRoute(
                 body = "현재 기기 또는 환경에서는 ARCore를 바로 사용할 수 없습니다. 그래도 지도와 상세 흐름은 계속 확인할 수 있습니다.",
             )
         } else {
-            PlaceholderCard(
-                title = uiState.introTitle,
-                body = uiState.introBody,
-            )
-
-            PlaceholderCard(
-                title = "오버레이 영역 Placeholder",
-                body = "여기에 이후 ARCore 세션, 건물 후보 오버레이, 동 선택 UI가 추가됩니다.",
-            )
+            ArCameraScene()
         }
 
         Button(onClick = { onOpenBuilding(uiState.sampleBuildingId) }) {
@@ -109,6 +108,79 @@ fun ArRoute(
 
         Button(onClick = onOpenMap) {
             Text(text = "지도 탭으로 이동")
+        }
+    }
+}
+
+@Composable
+private fun ArCameraScene() {
+    var trackingState by remember { mutableStateOf("초기화 대기") }
+    var trackingFailure by remember { mutableStateOf<TrackingFailureReason?>(null) }
+    var geospatialStatus by remember {
+        mutableStateOf(
+            if (BuildConfig.HAS_GEOSPATIAL_API_KEY) "Geospatial: 활성 대기" else "Geospatial: 키 없음 (비활성)",
+        )
+    }
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(360.dp),
+    ) {
+        ARScene(
+            modifier = Modifier.fillMaxSize(),
+            sessionConfiguration = { session, config ->
+                config.focusMode = Config.FocusMode.AUTO
+                if (BuildConfig.HAS_GEOSPATIAL_API_KEY &&
+                    session.isGeospatialModeSupported(Config.GeospatialMode.ENABLED)
+                ) {
+                    config.geospatialMode = Config.GeospatialMode.ENABLED
+                }
+            },
+            onTrackingFailureChanged = { reason ->
+                trackingFailure = reason
+            },
+            onSessionUpdated = { session, frame ->
+                trackingState = frame.camera.trackingState.name
+                if (BuildConfig.HAS_GEOSPATIAL_API_KEY) {
+                    val earth = session.earth
+                    geospatialStatus = when {
+                        earth == null -> "Geospatial: earth 미초기화"
+                        earth.trackingState == TrackingState.TRACKING -> {
+                            val pose = earth.cameraGeospatialPose
+                            "lat=%.5f lng=%.5f alt=%.1fm".format(
+                                pose.latitude, pose.longitude, pose.altitude,
+                            )
+                        }
+                        else -> "Earth: ${earth.trackingState.name}"
+                    }
+                }
+            },
+        )
+
+        Surface(
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .padding(8.dp),
+            color = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f),
+            shape = MaterialTheme.shapes.small,
+        ) {
+            Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)) {
+                Text(
+                    text = "Tracking: $trackingState",
+                    style = MaterialTheme.typography.bodySmall,
+                )
+                Text(
+                    text = geospatialStatus,
+                    style = MaterialTheme.typography.bodySmall,
+                )
+                trackingFailure?.let {
+                    Text(
+                        text = "Failure: ${it.name}",
+                        style = MaterialTheme.typography.bodySmall,
+                    )
+                }
+            }
         }
     }
 }

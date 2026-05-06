@@ -19,6 +19,7 @@ fun localProperty(name: String, defaultValue: String): String =
     localProperties.getProperty(name, defaultValue)
 
 val mapsApiKey = localProperty("MAPS_API_KEY", "")
+val geospatialApiKey = localProperty("GEOSPATIAL_API_KEY", "")
 val baseUrl = localProperty("ARPROPERTY_BASE_URL", "http://10.0.2.2:8080/")
 
 android {
@@ -35,7 +36,9 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
         buildConfigField("boolean", "HAS_MAPS_API_KEY", mapsApiKey.isNotBlank().toString())
+        buildConfigField("boolean", "HAS_GEOSPATIAL_API_KEY", geospatialApiKey.isNotBlank().toString())
         manifestPlaceholders["mapsApiKey"] = mapsApiKey
+        manifestPlaceholders["geospatialApiKey"] = geospatialApiKey
     }
 
     buildTypes {
@@ -95,6 +98,7 @@ dependencies {
     implementation(libs.maps.compose)
     implementation(libs.play.services.location)
     implementation(libs.arcore)
+    implementation(libs.arsceneview)
     implementation(libs.google.material)
 
     testImplementation(libs.junit4)

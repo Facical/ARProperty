@@ -1,5 +1,6 @@
 package com.arproperty.android.feature.map
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -23,6 +24,14 @@ import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.Marker
 import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState
+
+import androidx.compose.foundation.layout.height
+import androidx.compose.ui.viewinterop.AndroidView
+import com.kakao.vectormap.KakaoMap
+import com.kakao.vectormap.KakaoMapReadyCallback
+import com.kakao.vectormap.MapLifeCycleCallback
+import com.kakao.vectormap.MapView
+
 
 data class MapUiState(
     val sampleBuildingId: Int = 42,
@@ -88,5 +97,46 @@ fun MapRoute(
         Button(onClick = { onOpenLivability(uiState.sampleBuildingId) }) {
             Text(text = "샘플 생활 점수 열기")
         }
+        Text(
+            text = "Kakao Map Test",
+            style = MaterialTheme.typography.titleMedium,
+        )
+
+        KakaoMapContent(
+            modifier = Modifier
+                .fillMaxSize()
+                .height(400.dp),
+        )
     }
+
+}
+
+
+@Composable
+private fun KakaoMapContent(
+    modifier: Modifier = Modifier,
+) {
+    AndroidView(
+        modifier = modifier,
+        factory = { context ->
+            MapView(context).apply {
+                start(
+                    object : MapLifeCycleCallback() {
+                        override fun onMapDestroy() {
+                            Log.d("KakaoMap", "map destroyed")
+                        }
+
+                        override fun onMapError(error: Exception) {
+                            Log.e("KakaoMap", "map error", error)
+                        }
+                    },
+                    object : KakaoMapReadyCallback() {
+                        override fun onMapReady(kakaoMap: KakaoMap) {
+                            Log.d("KakaoMap", "map ready")
+                        }
+                    },
+                )
+            }
+        },
+    )
 }

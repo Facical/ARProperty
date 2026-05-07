@@ -54,7 +54,9 @@ import com.kakao.vectormap.label.LabelOptions
 import com.arproperty.android.R
 import com.kakao.vectormap.label.LabelStyle
 import com.kakao.vectormap.label.LabelStyles
-
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.material3.FilterChip
 data class MapUiState(
     val sampleBuildingId: Int = 42,
     val gumiCenter: LatLng = LatLng.from(36.1195, 128.3445),
@@ -242,10 +244,13 @@ fun MapRoute(
 //            Text(text = "샘플 생활 점수 열기")
 //        }
 
+            val scrollState = rememberScrollState()
+
             Row(
                 modifier = Modifier
                     .align(Alignment.TopCenter)
                     .fillMaxWidth()
+                    .horizontalScroll(scrollState)
                     .padding(12.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
             ) {
@@ -256,6 +261,30 @@ fun MapRoute(
                 Button(onClick = { onOpenLivability(uiState.sampleBuildingId) }) {
                     Text(text = "생활 점수")
                 }
+
+                FilterChip(
+                    selected = false,
+                    onClick = { /* 의료 표시 ON/OFF */ },
+                    label = { Text("의료") },
+                )
+
+                FilterChip(
+                    selected = false,
+                    onClick = { /* 교통 표시 ON/OFF */ },
+                    label = { Text("교통") },
+                )
+
+                FilterChip(
+                    selected = false,
+                    onClick = { /* 편의 표시 ON/OFF */ },
+                    label = { Text("편의") },
+                )
+
+                FilterChip(
+                    selected = false,
+                    onClick = { /* 안전 표시 ON/OFF */ },
+                    label = { Text("안전") },
+                )
             }
         }
     }

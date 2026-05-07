@@ -125,6 +125,7 @@ private fun addCurrentLocationMarker(
     val currentLocationStyles = labelManager.addLabelStyles(
         LabelStyles.from(
             LabelStyle.from(R.drawable.current_location_marker)
+                .setAnchorPoint(0.5f, 0.5f)
         )
     )
 

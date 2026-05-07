@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -24,6 +25,8 @@ import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.Marker
 import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 
 import androidx.compose.foundation.layout.height
 import androidx.compose.ui.viewinterop.AndroidView
@@ -31,7 +34,11 @@ import com.kakao.vectormap.KakaoMap
 import com.kakao.vectormap.KakaoMapReadyCallback
 import com.kakao.vectormap.MapLifeCycleCallback
 import com.kakao.vectormap.MapView
-
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.Alignment
 
 data class MapUiState(
     val sampleBuildingId: Int = 42,
@@ -58,15 +65,31 @@ fun MapRoute(
     }
 
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+        modifier = Modifier.fillMaxSize()
     ) {
         Text(
             text = "Map",
             style = MaterialTheme.typography.headlineMedium,
+            modifier = Modifier.padding(16.dp)
         )
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+        ){
+        if (hasKakaoMapKey()) {
+            KakaoMapContent(
+                modifier = Modifier.fillMaxWidth()
+            )
+
+        }else{
+            PlaceholderCard(
+                title = "KAKAO_NATIVE_APP_KEY가 비어 있습니다",
+                body = "local.properties에 KAKAO_NATIVE_APP_KEY를 넣으면 카카오맵을 사용할 수 있습니다."
+            )
+        }
+
 //구글맵 관련 내용이라 일단 주석처리
 //        if (BuildConfig.HAS_MAPS_API_KEY) {
 //            GoogleMap(
@@ -88,38 +111,36 @@ fun MapRoute(
 //            )
 //        }
 
-        PlaceholderCard(
-            title = "지도 화면 Placeholder",
-            body = "여기에 이후 건물 마커, 편의시설 레이어, AR <-> 지도 전환 상태 공유가 추가됩니다.",
-        )
+//        PlaceholderCard(
+//            title = "지도 화면 Placeholder",
+//            body = "여기에 이후 건물 마커, 편의시설 레이어, AR <-> 지도 전환 상태 공유가 추가됩니다.",
+//        )
+//
+//        Button(onClick = { onOpenBuilding(uiState.sampleBuildingId) }) {
+//            Text(text = "샘플 건물 상세 열기")
+//        }
+//
+//        Button(onClick = { onOpenLivability(uiState.sampleBuildingId) }) {
+//            Text(text = "샘플 생활 점수 열기")
+//        }
 
-        Button(onClick = { onOpenBuilding(uiState.sampleBuildingId) }) {
-            Text(text = "샘플 건물 상세 열기")
-        }
-
-        Button(onClick = { onOpenLivability(uiState.sampleBuildingId) }) {
-            Text(text = "샘플 생활 점수 열기")
-        }
-        Text(
-            text = "Kakao Map Test",
-            style = MaterialTheme.typography.titleMedium,
-        )
-
-        if (hasKakaoMapKey()) {
-            KakaoMapContent(
+            Row(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .height(400.dp),
-            )
+                    .align(Alignment.TopCenter)
+                    .fillMaxWidth()
+                    .padding(12.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                Button(onClick = { onOpenBuilding(uiState.sampleBuildingId) }) {
+                    Text(text = "건물 상세")
+                }
 
-        }else{
-            PlaceholderCard(
-                title = "KAKAO_NATIVE_APP_KEY가 비어 있습니다",
-                body = "카카오 지도 SDK는 연결됐지만 키가 없어 placeholder 상태로 유지됩니다. local.properties에 KAKAO_NATIVE_APP_KEY를 넣으면 실제 지도가 표시됩니다.")
+                Button(onClick = { onOpenLivability(uiState.sampleBuildingId) }) {
+                    Text(text = "생활 점수")
+                }
+            }
         }
-
     }
-
 }
 
 

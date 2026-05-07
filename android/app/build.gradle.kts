@@ -40,6 +40,7 @@ android {
         buildConfigField("boolean", "HAS_MAPS_API_KEY", mapsApiKey.isNotBlank().toString())
         buildConfigField("boolean", "HAS_GEOSPATIAL_API_KEY", geospatialApiKey.isNotBlank().toString())
         buildConfigField("String", "KAKAO_NATIVE_APP_KEY", "\"$kakaoNativeAppKey\"")
+        buildConfigField("boolean", "HAS_KAKAO_NATIVE_APP_KEY", kakaoNativeAppKey.isNotBlank().toString())
         manifestPlaceholders["mapsApiKey"] = mapsApiKey
         manifestPlaceholders["geospatialApiKey"] = geospatialApiKey
     }

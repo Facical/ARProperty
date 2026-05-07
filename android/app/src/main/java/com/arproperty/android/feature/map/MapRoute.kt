@@ -42,6 +42,10 @@ class MapViewModel : ViewModel() {
     val uiState = MapUiState()
 }
 
+private fun hasKakaoMapKey(): Boolean {
+    return BuildConfig.HAS_KAKAO_NATIVE_APP_KEY
+}
+
 @Composable
 fun MapRoute(
     onOpenBuilding: (Int) -> Unit,
@@ -56,7 +60,6 @@ fun MapRoute(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState())
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
@@ -64,26 +67,26 @@ fun MapRoute(
             text = "Map",
             style = MaterialTheme.typography.headlineMedium,
         )
-
-        if (BuildConfig.HAS_MAPS_API_KEY) {
-            GoogleMap(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .weight(1f, fill = false),
-                cameraPositionState = cameraPositionState,
-            ) {
-                Marker(
-                    state = MarkerState(position = uiState.gumiCenter),
-                    title = "구미 파일럿 위치",
-                    snippet = "초기 지도 scaffold",
-                )
-            }
-        } else {
-            PlaceholderCard(
-                title = "MAPS_API_KEY가 비어 있습니다",
-                body = "지도 SDK는 연결됐지만 키가 없어 placeholder 상태로 유지됩니다. local.properties에 MAPS_API_KEY를 넣으면 실제 지도가 표시됩니다.",
-            )
-        }
+//구글맵 관련 내용이라 일단 주석처리
+//        if (BuildConfig.HAS_MAPS_API_KEY) {
+//            GoogleMap(
+//                modifier = Modifier
+//                    .fillMaxSize()
+//                    .weight(1f, fill = false),
+//                cameraPositionState = cameraPositionState,
+//            ) {
+//                Marker(
+//                    state = MarkerState(position = uiState.gumiCenter),
+//                    title = "구미 파일럿 위치",
+//                    snippet = "초기 지도 scaffold",
+//                )
+//            }
+//        } else {
+//            PlaceholderCard(
+//                title = "MAPS_API_KEY가 비어 있습니다",
+//                body = "지도 SDK는 연결됐지만 키가 없어 placeholder 상태로 유지됩니다. local.properties에 MAPS_API_KEY를 넣으면 실제 지도가 표시됩니다.",
+//            )
+//        }
 
         PlaceholderCard(
             title = "지도 화면 Placeholder",
@@ -102,11 +105,19 @@ fun MapRoute(
             style = MaterialTheme.typography.titleMedium,
         )
 
-        KakaoMapContent(
-            modifier = Modifier
-                .fillMaxSize()
-                .height(400.dp),
-        )
+        if (hasKakaoMapKey()) {
+            KakaoMapContent(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .height(400.dp),
+            )
+
+        }else{
+            PlaceholderCard(
+                title = "KAKAO_NATIVE_APP_KEY가 비어 있습니다",
+                body = "카카오 지도 SDK는 연결됐지만 키가 없어 placeholder 상태로 유지됩니다. local.properties에 KAKAO_NATIVE_APP_KEY를 넣으면 실제 지도가 표시됩니다.")
+        }
+
     }
 
 }

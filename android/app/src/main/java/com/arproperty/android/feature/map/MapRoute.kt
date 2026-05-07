@@ -20,10 +20,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.arproperty.android.BuildConfig
 import com.arproperty.android.core.designsystem.PlaceholderCard
 import com.google.android.gms.maps.model.CameraPosition
-import com.google.android.gms.maps.model.LatLng
-import com.google.maps.android.compose.GoogleMap
-import com.google.maps.android.compose.Marker
-import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -39,10 +35,24 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Alignment
-
+import android.Manifest
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.pm.PackageManager
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.runtime.remember
+import androidx.core.content.ContextCompat
+import com.google.android.gms.location.LocationServices
+import com.kakao.vectormap.LatLng
+import com.kakao.vectormap.camera.CameraUpdateFactory
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.LocalContext
 data class MapUiState(
     val sampleBuildingId: Int = 42,
-    val gumiCenter: LatLng = LatLng(36.1195, 128.3445),
+    val gumiCenter: LatLng = LatLng.from(36.1195, 128.3445),
 )
 
 class MapViewModel : ViewModel() {
@@ -53,6 +63,51 @@ private fun hasKakaoMapKey(): Boolean {
     return BuildConfig.HAS_KAKAO_NATIVE_APP_KEY
 }
 
+private fun hasPermission(
+    context: Context,
+    permission: String,
+): Boolean {
+    return ContextCompat.checkSelfPermission(
+        context,
+        permission
+    ) == PackageManager.PERMISSION_GRANTED
+}
+
+private fun hasLocationPermission(context: Context): Boolean {
+    return hasPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) ||
+        hasPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)
+}
+
+@SuppressLint("MissingPermission")
+private fun moveToCurrentLocation(
+    context: Context,
+    kakaoMap: KakaoMap,
+) {
+    val fusedLocationClient =
+        LocationServices.getFusedLocationProviderClient(context)
+
+    fusedLocationClient.lastLocation
+        .addOnSuccessListener { location ->
+            if (location != null) {
+                val currentPosition = LatLng.from(
+                    location.latitude,
+                    location.longitude
+                )
+
+                val command =
+                    CameraUpdateFactory.newCenterPosition(currentPosition)
+
+                kakaoMap.moveCamera(command)
+            } else {
+                Log.d("Location", "현재 위치를 가져오지 못했음")
+            }
+        }
+        .addOnFailureListener { error ->
+            Log.e("Location", "위치 가져오기 실패", error)
+        }
+}
+
+
 @Composable
 fun MapRoute(
     onOpenBuilding: (Int) -> Unit,
@@ -60,9 +115,30 @@ fun MapRoute(
     viewModel: MapViewModel = viewModel(),
 ) {
     val uiState = viewModel.uiState
-    val cameraPositionState = rememberCameraPositionState {
-        position = CameraPosition.fromLatLngZoom(uiState.gumiCenter, 14f)
+    val context = LocalContext.current
+
+    var preparedMap by remember {
+        mutableStateOf<KakaoMap?>(null)
     }
+
+    val locationPermissionLauncher =
+        rememberLauncherForActivityResult(
+            contract = ActivityResultContracts.RequestMultiplePermissions()
+        ) { permissions ->
+            val fineLocationGranted =
+                permissions[Manifest.permission.ACCESS_FINE_LOCATION] == true
+
+            val coarseLocationGranted =
+                permissions[Manifest.permission.ACCESS_COARSE_LOCATION] == true
+
+            if (fineLocationGranted || coarseLocationGranted) {
+                preparedMap?.let { kakaoMap ->
+                    moveToCurrentLocation(context, kakaoMap)
+                }
+            } else {
+                Log.d("Location", "위치 권한이 거부됨")
+            }
+        }
 
     Column(
         modifier = Modifier.fillMaxSize()
@@ -80,7 +156,22 @@ fun MapRoute(
         ){
         if (hasKakaoMapKey()) {
             KakaoMapContent(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth(),
+                onMapReady = { kakaoMap ->
+                    preparedMap = kakaoMap
+
+                    if (hasLocationPermission(context)) {
+                        moveToCurrentLocation(context, kakaoMap)
+                    } else {
+                        locationPermissionLauncher.launch(
+                            arrayOf(
+                                Manifest.permission.ACCESS_FINE_LOCATION,
+                                Manifest.permission.ACCESS_COARSE_LOCATION
+                            )
+                        )
+                    }
+                }
             )
 
         }else{
@@ -147,6 +238,7 @@ fun MapRoute(
 @Composable
 private fun KakaoMapContent(
     modifier: Modifier = Modifier,
+    onMapReady: (KakaoMap) -> Unit,
 ) {
     AndroidView(
         modifier = modifier,
@@ -165,6 +257,7 @@ private fun KakaoMapContent(
                     object : KakaoMapReadyCallback() {
                         override fun onMapReady(kakaoMap: KakaoMap) {
                             Log.d("KakaoMap", "map ready")
+                            onMapReady(kakaoMap)
                         }
                     },
                 )

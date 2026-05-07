@@ -10,4 +10,13 @@ import java.util.List;
 public interface AptTradeHistoryRepository extends JpaRepository<AptTradeHistory, Integer> {
 
     List<AptTradeHistory> findByComplex_ComplexIdOrderByDealDateDesc(Integer complexId);
+
+    boolean existsByComplex_ComplexIdAndDongNameAndFloorAndExclusiveAreaAndDealDateAndDealAmount(
+            Integer complexId,
+            String dongName,
+            Integer floor,
+            java.math.BigDecimal exclusiveArea,
+            java.time.LocalDate dealDate,
+            Integer dealAmount
+    );
 }

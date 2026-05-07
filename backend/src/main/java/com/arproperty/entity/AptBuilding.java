@@ -33,6 +33,9 @@ public class AptBuilding {
     @Column(name = "dong_name", length = 50, nullable = false)
     private String dongName;
 
+    @Column(name = "building_management_number", length = 30)
+    private String buildingManagementNumber;
+
     @Column(name = "polygon_geom", columnDefinition = "geometry(Polygon,4326)")
     private Polygon polygonGeom;
 

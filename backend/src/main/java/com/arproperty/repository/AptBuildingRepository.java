@@ -6,8 +6,13 @@ import com.arproperty.entity.AptBuilding;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface AptBuildingRepository extends JpaRepository<AptBuilding, Integer> {
 
     List<AptBuilding> findByComplex_ComplexId(Integer complexId);
+
+    List<AptBuilding> findByComplex_ComplexNameContainingIgnoreCase(String complexName);
+
+    Optional<AptBuilding> findByBuildingManagementNumber(String buildingManagementNumber);
 }

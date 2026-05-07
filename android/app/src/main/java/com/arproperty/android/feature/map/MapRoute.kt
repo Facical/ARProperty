@@ -50,6 +50,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
+import com.kakao.vectormap.label.LabelOptions
+import com.arproperty.android.R
+import com.kakao.vectormap.label.LabelStyle
+import com.kakao.vectormap.label.LabelStyles
+
 data class MapUiState(
     val sampleBuildingId: Int = 42,
     val gumiCenter: LatLng = LatLng.from(36.1195, 128.3445),
@@ -98,6 +103,7 @@ private fun moveToCurrentLocation(
                     CameraUpdateFactory.newCenterPosition(currentPosition)
 
                 kakaoMap.moveCamera(command)
+                addCurrentLocationMarker(kakaoMap, currentPosition)
             } else {
                 Log.d("Location", "현재 위치를 가져오지 못했음")
             }
@@ -107,7 +113,28 @@ private fun moveToCurrentLocation(
         }
 }
 
+private fun addCurrentLocationMarker(
+    kakaoMap: KakaoMap,
+    position: LatLng,
+) {
+    val labelManager = kakaoMap.labelManager ?: return
+    val labelLayer = labelManager.layer ?: return
 
+    labelLayer.removeAll()
+
+    val currentLocationStyles = labelManager.addLabelStyles(
+        LabelStyles.from(
+            LabelStyle.from(R.drawable.current_location_marker)
+        )
+    )
+
+    val labelOptions = LabelOptions.from(position)
+        .setStyles(currentLocationStyles)
+
+    labelLayer.addLabel(labelOptions)
+
+    Log.d("LocationMarker", "현재 위치 마커 추가 완료: $position")
+}
 @Composable
 fun MapRoute(
     onOpenBuilding: (Int) -> Unit,
@@ -156,8 +183,7 @@ fun MapRoute(
         ){
         if (hasKakaoMapKey()) {
             KakaoMapContent(
-                modifier = Modifier
-                    .fillMaxWidth(),
+                modifier = Modifier.fillMaxSize(),
                 onMapReady = { kakaoMap ->
                     preparedMap = kakaoMap
 

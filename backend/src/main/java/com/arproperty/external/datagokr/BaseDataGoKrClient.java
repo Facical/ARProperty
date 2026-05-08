@@ -1,3 +1,38 @@
 package com.arproperty.external.datagokr;
 
-/** 공공데이터포털 API 공통 클라이언트 (XML/JSON 자동 판별, 페이징, 에러 핸들링) */
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+import org.springframework.web.client.RestClient;
+
+import java.util.Map;
+
+@Component
+public class BaseDataGoKrClient {
+
+    private final RestClient restClient;
+    private final String apiKey;
+
+    public BaseDataGoKrClient(
+            @Value("${app.api.data-go-kr-base-url:https://apis.data.go.kr}") String baseUrl,
+            @Value("${app.api.data-go-kr-key:}") String apiKey,
+            RestClient.Builder builder
+    ) {
+        this.restClient = builder.baseUrl(baseUrl).build();
+        this.apiKey = apiKey;
+    }
+
+    public String get(String path, Map<String, String> queryParams) {
+        if (!StringUtils.hasText(apiKey)) {
+            throw new IllegalStateException("DATA_GO_KR_API_KEY is required.");
+        }
+        return restClient.get()
+                .uri(uriBuilder -> {
+                    uriBuilder.path(path).queryParam("serviceKey", apiKey);
+                    queryParams.forEach(uriBuilder::queryParam);
+                    return uriBuilder.build();
+                })
+                .retrieve()
+                .body(String.class);
+    }
+}

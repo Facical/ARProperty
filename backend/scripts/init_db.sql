@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS apt_building_master (
     building_id       SERIAL PRIMARY KEY,
     complex_id        INTEGER NOT NULL REFERENCES apt_complex_master(complex_id) ON DELETE CASCADE,
     dong_name         VARCHAR(50) NOT NULL,               -- 동명 (101동, 102동 등)
+    building_management_number VARCHAR(30),               -- VWorld bd_mgt_sn (영구 매핑키)
     polygon_geom      GEOMETRY(POLYGON, 4326),            -- 건물 폴리곤 (Vworld/GIS)
     centroid          GEOMETRY(POINT, 4326),               -- 건물 중심 좌표
     ground_floors     INTEGER,                             -- 지상 층수
@@ -63,6 +64,7 @@ CREATE INDEX IF NOT EXISTS idx_building_complex ON apt_building_master(complex_i
 CREATE INDEX IF NOT EXISTS idx_building_polygon ON apt_building_master USING GIST(polygon_geom);
 CREATE INDEX IF NOT EXISTS idx_building_centroid ON apt_building_master USING GIST(centroid);
 CREATE INDEX IF NOT EXISTS idx_building_dong ON apt_building_master(dong_name);
+CREATE INDEX IF NOT EXISTS idx_building_mgmt_no ON apt_building_master(building_management_number);
 
 -- =============================================================
 -- 3. apt_trade_history (거래 이력)

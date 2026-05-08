@@ -1,5 +1,5 @@
-version: '3.8'
-
+# 로컬 개발 오케스트레이션 - PostgreSQL16+PostGIS3.4 · Redis7 · Spring Boot 백엔드
+# 호스트 5432는 네이티브 PG가 점유 → DB 외부 포트는 5433:5432 매핑
 services:
   db:
     image: postgis/postgis:16-3.4
@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: arproperty
       POSTGRES_PASSWORD: ${DB_PASSWORD:-devpassword}
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./backend/scripts/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql

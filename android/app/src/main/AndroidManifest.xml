@@ -6,6 +6,12 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+
+    <!-- ar카메라를 추가할 때 일반카메라도 추가하는 것을 권장함-->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-feature
         android:name="android.hardware.camera.ar"
         android:required="false" />

@@ -57,6 +57,20 @@ import com.kakao.vectormap.label.LabelStyles
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.FilterChip
+import androidx.activity.ComponentActivity
+import androidx.compose.runtime.collectAsState
+import com.arproperty.android.feature.shared.SharedSelectionViewModel
+import android.content.ContextWrapper
+
+private fun Context.requireActivity(): ComponentActivity {
+    var current: Context = this
+    while (current is ContextWrapper) {
+        if (current is ComponentActivity) return current
+        current = current.baseContext
+    }
+    error("Context is not a ComponentActivity")
+}
+
 data class MapUiState(
     val sampleBuildingId: Int = 42,
     val gumiCenter: LatLng = LatLng.from(36.1195, 128.3445),
@@ -146,6 +160,9 @@ fun MapRoute(
 ) {
     val uiState = viewModel.uiState
     val context = LocalContext.current
+    val activity = remember(context) { context.requireActivity() }
+    val sharedVm: SharedSelectionViewModel = viewModel(viewModelStoreOwner = activity)
+    val selectedBuilding by sharedVm.selectedBuilding.collectAsState()
 
     var preparedMap by remember {
         mutableStateOf<KakaoMap?>(null)
@@ -178,6 +195,13 @@ fun MapRoute(
             style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier.padding(16.dp)
         )
+        selectedBuilding?.let {
+            Text(
+                text = "AR에서 선택: ${it.complexName} ${it.dongName}",
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(horizontal = 16.dp)
+            )
+        }
 
         Box(
             modifier = Modifier

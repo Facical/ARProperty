@@ -49,6 +49,30 @@ public class BuildingDataClient {
         return parseBuildingFeatures(fetchSamguTrinienBuildings());
     }
 
+    public List<BuildingFeature> fetchByBdMgtSnPrefix(String prefix, int page, int size) {
+        if (!StringUtils.hasText(apiKey)) {
+            throw new IllegalStateException("VWORLD_API_KEY is required.");
+        }
+        String body = restClient.get()
+                .uri(uriBuilder -> uriBuilder.path(DATA_PATH)
+                        .queryParam("service", "data")
+                        .queryParam("request", "GetFeature")
+                        .queryParam("data", BUILDING_LAYER)
+                        .queryParam("key", apiKey)
+                        .queryParam("domain", "localhost")
+                        .queryParam("format", "json")
+                        .queryParam("crs", "EPSG:4326")
+                        .queryParam("size", size)
+                        .queryParam("page", page)
+                        .queryParam("geometry", "true")
+                        .queryParam("attribute", "true")
+                        .queryParam("attrFilter", "bd_mgt_sn:like:" + prefix)
+                        .build())
+                .retrieve()
+                .body(String.class);
+        return parseBuildingFeatures(body);
+    }
+
     public List<BuildingFeature> parseBuildingFeatures(String responseBody) {
         try {
             JsonNode response = objectMapper.readTree(responseBody).path("response");

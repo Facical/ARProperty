@@ -14,7 +14,7 @@
 | 영역 | 현재 상태 | 비고 |
 |------|-----------|------|
 | Android 앱 | Android Studio Compose scaffold 존재 | Navigation, placeholder 화면, 네트워크/AR/Map 연결용 뼈대 포함 |
-| 백엔드 | Gradle 설정, Dockerfile, 환경설정, DB 스키마 존재 | `src/main/java` 애플리케이션 소스는 아직 없음 |
+| 백엔드 | Spring Boot 앱 부팅 가능 | `/health` + `GET /api/v1/buildings/nearby` 엔드포인트 동작. 그 외 `complexes`, `livability`, 거래 상세는 컨트롤러 스텁 상태 |
 | 데이터 수집 | Python 수집 스크립트와 법정동 매핑 존재 | 구미시 대상 수집 뼈대가 준비된 상태 |
 | 문서 | 핵심 기준 문서 재정리 완료 | 과거 조사/초안 문서는 `docs/archive/`에 보존 |
 
@@ -44,6 +44,25 @@
 # DB / Redis 실행
 docker-compose up -d db redis
 
+# 옥계동 데모 시드 데이터 적재 (선택, 멱등 SQL — 단지는 sync로 채워야 함)
+docker exec -i $(docker-compose ps -q db) psql -U arproperty -d arproperty \
+  < backend/scripts/seed_demo_okgye.sql
+
+# 백엔드 부팅 (포트 8080)
+cd backend
+./gradlew bootRun
+
+# 옥계동 실 단지 좌표 적재 (공공데이터 apt_list → Kakao Local 자동 조회)
+# 필요 env: DATA_GO_KR_API_KEY, KAKAO_REST_API_KEY
+./gradlew bootRun --args='--sync-okgye-complex'
+
+# 옥계동 동(棟) 단위 폴리곤·centroid 적재 (VWorld 2D Data → 단지 매칭)
+# 필요 env: VWORLD_API_KEY (반드시 sync-okgye-complex 이후 실행)
+./gradlew bootRun --args='--sync-okgye-buildings'
+
+# 주변 건물 API 확인
+curl 'http://localhost:8080/api/v1/buildings/nearby?lat=36.13&lon=128.34&radius=500'
+
 # Android 앱 디버그 빌드
 cd android
 ./gradlew :app:assembleDebug
@@ -57,10 +76,49 @@ pip install -r requirements.txt
 
 ### 아직 불가능하거나 미완성인 것
 
-- `backend/`에 Spring Boot 애플리케이션 소스가 아직 없어서 `./gradlew bootRun`은 현재 기준으로 실행 대상이 아닙니다.
-- `docker-compose up -d`로 전체 스택을 올리는 흐름도 백엔드 소스가 커밋되기 전에는 완료되지 않습니다.
-- Android 앱은 ARCore 세션, SceneView 카메라 렌더링, 옥계동 좌표(36.13, 128.34)에 고정된 데모 Geospatial Anchor와 큐브 마커까지 연결되어 있지만, 실데이터 상세 UI와 점수 비교 화면은 아직 placeholder입니다.
+- 백엔드는 `/health` 와 `GET /api/v1/buildings/nearby`만 동작합니다. `buildings/{id}`, `buildings/{id}/trades`, `complexes`, `livability` 엔드포인트는 컨트롤러 스텁 상태입니다.
+- Android AR 화면은 `nearby` API를 호출해 옥계동 주변 단지 마커를 동적으로 그리고 등급별 색상(녹/황/적)으로 표시하지만, 마커 직접 탭은 아직 없고 화면 하단 칩 목록에서 단지를 선택하는 방식입니다.
+- DetailPopup의 거래 이력 다건/건물 상세는 `buildings/{id}` 엔드포인트가 추가될 때 함께 채워집니다.
 - ARCore Geospatial API는 `local.properties`에 `GEOSPATIAL_API_KEY=...`를 추가했을 때만 자동 활성화됩니다. 키가 없으면 카메라/세션은 정상 동작하고 Geospatial만 비활성으로 표시됩니다.
+
+## 시연용 백엔드 외부 노출
+
+발표 환경에서 안드로이드 디바이스가 같은 LAN에 없거나, 사내망/모바일 데이터로 백엔드를 호출해야 할 때 사용합니다.
+
+### 옵션 1: cloudflared (계정 불필요, 임시 URL)
+
+```bash
+cloudflared tunnel --url http://localhost:8080
+# 출력: https://<random>.trycloudflare.com
+```
+
+### 옵션 2: ngrok (계정 필요, 안정적 URL)
+
+```bash
+ngrok http 8080
+# 출력: https://<random>.ngrok-free.app
+```
+
+### 안드로이드 측 적용
+
+`android/local.properties`(없으면 생성)에 발급된 https URL을 박고 디버그 빌드를 다시 만듭니다.
+
+```properties
+API_BASE_URL=https://<random>.trycloudflare.com/
+```
+
+`/`로 끝나야 Retrofit이 정상 동작합니다.
+
+### 시연 직전 체크리스트
+
+```bash
+# 단지 좌표 sync 완료 확인 (N>0이어야 함)
+docker exec -it $(docker-compose ps -q db) psql -U arproperty -d arproperty \
+  -c "SELECT count(*) FROM apt_complex_master WHERE legal_dong_code='4719012800';"
+
+# 외부 URL에서 nearby API 응답 확인
+curl 'https://<your-tunnel>/api/v1/buildings/nearby?lat=36.13&lon=128.34&radius=1000'
+```
 
 ## 협업 기준
 

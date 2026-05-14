@@ -38,6 +38,26 @@
 
 ## 로컬 실행 기준
 
+### 신규 PC에서 처음 셋업할 때
+
+private 리포지토리 가정으로 `local.properties` / `backend/.env`가 git에 포함되어 있습니다. 따라서 clone 직후 별도 키 입력 없이 빌드/실행이 가능합니다.
+
+```bash
+git clone <repo> ARProperty
+cd ARProperty
+```
+
+PC별로 다른 두 가지만 보강해주세요.
+
+1. **Android SDK 경로** — `android/local.properties`에 `sdk.dir` 라인이 없습니다. Android Studio가 첫 sync 시 자동으로 채우거나, `ANDROID_HOME` 환경변수가 잡혀 있으면 그대로 사용합니다.
+2. **카카오/Google ARCore 키해시** — `build.gradle.kts:30`의 카카오 native 키와 `local.properties`의 `GEOSPATIAL_API_KEY`는 각각 카카오/Google Cloud 콘솔에서 *현재 PC의 디버그 keystore SHA1*에 묶여 있습니다. 새 PC에서는 본인 SHA1을 콘솔에 추가해야 카카오맵 타일 / Geospatial 앵커가 동작합니다.
+   ```bash
+   keytool -list -v -keystore ~/.android/debug.keystore \
+     -alias androiddebugkey -storepass android -keypass android
+   # SHA1 라인을 복사해서 카카오 developers 콘솔 → 앱 → 플랫폼 → Android 키해시에 추가
+   # (카카오는 SHA1을 base64로 변환한 키해시를 요구)
+   ```
+
 ### 지금 바로 가능한 것
 
 ```bash
@@ -101,13 +121,21 @@ ngrok http 8080
 
 ### 안드로이드 측 적용
 
-`android/local.properties`(없으면 생성)에 발급된 https URL을 박고 디버그 빌드를 다시 만듭니다.
+두 가지 방식 중 편한 쪽을 선택합니다.
+
+**(A) 재빌드해서 새 URL을 박는다**
+
+`android/local.properties`의 `ARPROPERTY_BASE_URL`을 발급된 https URL로 덮어쓰고 디버그 빌드를 다시 만듭니다.
 
 ```properties
-API_BASE_URL=https://<random>.trycloudflare.com/
+ARPROPERTY_BASE_URL=https://<random>.trycloudflare.com/
 ```
 
 `/`로 끝나야 Retrofit이 정상 동작합니다.
+
+**(B) 재빌드 없이 런타임에 URL만 바꾼다** (실기기 권장)
+
+앱 실행 후 AR 화면 안의 **BaseUrl 다이얼로그**에서 URL을 입력합니다. `BaseUrlOverrideInterceptor`가 모든 Retrofit 요청을 즉시 새 호스트로 리라우트하므로 앱 재시작도 불필요합니다.
 
 ### 시연 직전 체크리스트
 

@@ -19,8 +19,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.arproperty.android.BuildConfig
 import com.arproperty.android.core.designsystem.PlaceholderCard
-import com.google.android.gms.maps.model.CameraPosition
-import com.google.maps.android.compose.rememberCameraPositionState
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 
@@ -233,27 +231,6 @@ fun MapRoute(
                 body = "local.properties에 KAKAO_NATIVE_APP_KEY를 넣으면 카카오맵을 사용할 수 있습니다."
             )
         }
-
-//구글맵 관련 내용이라 일단 주석처리
-//        if (BuildConfig.HAS_MAPS_API_KEY) {
-//            GoogleMap(
-//                modifier = Modifier
-//                    .fillMaxSize()
-//                    .weight(1f, fill = false),
-//                cameraPositionState = cameraPositionState,
-//            ) {
-//                Marker(
-//                    state = MarkerState(position = uiState.gumiCenter),
-//                    title = "구미 파일럿 위치",
-//                    snippet = "초기 지도 scaffold",
-//                )
-//            }
-//        } else {
-//            PlaceholderCard(
-//                title = "MAPS_API_KEY가 비어 있습니다",
-//                body = "지도 SDK는 연결됐지만 키가 없어 placeholder 상태로 유지됩니다. local.properties에 MAPS_API_KEY를 넣으면 실제 지도가 표시됩니다.",
-//            )
-//        }
 
 //        PlaceholderCard(
 //            title = "지도 화면 Placeholder",

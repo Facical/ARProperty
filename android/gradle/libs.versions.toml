@@ -14,6 +14,7 @@ okhttp = "5.3.2"
 mapsCompose = "8.3.0"
 playServicesLocation = "21.3.0"
 arcore = "1.53.0"
+arsceneview = "2.3.0"
 junit4 = "4.13.2"
 material = "1.13.0"
 
@@ -39,6 +40,7 @@ okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor",
 maps-compose = { group = "com.google.maps.android", name = "maps-compose", version.ref = "mapsCompose" }
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 arcore = { group = "com.google.ar", name = "core", version.ref = "arcore" }
+arsceneview = { group = "io.github.sceneview", name = "arsceneview", version.ref = "arsceneview" }
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 

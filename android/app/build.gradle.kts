@@ -19,7 +19,10 @@ fun localProperty(name: String, defaultValue: String): String =
     localProperties.getProperty(name, defaultValue)
 
 val mapsApiKey = localProperty("MAPS_API_KEY", "")
+val geospatialApiKey = localProperty("GEOSPATIAL_API_KEY", "")
 val baseUrl = localProperty("ARPROPERTY_BASE_URL", "http://10.0.2.2:8080/")
+
+val kakaoNativeAppKey = localProperty("KAKAO_NATIVE_APP_KEY", "")
 
 android {
     namespace = "com.arproperty.android"
@@ -35,7 +38,11 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
         buildConfigField("boolean", "HAS_MAPS_API_KEY", mapsApiKey.isNotBlank().toString())
+        buildConfigField("boolean", "HAS_GEOSPATIAL_API_KEY", geospatialApiKey.isNotBlank().toString())
+        buildConfigField("String", "KAKAO_NATIVE_APP_KEY", "\"$kakaoNativeAppKey\"")
+        buildConfigField("boolean", "HAS_KAKAO_NATIVE_APP_KEY", kakaoNativeAppKey.isNotBlank().toString())
         manifestPlaceholders["mapsApiKey"] = mapsApiKey
+        manifestPlaceholders["geospatialApiKey"] = geospatialApiKey
     }
 
     buildTypes {
@@ -95,7 +102,13 @@ dependencies {
     implementation(libs.maps.compose)
     implementation(libs.play.services.location)
     implementation(libs.arcore)
+    implementation(libs.arsceneview)
     implementation(libs.google.material)
+
+    // 카카오 공통 모듈
+    implementation("com.kakao.sdk:v2-common:2.20.6")
+    // 카카오 지도
+    implementation("com.kakao.maps.open:android:2.13.1")
 
     testImplementation(libs.junit4)
 }

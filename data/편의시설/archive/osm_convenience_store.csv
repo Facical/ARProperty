@@ -1,0 +1,71 @@
+﻿category,sub_category,name,lat,lon,address,phone,operator,osm_type,osm_id,data_source
+convenience,convenience_store,리스토아할인마트,36.0879351,128.3662177,,,,node,368691800,manual
+convenience,convenience_store,365낚시마트,36.1174425,128.363754,,,,node,368691831,manual
+convenience,convenience_store,영신문방구,36.2366514,128.3027528,,,,node,368724971,manual
+convenience,convenience_store,GS25 구미병원점,36.139885,128.327717,,,GS리테일,node,368831938,manual
+convenience,convenience_store,세븐일레븐 구미차병원점,36.114368,128.340584,,,코리아세븐,node,368831945,manual
+convenience,convenience_store,CM편의점,36.090657,128.428938,,,,node,368949714,manual
+convenience,convenience_store,CSN편의점,36.109868,128.420468,,,,node,368949722,manual
+convenience,convenience_store,로손편의점,36.124872,128.342685,,,,node,368949727,manual
+convenience,convenience_store,공원편의점,36.106458,128.426403,,,,node,368949730,manual
+convenience,convenience_store,테마25시편의점,36.113833,128.332139,,,,node,368949743,manual
+convenience,convenience_store,송정25시편의점,36.1151053,128.348993,,,,node,368949744,manual
+convenience,convenience_store,2002할인마트(2002 Mart),36.0882859,128.3682559,,,,node,1721409991,manual
+convenience,convenience_store,이마트24,36.0923822,128.4404382,,,,node,3740205123,manual
+convenience,convenience_store,CU,36.0926464,128.4408004,,,BGF리테일,node,3740207525,manual
+convenience,convenience_store,세븐일레븐,36.0932952,128.4325049,,,코리아세븐,node,3741163572,manual
+convenience,convenience_store,CU,36.1397743,128.442068,,,BGF리테일,node,4631717266,manual
+convenience,convenience_store,GS25,36.1397135,128.4394072,,,GS리테일,node,4631717267,manual
+convenience,convenience_store,미니스탑 봉곡 도서관점,36.1514504,128.3080678,,,,node,4634748480,manual
+convenience,convenience_store,GS25,36.0910936,128.4403276,,,,node,4639360375,manual
+convenience,convenience_store,GS25,36.1412562,128.332525,,,GS리테일,node,4658964885,manual
+convenience,convenience_store,GS25,36.1391201,128.396688,,,GS리테일,node,4663182765,manual
+convenience,convenience_store,세븐일레븐,36.1378642,128.3973952,,,,node,4663183803,manual
+convenience,convenience_store,GS25,36.1208707,128.3745149,,,GS리테일,node,4663265834,manual
+convenience,convenience_store,GS25,36.1205241,128.3716933,,,GS리테일,node,4663265835,manual
+convenience,convenience_store,GS25,36.1217817,128.377369,,,GS리테일,node,4663265844,manual
+convenience,convenience_store,세븐일레븐,36.0900932,128.4413941,,,코리아세븐,node,4677499605,manual
+convenience,convenience_store,세븐일레븐,36.090675,128.4309246,,,코리아세븐,node,4677499607,manual
+convenience,convenience_store,세븐일레븐,36.0928168,128.4316949,,,코리아세븐,node,4677499608,manual
+convenience,convenience_store,CU 구평부영점,36.0919311,128.4355545,,,BGF리테일,node,4679634724,manual
+convenience,convenience_store,GS25 옥계희망점,36.1398989,128.4164322,산호대로25안길 1,,,node,4796110503,manual
+convenience,convenience_store,이마트24,36.147303,128.3911199,,,,node,4857596339,manual
+convenience,convenience_store,이마트24,36.1452656,128.3935482,,,,node,4857700336,manual
+convenience,convenience_store,CU,36.1512536,128.3303447,,,BGF리테일,node,4893359696,manual
+convenience,convenience_store,7-Eleven,36.1499772,128.331239,,,,node,4893359697,manual
+convenience,convenience_store,대백마트,36.0996364,128.3850798,,,,node,5063409791,manual
+convenience,convenience_store,세븐일레븐,36.0923177,128.4419634,,,코리아세븐,node,5299016437,manual
+convenience,convenience_store,GS25,36.1514543,128.3294016,,,GS리테일,node,5727073127,manual
+convenience,convenience_store,CU,36.1085016,128.4244438,,,BGF리테일,node,5873317988,manual
+convenience,convenience_store,세븐일레븐,36.1085059,128.4242472,,,코리아세븐,node,5873317989,manual
+convenience,convenience_store,세븐일레븐구미골드타워점,36.1557081,128.4312904,,,,node,6327737759,manual
+convenience,convenience_store,GS25구미클래스점,36.1620796,128.4404214,,,,node,6327739835,manual
+convenience,convenience_store,CU,36.1246429,128.3590431,경상북도 구미시 야은로 728,,BGF리테일,node,7051114021,manual
+convenience,convenience_store,GS25,36.1502802,128.3330548,,,,node,7176722620,manual
+convenience,convenience_store,CU,36.1415115,128.3961015,,,,node,12521111282,manual
+convenience,convenience_store,이마트24,36.1378585,128.4162122,,,(주)이마트24,node,12616741474,manual
+convenience,convenience_store,이마트24,36.0988631,128.3596718,,,,node,13013781667,manual
+convenience,convenience_store,세븐일레븐,36.0989216,128.3612017,,,,node,13013781673,manual
+convenience,convenience_store,GS25,36.0990311,128.3579397,,,,node,13014697991,manual
+convenience,convenience_store,이마트24,36.1467147,128.3897625,,,,node,13074740769,manual
+convenience,convenience_store,씨스페이스 구미문성점,36.1547684,128.351241,,,,node,13483083459,manual
+convenience,convenience_store,GS25,36.1605542,128.3443105,,,,node,13574803116,manual
+convenience,convenience_store,CU,36.1590186,128.3398603,,,,node,13574830278,manual
+convenience,convenience_store,7-Eleven,36.1253177,128.34601,,,,node,13690148902,manual
+convenience,convenience_store,GS25,36.1248366,128.3471304,,,,node,13697082701,manual
+convenience,convenience_store,GS25,36.1397697,128.4414792,,,GS리테일,way,468689957,manual
+convenience,convenience_store,GS25 구미원남점,36.1299376,128.3221666,,,,way,471801550,manual
+convenience,convenience_store,GS25 남통이편한점,36.1290526,128.3162532,,,,way,473927323,manual
+convenience,convenience_store,미니스톱,36.1165555,128.3517622,,,미니스톱,way,476246536,manual
+convenience,convenience_store,CU,36.1287715,128.3313273,,,BGF리테일,way,476489160,manual
+convenience,convenience_store,7-Eleven,36.1199363,128.3493095,,,,way,489744657,manual
+convenience,convenience_store,GS25,36.1271917,128.3302632,,,GS리테일,way,490873272,manual
+convenience,convenience_store,세븐일레븐 구미형곡점,36.1110321,128.33448,,,코리아세븐,way,503157514,manual
+convenience,convenience_store,CU형곡중앙로점,36.1125766,128.3383891,,,BGF리테일,way,508887573,manual
+convenience,convenience_store,GS25,36.1513297,128.2910114,,,,way,849650308,manual
+convenience,convenience_store,CU,36.1517812,128.2915632,,,,way,849650311,manual
+convenience,convenience_store,CU,36.1292682,128.319302,,,,way,967042048,manual
+convenience,convenience_store,CU,36.1423513,128.3162744,,,,way,967042075,manual
+convenience,convenience_store,CU,36.1403983,128.3182569,,,,way,967057248,manual
+convenience,convenience_store,CU,36.1060785,128.3824553,,,,way,1053589168,manual
+convenience,convenience_store,CU,36.1023489,128.3830564,,,,way,1053589188,manual

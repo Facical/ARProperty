@@ -1,0 +1,47 @@
+﻿category,sub_category,name,lat,lon,address,phone,operator,source_type,source_id,data_source
+education,elementary_school,도량초등학교,36.1443968,128.320323,,,,osm,node/368936011,manual
+education,elementary_school,남계초등학교,36.181496,128.349137,,,,osm,node/368936051,manual
+education,elementary_school,상모초등학교,36.0912033,128.3570872,,,,osm,node/1721410515,manual
+education,elementary_school,선주초등학교,36.15033,128.3111329,,,,osm,node/4628414012,manual
+education,elementary_school,구미봉곡초등학교,36.1535087,128.3038662,,,,osm,node/4631940543,manual
+education,elementary_school,고아초등학교,36.2120558,128.3293025,,,,osm,node/8718850154,manual
+education,elementary_school,옥계동부초등학교,36.1388649,128.4277976,옥계북로 89,,,osm,way/244419141,manual
+education,elementary_school,황상초등학교,36.1186273,128.4274362,,,,osm,way/370392130,manual
+education,elementary_school,구미문장초등학교,36.1482655,128.3327736,,,,osm,way/441999513,manual
+education,elementary_school,구평초등학교,36.0913451,128.4517536,,,,osm,way/469416941,manual
+education,elementary_school,구평남부초등학교,36.0910863,128.4375419,,,,osm,way/469416946,manual
+education,elementary_school,진평초등학교,36.091374,128.4268878,,,,osm,way/469422160,manual
+education,elementary_school,천생초등학교,36.0939234,128.4380584,,,,osm,way/469431026,manual
+education,elementary_school,구운초등학교,36.1706144,128.3691202,,,,osm,way/469915821,manual
+education,elementary_school,오산초등학교,36.0722782,128.3528473,,,,osm,way/469991629,manual
+education,elementary_school,오태초등학교,36.0702006,128.3498743,,,,osm,way/469991630,manual
+education,elementary_school,광평초등학교,36.1126898,128.3627047,,,,osm,way/470652644,manual
+education,elementary_school,신평초등학교,36.121283,128.3654469,,,,osm,way/472062558,manual
+education,elementary_school,비산초등학교,36.1188452,128.3747671,,,,osm,way/472092569,manual
+education,elementary_school,인의초등학교,36.1017443,128.4269738,,,,osm,way/473340859,manual
+education,elementary_school,인동초등학교,36.1061588,128.4228341,,,,osm,way/473340860,manual
+education,elementary_school,임봉초등학교,36.1404712,128.459345,,,,osm,way/475829831,manual
+education,elementary_school,신기초등학교,36.1261514,128.3653971,,,,osm,way/494229788,manual
+education,elementary_school,형곡초등학교,36.1094083,128.3382157,,,,osm,way/503157488,manual
+education,elementary_school,사곡초등학교,36.0995516,128.3602312,경상북도 구미시 상사동로24길 9,,,osm,way/549479491,manual
+education,elementary_school,왕산초등학교,36.0860657,128.3649864,,,,osm,way/549479508,manual
+education,elementary_school,구미옥계초등학교,36.1401333,128.4147196,,,,osm,way/553160618,manual
+education,elementary_school,양포초등학교,36.1451853,128.4163683,,,,osm,way/553160619,manual
+education,elementary_school,지산초등학교,36.1405753,128.344649,,,,osm,way/557545716,manual
+education,elementary_school,인덕초등학교,36.1620177,128.4374462,신당인덕3로 25,,,osm,way/675678284,manual
+education,elementary_school,형남초등학교,36.1015271,128.3349959,,,,osm,way/825059575,manual
+education,elementary_school,문성초등학교,36.1617147,128.345573,,,,osm,way/842067394,manual
+education,elementary_school,구미초등학교,36.1304568,128.3346637,역전로2길 23,,구미시,osm,way/846856351,manual
+education,elementary_school,구미 원당 초등학교,36.1443134,128.424975,경상북도 구미시 옥계신당로9길 21,,,osm,way/893363363,manual
+education,elementary_school,해마루초등학교,36.1403772,128.4331177,산호대로 953,+82 54-473-2215,,osm,way/893363367,manual
+education,elementary_school,구미신당초등학교,36.1603949,128.4312613,신당4로 29,,,osm,way/908378424,manual
+education,elementary_school,도봉초등학교,36.14173,128.317133,,,,osm,way/967057246,manual
+education,elementary_school,야은초등학교,36.1484313,128.3217401,,,,osm,way/967057272,manual
+education,elementary_school,도량초등학교,36.1444141,128.3201146,,,,osm,way/967057311,manual
+education,elementary_school,원남초등학교,36.1291239,128.3215667,원남로 12-50,,,osm,way/1120918645,manual
+education,elementary_school,금오초등학교,36.1239516,128.3346613,,,,osm,way/1120918699,manual
+education,elementary_school,덕촌초등학교,36.2626502,128.2542519,,,,osm,way/1376640014,manual
+education,elementary_school,형일초등학교,36.1144931,128.329951,,,,osm,way/1421444221,manual
+education,elementary_school,산동초등학교,36.1669737,128.4463227,,,,osm,way/1442790870,manual
+education,elementary_school,도개초등학교,36.300325,128.3312777,,,,osm,way/1457127352,manual
+education,elementary_school,송정초등학교,36.1139968,128.3485515,경상북도 구미시 송정대로6길 72-6,,,osm,way/1509390908,manual

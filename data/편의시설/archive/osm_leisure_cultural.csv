@@ -1,0 +1,16 @@
+﻿category,sub_category,name,lat,lon,address,phone,operator,osm_type,osm_id,data_source
+leisure,cultural_center,구미자동차극장,36.164091,128.32337,,,,node,368633841,manual
+leisure,cultural_center,구미자동차극장,36.1641,128.323359,,,,node,368634224,manual
+leisure,cultural_center,프로젝트영화관,36.1292255,128.3309025,,,,node,368635008,manual
+leisure,cultural_center,중앙소극장,36.1291309,128.3313376,,,,node,368635013,manual
+leisure,cultural_center,선산문화회관,36.243554,128.303958,,,,node,368874459,manual
+leisure,cultural_center,메가박스 구미강동 (MEGABOX Gumigangdong),36.1072275,128.4180174,,,,node,3740147608,manual
+leisure,cultural_center,CGV 구미,36.1300306,128.3276387,경상북도 구미시 구미중앙로 44,,,node,4632059405,manual
+leisure,cultural_center,청소년수련원,36.1962936,128.3692085,,,,node,5088814922,manual
+leisure,cultural_center,대공연장,36.1183018,128.3491285,,,,way,488842079,manual
+leisure,cultural_center,소공연장,36.1185786,128.3487811,,,,way,488842080,manual
+leisure,cultural_center,금오공과대학교 야외음악당,36.1424837,128.3962648,,,,way,493441798,manual
+leisure,cultural_center,야외음악당,36.1510465,128.2898651,,,,way,557547258,manual
+leisure,cultural_center,구미강동문화복지회관,36.0900173,128.4546644,,,,way,619910348,manual
+leisure,cultural_center,롯데시네마 구미공단점,36.1043188,128.3849961,,,,way,1053589215,manual
+leisure,cultural_center,구미문화예술회관,36.1182223,128.3487468,,,,way,1120918710,manual

@@ -1,0 +1,67 @@
+﻿category,sub_category,name,lat,lon,address,phone,operator,osm_type,osm_id,data_source
+leisure,park,우호의정원,36.1139171,128.3358047,,,,way,167955280,manual
+leisure,park,동락공원,36.0941495,128.4005117,,,,way,370306307,manual
+leisure,park,별빛공원,36.0928313,128.4343526,,,,way,370307310,manual
+leisure,park,구평공원,36.0905925,128.4386116,,,,way,370310451,manual
+leisure,park,다솜공원,36.0912192,128.4412216,,,,way,370311090,manual
+leisure,park,어우름공원,36.0922587,128.4307673,,,,way,370311554,manual
+leisure,park,구진벌공원,36.0948512,128.4354183,,,,way,370387832,manual
+leisure,park,해마루공원,36.1428573,128.436735,,,,way,468686445,manual
+leisure,park,수도산공원,36.1194657,128.3410506,,,,way,468728992,manual
+leisure,park,봉곡테마공원,36.1506386,128.3140643,,,,way,469064716,manual
+leisure,park,4주공 공원,36.142177,128.3238716,,,,way,470427704,manual
+leisure,park,구미역 후면광장,36.1277079,128.330301,,,,way,471809600,manual
+leisure,park,누리공원,36.1227088,128.3656122,,,,way,472064835,manual
+leisure,park,금오정,36.1199702,128.3673915,,,,way,472068048,manual
+leisure,park,공단공원,36.1054655,128.3848492,,,,way,472070980,manual
+leisure,park,왕산허위 선생 기념관,36.083604,128.3646071,,,,way,473344421,manual
+leisure,park,공원 및 놀이터,36.1462372,128.3215806,,,,way,473593514,manual
+leisure,park,구평건강공원,36.0977998,128.4332362,,,,way,473680727,manual
+leisure,park,도토리공원,36.1006248,128.4285216,,,,way,473933971,manual
+leisure,park,인의공원,36.100837,128.4261305,,,,way,473939704,manual
+leisure,park,분수대 광장,36.1462813,128.3934466,,,,way,493442464,manual
+leisure,park,참빛공원,36.0945221,128.4380849,,,,way,548508845,manual
+leisure,park,동그라미공원,36.1060691,128.4253096,,,,way,548561006,manual
+leisure,park,색동공원,36.0984797,128.4288196,,,,way,611600831,manual
+leisure,park,사계절공원,36.09565,128.4320176,,,,way,611600832,manual
+leisure,park,푸른꿈공원,36.0907215,128.4278319,,,,way,611600834,manual
+leisure,park,나들이공원,36.0910979,128.4259428,,,,way,611600836,manual
+leisure,park,버금공원,36.0945403,128.4298031,,,,way,611600837,manual
+leisure,park,미리내공원,36.093697,128.4279155,,,,way,611600838,manual
+leisure,park,희망공원,36.0947771,128.4259861,,,,way,611600839,manual
+leisure,park,토골공원,36.0941435,128.422887,,,,way,611600840,manual
+leisure,park,아름공원,36.0969311,128.4269243,,,,way,611600841,manual
+leisure,park,비둘기공원,36.1116875,128.4270899,,,,way,612664053,manual
+leisure,park,한누리공원,36.1045899,128.4220811,,,,way,612664071,manual
+leisure,park,디딜방아공원,36.0917974,128.4453951,,,,way,612984793,manual
+leisure,park,인동중앙공원,36.1092168,128.4217526,,,,way,612984805,manual
+leisure,park,찰밭공원,36.1006972,128.4226073,,,,way,612987253,manual
+leisure,park,다정공원,36.116928,128.4257614,,,,way,613981249,manual
+leisure,park,해바라기공원,36.1186056,128.4258619,,,,way,614031012,manual
+leisure,park,양지공원,36.1255283,128.3586836,경상북도 구미시 낙동강변로 917,,,way,754807909,manual
+leisure,park,지내공원,36.1615042,128.3445954,,,,way,784787470,manual
+leisure,park,외골공원,36.1642062,128.3457406,,,,way,842068179,manual
+leisure,park,채미정,36.112636,128.3130158,,,,way,850007686,manual
+leisure,park,경상북도 환경연수원,36.1192771,128.3091849,,,,way,850007707,manual
+leisure,park,도담공원,36.1406454,128.4221485,,,Government,way,897905698,manual
+leisure,park,달빛공원,36.142736,128.4230388,,,구미시,way,897905702,manual
+leisure,park,낙동강체육공원,36.1453275,128.3745565,경상북도 구미시 낙동제방길 200,,,way,899193999,manual
+leisure,park,구포생활체육공원,36.1331406,128.4042289,,,,way,899831052,manual
+leisure,park,꿈나무공원,36.1601236,128.4292969,,,,way,903759897,manual
+leisure,park,물빛공원,36.1590756,128.4303694,,,,way,903759898,manual
+leisure,park,봉수대공원,36.1393834,128.3214529,,,,way,967058565,manual
+leisure,park,신당체육공원,36.1469913,128.4253866,,,,way,975340457,manual
+leisure,park,등락지구 유소년체육시설,36.0986924,128.3999025,,,,way,1050656714,manual
+leisure,park,산들공원,36.1087556,128.3338301,,,,way,1104358887,manual
+leisure,park,산내공원,36.1109795,128.3401795,,,,way,1104371964,manual
+leisure,park,산림문화생태근린공원,36.1772886,128.4659886,,,,way,1161848516,manual
+leisure,park,구미산악스포츠공원,36.2565918,128.3887571,,,,way,1161956936,manual
+leisure,park,새싹공원,36.1498104,128.3255254,,,,way,1185467211,manual
+leisure,park,다봉공원,36.1564265,128.3092017,,,,way,1185515196,manual
+leisure,park,소롯골공원,36.1461874,128.3253444,,,,way,1204850987,manual
+leisure,park,지산샛강생태공원,36.1356178,128.3548641,,,,way,1217944435,manual
+leisure,park,냉산산악레포츠공원,36.2544656,128.3874965,,,,way,1268571904,manual
+leisure,park,선산뒷골체육공원,36.2594774,128.2887047,,,,way,1293777606,manual
+leisure,park,구미다온숲,36.1303166,128.4223249,,,,way,1304618815,manual
+leisure,park,구미추모공원,36.318408,128.2699707,,,,way,1316928012,manual
+leisure,park,여우광장,36.1581723,128.3407926,,,,way,1470281068,manual

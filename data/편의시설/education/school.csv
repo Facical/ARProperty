@@ -1,0 +1,97 @@
+﻿category,sub_category,name,lat,lon,address,phone,operator,source_type,source_id,data_source
+education,school,경북생활과학고등학교,36.198838,128.392831,,,,osm,node/368626636,manual
+education,school,봉곡 중학교,36.158552,128.304695,봉곡서로11안길 9-8,,,osm,node/368925282,manual
+education,school,도량초등학교,36.1443968,128.320323,,,,osm,node/368936011,manual
+education,school,남계초등학교,36.181496,128.349137,,,,osm,node/368936051,manual
+education,school,상모초등학교,36.0912033,128.3570872,,,,osm,node/1721410515,manual
+education,school,상모중학교,36.0908392,128.3593831,,,,osm,node/1721411896,manual
+education,school,상모고등학교,36.0845187,128.3516262,,,,osm,node/1721421178,manual
+education,school,구미전자공업고등학교,36.1153004,128.404797,,,,osm,node/3740974326,manual
+education,school,선주초등학교,36.15033,128.3111329,,,,osm,node/4628414012,manual
+education,school,구미봉곡초등학교,36.1535087,128.3038662,,,,osm,node/4631940543,manual
+education,school,다인음악학원,36.1398924,128.4163679,산호대로25안길 1,,,osm,node/4796110504,manual
+education,school,고아초등학교,36.2120558,128.3293025,,,,osm,node/8718850154,manual
+education,school,옥계동부중학교,36.1387719,128.4262192,옥계북로 87,,,osm,way/244419136,manual
+education,school,옥계동부초등학교,36.1388649,128.4277976,옥계북로 89,,,osm,way/244419141,manual
+education,school,금오중학교,36.0857442,128.370542,,,,osm,way/255366361,manual
+education,school,황상초등학교,36.1186273,128.4274362,,,,osm,way/370392130,manual
+education,school,구미중학교운동장,36.147071,128.3302108,,,,osm,way/439965345,manual
+education,school,구미문장초등학교,36.1482655,128.3327736,,,,osm,way/441999513,manual
+education,school,구평초등학교,36.0913451,128.4517536,,,,osm,way/469416941,manual
+education,school,구평남부초등학교,36.0910863,128.4375419,,,,osm,way/469416946,manual
+education,school,천생중학교,36.0903044,128.4374534,,,,osm,way/469416948,manual
+education,school,인동고등학교,36.0899818,128.4322916,,,,osm,way/469416949,manual
+education,school,진평초등학교,36.091374,128.4268878,,,,osm,way/469422160,manual
+education,school,천생초등학교,36.0939234,128.4380584,,,,osm,way/469431026,manual
+education,school,구운초등학교,36.1706144,128.3691202,,,,osm,way/469915821,manual
+education,school,구운초등학교 운동장,36.1705613,128.3692722,,,,osm,way/469915903,manual
+education,school,오태중학교,36.0718897,128.3542923,,,,osm,way/469991628,manual
+education,school,오산초등학교,36.0722782,128.3528473,,,,osm,way/469991629,manual
+education,school,오태초등학교,36.0702006,128.3498743,,,,osm,way/469991630,manual
+education,school,광평초등학교,36.1126898,128.3627047,,,,osm,way/470652644,manual
+education,school,광평중학교,36.1162857,128.3566961,,,,osm,way/470652645,manual
+education,school,신평초등학교,36.121283,128.3654469,,,,osm,way/472062558,manual
+education,school,기숙사,36.1190277,128.3690337,,,,osm,way/472062575,manual
+education,school,비산초등학교,36.1188452,128.3747671,,,,osm,way/472092569,manual
+education,school,진평중학교,36.0948915,128.4213565,,,,osm,way/472317244,manual
+education,school,인의초등학교,36.1017443,128.4269738,,,,osm,way/473340859,manual
+education,school,인동초등학교,36.1061588,128.4228341,,,,osm,way/473340860,manual
+education,school,선주고등학교,36.141573,128.3120663,,,,osm,way/473936854,manual
+education,school,형곡중학교,36.1065973,128.3311186,,,,osm,way/474775672,manual
+education,school,임봉초등학교,36.1404712,128.459345,,,,osm,way/475829831,manual
+education,school,경북외국어고등학교,36.1239301,128.3218824,,,,osm,way/490271740,manual
+education,school,구미여자중학교,36.1249773,128.3270463,,,,osm,way/490271749,manual
+education,school,구미고등학교,36.1369733,128.3333866,,,,osm,way/493434805,manual
+education,school,신기초등학교,36.1261514,128.3653971,,,,osm,way/494229788,manual
+education,school,신평중학교,36.1264684,128.3632429,,,,osm,way/494229790,manual
+education,school,형곡초등학교,36.1094083,128.3382157,,,,osm,way/503157488,manual
+education,school,형곡고등학교,36.1020309,128.3384186,,,,osm,way/504361307,manual
+education,school,구미여자상업고등학교,36.1071005,128.3413838,경상북도 구미시 형곡로38길 9-14,,,osm,way/504361322,manual
+education,school,사곡초등학교,36.0995516,128.3602312,경상북도 구미시 상사동로24길 9,,,osm,way/549479491,manual
+education,school,금오고등학교,36.1082144,128.3550776,경상북도 구미시 박정희로25길 15,,,osm,way/549479494,manual
+education,school,왕산초등학교,36.0860657,128.3649864,,,,osm,way/549479508,manual
+education,school,구미옥계초등학교,36.1401333,128.4147196,,,,osm,way/553160618,manual
+education,school,양포초등학교,36.1451853,128.4163683,,,,osm,way/553160619,manual
+education,school,구미제일고등학교,36.1425058,128.3458665,선산대로 129,,,osm,way/557545702,manual
+education,school,구미혜당학교,36.1418858,128.3450326,,,,osm,way/557545715,manual
+education,school,지산초등학교,36.1405753,128.344649,,,,osm,way/557545716,manual
+education,school,옥계중학교,36.1385318,128.4111913,,,,osm,way/587817645,manual
+education,school,구미정보고등학교,36.1179453,128.4336525,,,,osm,way/621875300,manual
+education,school,인덕초등학교,36.1620177,128.4374462,신당인덕3로 25,,,osm,way/675678284,manual
+education,school,인덕중학교,36.1620591,128.4387585,신당인덕3로 33,,,osm,way/675678285,manual
+education,school,형남초등학교,36.1015271,128.3349959,,,,osm,way/825059575,manual
+education,school,형남중학교,36.1015338,128.336317,,,,osm,way/825059576,manual
+education,school,문성초등학교,36.1617147,128.345573,,,,osm,way/842067394,manual
+education,school,구미초등학교,36.1304568,128.3346637,역전로2길 23,,구미시,osm,way/846856351,manual
+education,school,구미 원당 초등학교,36.1443134,128.424975,경상북도 구미시 옥계신당로9길 21,,,osm,way/893363363,manual
+education,school,해마루중학교,36.1394701,128.4330073,산호대로 951,+82 54-476-9371,,osm,way/893363366,manual
+education,school,해마루초등학교,36.1403772,128.4331177,산호대로 953,+82 54-473-2215,,osm,way/893363367,manual
+education,school,구미산동고등학교,36.1586936,128.436263,,,,osm,way/893366776,manual
+education,school,현일중고등학교,36.1873497,128.3496366,선산대로 656,,고아학원,osm,way/901068311,manual
+education,school,해마루고등학교 (가칭),36.1381978,128.4298314,,,,osm,way/901269390,manual
+education,school,구미원당중학교,36.1454926,128.4249463,경상북도 구미시 옥계신당로9길 9,,,osm,way/903101882,manual
+education,school,구미신당초등학교,36.1603949,128.4312613,신당4로 29,,,osm,way/908378424,manual
+education,school,도봉초등학교,36.14173,128.317133,,,,osm,way/967057246,manual
+education,school,선주중학교,36.1423614,128.3131025,,,,osm,way/967057267,manual
+education,school,도송중학교,36.1476713,128.3208555,,,,osm,way/967057270,manual
+education,school,야은초등학교,36.1484313,128.3217401,,,,osm,way/967057272,manual
+education,school,도량초등학교,36.1444141,128.3201146,,,,osm,way/967057311,manual
+education,school,원남초등학교,36.1291239,128.3215667,원남로 12-50,,,osm,way/1120918645,manual
+education,school,금오초등학교,36.1239516,128.3346613,,,,osm,way/1120918699,manual
+education,school,덕촌초등학교,36.2626502,128.2542519,,,,osm,way/1376640014,manual
+education,school,무을중학교,36.258973,128.189866,,,,osm,way/1415868674,manual
+education,school,형일초등학교,36.1144931,128.329951,,,,osm,way/1421444221,manual
+education,school,산동초등학교,36.1669737,128.4463227,,,,osm,way/1442790870,manual
+education,school,구미봉곡초등학교,36.1534563,128.3039642,,,,osm,way/1444245605,manual
+education,school,도개초등학교,36.300325,128.3312777,,,,osm,way/1457127352,manual
+education,school,도개고등학교,36.3013078,128.330695,,,,osm,way/1457127353,manual
+education,school,도개중학교,36.3014005,128.3319045,,,,osm,way/1457127354,manual
+education,school,해평초등학교,36.2031858,128.3911278,,,,osm,way/1469745250,manual
+education,school,구미문성중학교,36.1541677,128.3436462,,,,osm,way/1470286392,manual
+education,school,상모고등학교,36.084238,128.3518151,경상북도 구미시 박정희로 60-22,,,osm,way/1484289364,manual
+education,school,정수초등학교,36.0903191,128.3515293,경상북도 구미시 박정희로 120,,,osm,way/1484289367,manual
+education,school,사곡고등학교,36.096553,128.3527104,경상북도 구미시 박정희로 195,,,osm,way/1484289375,manual
+education,school,산동중학교,36.1688948,128.4395609,,,,osm,way/1495037448,manual
+education,school,송정여자중학교,36.113313,128.3480862,경상북도 구미시 송정대로6길 72-12,,,osm,way/1509390907,manual
+education,school,송정초등학교,36.1139968,128.3485515,경상북도 구미시 송정대로6길 72-6,,,osm,way/1509390908,manual
+education,school,인동중학교,36.108936,128.428438,,,,osm,relation/8490722,manual

@@ -6,6 +6,7 @@ import com.arproperty.android.core.model.BuildingDetail
 import com.arproperty.android.core.model.BuildingSummary
 import com.arproperty.android.core.model.ComplexDetail
 import com.arproperty.android.core.model.ComplexSummary
+import com.arproperty.android.core.model.InfraNearby
 import com.arproperty.android.core.model.LivabilityComparisonItem
 import com.arproperty.android.core.model.LivabilityDetail
 import com.arproperty.android.core.model.TradeItem
@@ -76,6 +77,12 @@ interface ComplexRepository {
 interface LivabilityRepository {
     suspend fun getLivability(buildingId: Int, preset: String? = null): Result<LivabilityDetail>
     suspend fun compareLivability(buildingIds: List<Int>, preset: String? = null): Result<List<LivabilityComparisonItem>>
+    suspend fun getInfraNearby(
+        lat: Double,
+        lon: Double,
+        radius: Int = 1000,
+        category: String? = null,
+    ): Result<List<InfraNearby>>
 }
 
 private class DefaultHealthRepository(
@@ -134,6 +141,20 @@ private class DefaultLivabilityRepository(
         service.compareLivability(
             buildingIds = buildingIds.joinToString(","),
             preset = preset,
+        ).data
+    }
+
+    override suspend fun getInfraNearby(
+        lat: Double,
+        lon: Double,
+        radius: Int,
+        category: String?,
+    ): Result<List<InfraNearby>> = runCatching {
+        service.getInfraNearby(
+            lat = lat,
+            lon = lon,
+            radius = radius,
+            category = category,
         ).data
     }
 }

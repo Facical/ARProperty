@@ -5,6 +5,7 @@ import com.arproperty.android.core.model.BuildingDetail
 import com.arproperty.android.core.model.BuildingSummary
 import com.arproperty.android.core.model.ComplexDetail
 import com.arproperty.android.core.model.ComplexSummary
+import com.arproperty.android.core.model.InfraNearby
 import com.arproperty.android.core.model.LivabilityComparisonItem
 import com.arproperty.android.core.model.LivabilityDetail
 import com.arproperty.android.core.model.TradeItem
@@ -69,4 +70,12 @@ interface LivabilityApiService {
         @Query("building_ids") buildingIds: String,
         @Query("preset") preset: String? = null,
     ): ApiResponse<List<LivabilityComparisonItem>>
+
+    @GET("api/v1/livability/infra/nearby")
+    suspend fun getInfraNearby(
+        @Query("lat") lat: Double,
+        @Query("lon") lon: Double,
+        @Query("radius") radius: Int? = null,
+        @Query("category") category: String? = null,
+    ): ApiResponse<List<InfraNearby>>
 }

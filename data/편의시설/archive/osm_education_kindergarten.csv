@@ -1,0 +1,16 @@
+﻿category,sub_category,name,lat,lon,address,phone,operator,osm_type,osm_id,data_source
+education,kindergarten_or_daycare,구미유치원,36.135549,128.33162,,,,node,368890807,manual
+education,kindergarten_or_daycare,파크유치원,36.1488045,128.323977,,,,node,368890814,manual
+education,kindergarten_or_daycare,가야유치원,36.128238,128.417888,,,,node,368890815,manual
+education,kindergarten_or_daycare,용마유치원,36.093041,128.359194,,,,node,368890823,manual
+education,kindergarten_or_daycare,하나유치원,36.1472485,128.4128257,,,,node,368890830,manual
+education,kindergarten_or_daycare,원평천주교회분도유치원,36.154407,128.314538,,,,node,368890831,manual
+education,kindergarten_or_daycare,예다음 어린이집,36.0917974,128.4476223,,,,node,4637411413,manual
+education,kindergarten_or_daycare,꿈이있는 지역아동센터,36.1393677,128.4159134,산호대로25길 25-24,,,node,4667153038,manual
+education,kindergarten_or_daycare,별하나 유치원,36.0912403,128.4407286,,,,way,473340871,manual
+education,kindergarten_or_daycare,민들레어린이집,36.0926365,128.4414971,,,,way,548563718,manual
+education,kindergarten_or_daycare,NI몬테소리어린이집,36.0912133,128.4422019,,,,way,548651800,manual
+education,kindergarten_or_daycare,무궁화유치원,36.0934438,128.4439173,,,,way,611230867,manual
+education,kindergarten_or_daycare,리더스 유치원,36.0945617,128.4466001,,,,way,619593526,manual
+education,kindergarten_or_daycare,성모유치원,36.1099813,128.4275439,,,,way,621754599,manual
+education,kindergarten_or_daycare,여산은성유치원,36.0889641,128.4421084,,,,way,770982168,manual

@@ -1,0 +1,16 @@
+﻿category,sub_category,name,lat,lon,address,phone,operator,source_type,source_id,data_source
+leisure,library,구미1대학 디지털도서관,36.1493151,128.2902021,,,,osm,node/368658264,manual
+leisure,library,금오공과대학교 도서관,36.1457409,128.3938716,,,,osm,node/368658271,manual
+leisure,library,선산도서관,36.2387913,128.304804,,,,osm,node/368658273,manual
+leisure,library,봉곡도서관,36.1530628,128.3077142,,,,osm,node/368658279,manual
+leisure,library,금오불교어린이회관,36.158673,128.306775,,,,osm,node/368871384,manual
+leisure,library,구미대학교 도서관,36.1522109,128.2890396,,,,osm,node/5377443433,manual
+leisure,library,인동시립도서관,36.0990977,128.423897,,,,osm,way/370307872,manual
+leisure,library,경북도립구미도서관,36.1237545,128.3314732,,,,osm,way/490271695,manual
+leisure,library,구미시립중앙도서관,36.1136646,128.3362393,,,,osm,way/490877430,manual
+leisure,library,국립구미전자공업고등학교 도서관,36.1155572,128.4058836,,,,osm,way/821854280,manual
+leisure,library,구미시립산동도서관,36.1581535,128.4299011,,,,osm,way/903759899,manual
+leisure,library,선산도서관,36.238816,128.3048246,,,,osm,way/915448300,manual
+leisure,library,벽강중앙도서관,36.1688061,128.4686451,,,,osm,way/1061941542,manual
+leisure,library,구미시립양포도서관,36.138668,128.4231144,옥계북로 51,,,osm,way/1479957141,manual
+leisure,library,구미시립상모정수도서관,36.0870856,128.3562549,경상북도 구미시 상사서로4길 10,,,osm,way/1484289382,manual

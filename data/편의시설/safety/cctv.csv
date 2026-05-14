@@ -1,0 +1,940 @@
+﻿category,sub_category,name,lat,lon,address,phone,operator,source_type,source_id,data_source
+safety,cctv,06-1-01-1,36.2398693126462,128.30268213775,경북 구미시 선산읍 남문로2길 12,,,gumi_opendata_xlsx,1,gumi_opendata
+safety,cctv,09-1-01-1,36.2390483841366,128.302268505349,경북 구미시 선산읍 남문로2길 2,,,gumi_opendata_xlsx,2,gumi_opendata
+safety,cctv,13-1-01-1,36.2426173027541,128.298471495614,경북 구미시 선산읍 선산중앙로 67,,,gumi_opendata_xlsx,3,gumi_opendata
+safety,cctv,14-1-01-14,36.2111824261653,128.268910149983,경북 구미시 선산읍 북산6길 58,,,gumi_opendata_xlsx,4,gumi_opendata
+safety,cctv,14-1-01-13,36.2282284346347,128.263871414135,경북 구미시 선산읍 내고5길 131-2,,,gumi_opendata_xlsx,5,gumi_opendata
+safety,cctv,14-1-01-1,36.2713263838511,128.32863039121,경북 구미시 선산읍 유학길 18,,,gumi_opendata_xlsx,6,gumi_opendata
+safety,cctv,14-1-01-2,36.2716278081358,128.328776383457,경북 구미시 선산읍 유학길 14,,,gumi_opendata_xlsx,7,gumi_opendata
+safety,cctv,14-1-01-4,36.2763014375943,128.323700870764,경북 구미시 선산읍 선상동로 177,,,gumi_opendata_xlsx,8,gumi_opendata
+safety,cctv,14-1-01-12,36.2355073503879,128.243620482249,경북 구미시 선산읍 대조오목길 360,,,gumi_opendata_xlsx,9,gumi_opendata
+safety,cctv,14-1-01-6,36.2435431857404,128.303312678221,경북 구미시 선산읍 동교길 5,,,gumi_opendata_xlsx,10,gumi_opendata
+safety,cctv,14-1-01-15,36.2137995785866,128.245600842553,경북 구미시 선산읍 배다리2길 3,,,gumi_opendata_xlsx,11,gumi_opendata
+safety,cctv,14-1-01-11,36.2472341611791,128.263414028895,경북 구미시 선산읍 선상서로 378,,,gumi_opendata_xlsx,12,gumi_opendata
+safety,cctv,14-1-01-10,36.2411693139603,128.28125331463,경북 구미시 선산읍 죽장2길 5,,,gumi_opendata_xlsx,13,gumi_opendata
+safety,cctv,14-1-01-8,36.2458730347051,128.29480914867,경북 구미시 선산읍 단계서4길 21,,,gumi_opendata_xlsx,14,gumi_opendata
+safety,cctv,14-1-01-7,36.2411267199333,128.301442651952,경북 구미시 선산읍 남문로3길 2,,,gumi_opendata_xlsx,15,gumi_opendata
+safety,cctv,14-1-01-16,36.2157802137977,128.237817741204,경북 구미시 선산읍 대조오목길 125,,,gumi_opendata_xlsx,16,gumi_opendata
+safety,cctv,14-1-01-9,36.2396546198874,128.292676695354,경북 구미시 선산읍 선상서로14길 20-1,,,gumi_opendata_xlsx,17,gumi_opendata
+safety,cctv,14-1-01-5,36.2419192024257,128.327069874317,경북 구미시 선산읍 유학길 351,,,gumi_opendata_xlsx,18,gumi_opendata
+safety,cctv,14-1-01-17,36.2430728101594,128.303915147126,경북 구미시 선산읍 선산중앙로 118,,,gumi_opendata_xlsx,19,gumi_opendata
+safety,cctv,14-1-01-18,36.2447236688486,128.299419111556,경북 구미시 선산읍 동부리 산 1-3,,,gumi_opendata_xlsx,20,gumi_opendata
+safety,cctv,14-1-01-19,36.244273368055,128.325999124727,경북 구미시 선산읍 유학10길 7,,,gumi_opendata_xlsx,21,gumi_opendata
+safety,cctv,14-1-01-20,36.2389108339069,128.29063992841,경북 구미시 선산읍 이문리 632-14,,,gumi_opendata_xlsx,22,gumi_opendata
+safety,cctv,14-1-01-21,36.2384898288929,128.293117923865,경북 구미시 선산읍 선주로 8-1,,,gumi_opendata_xlsx,23,gumi_opendata
+safety,cctv,15-1-01-2,,,선산 선산읍 원리 100-3 원2리 입구 마을방향,,,gumi_opendata_xlsx,24,gumi_opendata
+safety,cctv,15-1-01-1,36.230157737628,128.330832451782,경북 구미시 선산읍 원리 758-4,,,gumi_opendata_xlsx,25,gumi_opendata
+safety,cctv,15-1-01-3,36.240932296965,128.296626181303,경북 구미시 선산읍 선산중앙로 40,,,gumi_opendata_xlsx,26,gumi_opendata
+safety,cctv,15-1-01-4,36.2397979443636,128.299168821825,경북 구미시 선산읍 선상서로4길 23,,,gumi_opendata_xlsx,27,gumi_opendata
+safety,cctv,15-1-01-5,36.2487823700559,128.304268112794,경북 구미시 선산읍 교리 910-7,,,gumi_opendata_xlsx,28,gumi_opendata
+safety,cctv,15-1-01-6,36.2382466110488,128.296049222018,경북 구미시 선산읍 선산중앙로 8,,,gumi_opendata_xlsx,29,gumi_opendata
+safety,cctv,15-1-01-7,36.2436288179693,128.297350315212,경북 구미시 선산읍 선주로 97,,,gumi_opendata_xlsx,30,gumi_opendata
+safety,cctv,15-1-01-8,36.2437466706037,128.294773513406,경북 구미시 선산읍 선주로 73,,,gumi_opendata_xlsx,31,gumi_opendata
+safety,cctv,15-1-01-9,36.2422639683284,128.326761556994,경북 구미시 선산읍 독동리 640-22,,,gumi_opendata_xlsx,32,gumi_opendata
+safety,cctv,15-1-01-10,36.2446828721577,128.327044293088,경북 구미시 선산읍 독동리 453-5,,,gumi_opendata_xlsx,33,gumi_opendata
+safety,cctv,15-1-01-11,36.2409599649431,128.325370377068,경북 구미시 선산읍 독동리 826-4,,,gumi_opendata_xlsx,34,gumi_opendata
+safety,cctv,16-1-01-1,36.2122736151049,128.350433434132,경북 구미시 선산읍 원리 1-83,,,gumi_opendata_xlsx,35,gumi_opendata
+safety,cctv,16-1-01-2,36.2391470777347,128.308410562061,경북 구미시 선산읍 화조리 540-3,,,gumi_opendata_xlsx,36,gumi_opendata
+safety,cctv,16-1-01-3,36.2419761772143,128.30353962219,경북 구미시 선산읍 남문로2길 35,,,gumi_opendata_xlsx,37,gumi_opendata
+safety,cctv,16-1-01-4,36.2263608105843,128.278815770443,경북 구미시 선산읍 내고리 811-23,,,gumi_opendata_xlsx,38,gumi_opendata
+safety,cctv,16-1-01-5,36.2366624246193,128.312562446808,경북 구미시 선산읍 화조리 580-2,,,gumi_opendata_xlsx,39,gumi_opendata
+safety,cctv,16-1-01-6,36.2145648224589,128.268290769219,경북 구미시 선산읍 북산리 575-4,,,gumi_opendata_xlsx,40,gumi_opendata
+safety,cctv,16-1-01-10,36.2447161682494,128.300797318313,경북 구미시 선산읍 선주로 129-5,,,gumi_opendata_xlsx,41,gumi_opendata
+safety,cctv,16-1-01-11,,,선산 포상1리 진입로 신봉교,,,gumi_opendata_xlsx,42,gumi_opendata
+safety,cctv,16-1-01-12,36.2417674887875,128.300433861146,경북 구미시 선산읍 남문로5길 10-1,,,gumi_opendata_xlsx,43,gumi_opendata
+safety,cctv,16-1-01-13,36.2196328354613,128.343734130653,경북 구미시 선산읍 어강1길 2,,,gumi_opendata_xlsx,44,gumi_opendata
+safety,cctv,16-1-01-14,,,선산 이문리 704 삼한건축,,,gumi_opendata_xlsx,45,gumi_opendata
+safety,cctv,17-1-01-1,36.226335516031,128.262975328033,경북 구미시 선산읍 내고리 586,,,gumi_opendata_xlsx,46,gumi_opendata
+safety,cctv,17-1-01-2,36.2342758776607,128.241762433254,경북 구미시 선산읍 소재리 134,,,gumi_opendata_xlsx,47,gumi_opendata
+safety,cctv,09-1-02-1,36.2154449404326,128.325093855908,경북 구미시 고아읍 농공단지길 27,,,gumi_opendata_xlsx,48,gumi_opendata
+safety,cctv,12-1-02-1,36.2092991192976,128.313064112718,경북 구미시 고아읍 파산리 134-3,,,gumi_opendata_xlsx,49,gumi_opendata
+safety,cctv,12-1-02-2,36.1826850081267,128.316238236129,경북 구미시 고아읍 원대로 362,,,gumi_opendata_xlsx,50,gumi_opendata
+safety,cctv,14-1-02-1,36.1510292996929,128.333056757574,경북 구미시 고아읍 문장로22길 20,,,gumi_opendata_xlsx,51,gumi_opendata
+safety,cctv,14-1-02-4,36.1529402697585,128.32731200519,경북 구미시 고아읍 문장로27길 18-10,,,gumi_opendata_xlsx,52,gumi_opendata
+safety,cctv,14-1-02-3,36.1524994797102,128.328680952168,경북 구미시 고아읍 문장로27길 5,,,gumi_opendata_xlsx,53,gumi_opendata
+safety,cctv,14-1-02-5,36.2114769566784,128.332336649924,경북 구미시 고아읍 관심길 39,,,gumi_opendata_xlsx,54,gumi_opendata
+safety,cctv,14-1-02-2,36.1514079151215,128.329096654561,경북 구미시 고아읍 문장로23길 14-10,,,gumi_opendata_xlsx,55,gumi_opendata
+safety,cctv,14-1-02-6,36.1823252496578,128.274464581294,경북 구미시 고아읍 외예리 246-2,,,gumi_opendata_xlsx,56,gumi_opendata
+safety,cctv,14-1-02-7,36.2119935625288,128.293916406411,경북 구미시 고아읍 황산리 664-3,,,gumi_opendata_xlsx,57,gumi_opendata
+safety,cctv,14-1-02-8,36.1911853726224,128.345438792634,경북 구미시 고아읍 항곡7길 16-2,,,gumi_opendata_xlsx,58,gumi_opendata
+safety,cctv,14-1-02-9,36.1606627351599,128.353271635336,경북 구미시 고아읍 선산대로 350,,,gumi_opendata_xlsx,59,gumi_opendata
+safety,cctv,14-1-02-10,36.1659402309315,128.358648524318,경북 구미시 고아읍 송평로 57,,,gumi_opendata_xlsx,60,gumi_opendata
+safety,cctv,14-1-02-11,36.1671185111727,128.371029710187,경북 구미시 고아읍 다평길 33,,,gumi_opendata_xlsx,61,gumi_opendata
+safety,cctv,14-1-02-12,36.2084150136617,128.30775718042,경북 구미시 고아읍 파산3길 14-2,,,gumi_opendata_xlsx,62,gumi_opendata
+safety,cctv,14-1-02-13,36.2119361779092,128.334276955448,경북 구미시 고아읍 관심길 65,,,gumi_opendata_xlsx,63,gumi_opendata
+safety,cctv,15-1-02-1,36.1423212957639,128.362793609961,경북 구미시 고아읍 대평길 171,,,gumi_opendata_xlsx,64,gumi_opendata
+safety,cctv,15-1-02-2,36.2170011746948,128.315081547586,경북 구미시 고아읍 오로3길 9,,,gumi_opendata_xlsx,65,gumi_opendata
+safety,cctv,15-1-02-3,36.1997665779576,128.338710639744,경북 구미시 고아읍 예강1길 5,,,gumi_opendata_xlsx,66,gumi_opendata
+safety,cctv,15-1-02-4,36.207135555227,128.327540067176,경북 구미시 고아읍 이례로 111,,,gumi_opendata_xlsx,67,gumi_opendata
+safety,cctv,15-1-02-5,36.1962225263269,128.27756362303,경북 구미시 고아읍 횡산리 182,,,gumi_opendata_xlsx,68,gumi_opendata
+safety,cctv,15-1-02-6,36.1803163693139,128.348875936678,경북 구미시 고아읍 봉한3길 24,,,gumi_opendata_xlsx,69,gumi_opendata
+safety,cctv,15-1-02-7,36.1771877150242,128.350739620126,경북 구미시 고아읍 봉한리 911-105,,,gumi_opendata_xlsx,70,gumi_opendata
+safety,cctv,15-1-02-8,36.2104556550366,128.327647302694,경북 구미시 고아읍 황들길 3,,,gumi_opendata_xlsx,71,gumi_opendata
+safety,cctv,16-1-02-1,36.2250063241422,128.311816768722,경북 구미시 고아읍 선산대로 1218,,,gumi_opendata_xlsx,72,gumi_opendata
+safety,cctv,16-1-02-2,36.1507605872522,128.328499502638,경북 구미시 고아읍 문장로23길 20,,,gumi_opendata_xlsx,73,gumi_opendata
+safety,cctv,16-1-02-3,,,고아 고아읍 문성리 26-1,,,gumi_opendata_xlsx,74,gumi_opendata
+safety,cctv,16-1-02-4,,,고아 고아읍 문성리 89,,,gumi_opendata_xlsx,75,gumi_opendata
+safety,cctv,16-1-02-5,36.1883837390138,128.348203560152,경북 구미시 고아읍 선산대로 670,,,gumi_opendata_xlsx,76,gumi_opendata
+safety,cctv,16-1-02-6,36.1632299553654,128.372712598368,경북 구미시 고아읍 다평7길 1,,,gumi_opendata_xlsx,77,gumi_opendata
+safety,cctv,16-1-02-7,,,고아 고아읍 원호리 478,,,gumi_opendata_xlsx,78,gumi_opendata
+safety,cctv,16-1-02-8,36.1644847409581,128.356437786769,경북 구미시 고아읍 송평로1길 5,,,gumi_opendata_xlsx,79,gumi_opendata
+safety,cctv,16-1-02-9,36.1867362317873,128.289524124208,경북 구미시 고아읍 포아로 554,,,gumi_opendata_xlsx,80,gumi_opendata
+safety,cctv,16-1-02-10,36.188493441032,128.347640388202,경북 구미시 고아읍 선산대로 671,,,gumi_opendata_xlsx,81,gumi_opendata
+safety,cctv,16-1-02-11,36.2056639045455,128.316898695991,경북 구미시 고아읍 이례로 10,,,gumi_opendata_xlsx,82,gumi_opendata
+safety,cctv,16-1-02-12,36.165129692565,128.371134205399,경북 구미시 고아읍 다평길 55,,,gumi_opendata_xlsx,83,gumi_opendata
+safety,cctv,17-1-02-1,36.2120889935974,128.291764492147,경북 구미시 고아읍 황산길 237-6,,,gumi_opendata_xlsx,84,gumi_opendata
+safety,cctv,17-1-02-2,,,고아 문성리 800,,,gumi_opendata_xlsx,85,gumi_opendata
+safety,cctv,17-1-02-3,36.1486397544695,128.348364348767,경북 구미시 고아읍 지산25길 10-35,,,gumi_opendata_xlsx,86,gumi_opendata
+safety,cctv,17-1-02-4,36.1985325517854,128.335599391893,경북 구미시 고아읍 예강3길 36-7,,,gumi_opendata_xlsx,87,gumi_opendata
+safety,cctv,17-1-02-5,36.1570378698197,128.335589690906,경북 구미시 고아읍 들성로 127,,,gumi_opendata_xlsx,88,gumi_opendata
+safety,cctv,17-1-02-6,36.1558943914028,128.332842761294,경북 구미시 고아읍 들성로 101-1,,,gumi_opendata_xlsx,89,gumi_opendata
+safety,cctv,17-1-02-7,36.1655532150292,128.345826246164,경북 구미시 고아읍 들성로11길 45-16,,,gumi_opendata_xlsx,90,gumi_opendata
+safety,cctv,17-1-02-8,36.1524860828644,128.327565247089,경북 구미시 고아읍 문장로27길 18-2,,,gumi_opendata_xlsx,91,gumi_opendata
+safety,cctv,17-1-02-9,36.2010259360658,128.260859352648,경북 구미시 고아읍 횡산3길 229,,,gumi_opendata_xlsx,92,gumi_opendata
+safety,cctv,17-1-02-10,36.1866371599725,128.315381051593,경북 구미시 고아읍 원대로 408,,,gumi_opendata_xlsx,93,gumi_opendata
+safety,cctv,17-1-02-11,36.1853615123445,128.315578150239,경북 구미시 고아읍 원대로 392-1,,,gumi_opendata_xlsx,94,gumi_opendata
+safety,cctv,17-1-02-12,,,고아 원대로 822-205,,,gumi_opendata_xlsx,95,gumi_opendata
+safety,cctv,17-1-02-13,,,고아 원대로 689-3,,,gumi_opendata_xlsx,96,gumi_opendata
+safety,cctv,17-1-02-14,36.2079426483577,128.314123024956,경북 구미시 고아읍 파산리 65,,,gumi_opendata_xlsx,97,gumi_opendata
+safety,cctv,17-1-02-15,,,고아 대망1리 96,,,gumi_opendata_xlsx,98,gumi_opendata
+safety,cctv,17-1-02-16,,,고아 대망1리 822-3,,,gumi_opendata_xlsx,99,gumi_opendata
+safety,cctv,17-1-02-17,36.2019892620761,128.29682342171,경북 구미시 고아읍 포아로 835,,,gumi_opendata_xlsx,100,gumi_opendata
+safety,cctv,19-1-02-1,36.1619749292002,128.323946225939,경북 구미시 고아읍 원대로 106,,,gumi_opendata_xlsx,101,gumi_opendata
+safety,cctv,19-1-02-2,36.1902712459833,128.315774781498,경북 구미시 고아읍 대망리 822-253,,,gumi_opendata_xlsx,102,gumi_opendata
+safety,cctv,20-1-02-1,36.1508948596575,128.329863004368,경북 구미시 고아읍 문장로23길 6-8,,,gumi_opendata_xlsx,103,gumi_opendata
+safety,cctv,20-1-02-2,36.1497798273463,128.348840197359,경북 구미시 고아읍 선산대로 223-8,,,gumi_opendata_xlsx,104,gumi_opendata
+safety,cctv,12-1-07-1,36.1406275458124,128.456051623737,경북 구미시 산동읍 임봉길 19-3,,,gumi_opendata_xlsx,105,gumi_opendata
+safety,cctv,12-1-07-4,36.1382439007432,128.466272077816,경북 구미시 산동읍 임천리 842-5,,,gumi_opendata_xlsx,106,gumi_opendata
+safety,cctv,12-1-07-3,36.1390987544677,128.462355048155,경북 구미시 산동읍 임천리 800-2,,,gumi_opendata_xlsx,107,gumi_opendata
+safety,cctv,14-1-07-10,,,산동 산동면 임천리 109-5 블루원 앞,,,gumi_opendata_xlsx,108,gumi_opendata
+safety,cctv,13-1-07-2,36.1565368937963,128.406072516278,경북 구미시 산동읍 성수리 631-32,,,gumi_opendata_xlsx,109,gumi_opendata
+safety,cctv,13-1-07-1,36.1589334334214,128.407453564084,경북 구미시 산동읍 성수1길 92,,,gumi_opendata_xlsx,110,gumi_opendata
+safety,cctv,14-1-07-1,36.1567524798139,128.406989879306,경북 구미시 산동읍 성수1길 120-2,,,gumi_opendata_xlsx,111,gumi_opendata
+safety,cctv,14-1-07-2,36.1691600152542,128.435639005333,경북 구미시 산동읍 강동로 1024,,,gumi_opendata_xlsx,112,gumi_opendata
+safety,cctv,14-1-07-3,36.1821476053966,128.448659135885,경북 구미시 산동읍 동곡리 269-1,,,gumi_opendata_xlsx,113,gumi_opendata
+safety,cctv,14-1-07-4,36.1602868005988,128.416914218589,경북 구미시 산동읍 성수리 141-3,,,gumi_opendata_xlsx,114,gumi_opendata
+safety,cctv,14-1-07-5,36.2144607829705,128.477964144825,경북 구미시 산동읍 송백로 860,,,gumi_opendata_xlsx,115,gumi_opendata
+safety,cctv,14-1-07-6,36.163850914642,128.459963743514,경북 구미시 산동읍 인덕2길 4,,,gumi_opendata_xlsx,116,gumi_opendata
+safety,cctv,14-1-07-7,36.146602820658,128.465092196054,경북 구미시 산동읍 임천인덕로 89-19,,,gumi_opendata_xlsx,117,gumi_opendata
+safety,cctv,14-1-07-8,36.1711190498962,128.439511160943,경북 구미시 산동읍 동백로 40,,,gumi_opendata_xlsx,118,gumi_opendata
+safety,cctv,14-1-07-9,36.1637606538824,128.459769039088,경북 구미시 산동읍 인덕리 371-5,,,gumi_opendata_xlsx,119,gumi_opendata
+safety,cctv,15-1-07-1,36.2095627103436,128.471522668234,경북 구미시 산동읍 백현리 706,,,gumi_opendata_xlsx,120,gumi_opendata
+safety,cctv,15-1-07-2,36.1738168004244,128.441983875723,경북 구미시 산동읍 동곡4길 13,,,gumi_opendata_xlsx,121,gumi_opendata
+safety,cctv,15-1-07-3,36.1577443776499,128.407462866523,경북 구미시 산동읍 성수1길 105,,,gumi_opendata_xlsx,122,gumi_opendata
+safety,cctv,15-1-07-4,36.1620492234186,128.411245577408,경북 구미시 산동읍 성수1길 41,,,gumi_opendata_xlsx,123,gumi_opendata
+safety,cctv,15-1-07-5,36.1315011408668,128.474808303569,경북 구미시 산동읍 임천리 108,,,gumi_opendata_xlsx,124,gumi_opendata
+safety,cctv,16-1-07-1,36.139474264053,128.441933979027,경북 구미시 산동읍 산호대로43길 16,,,gumi_opendata_xlsx,125,gumi_opendata
+safety,cctv,16-1-07-2,36.2223042199884,128.480092608852,경북 구미시 산동읍 송백로 951,,,gumi_opendata_xlsx,126,gumi_opendata
+safety,cctv,16-1-07-3,36.1795977467391,128.447084297069,경북 구미시 산동읍 동곡리 294-2,,,gumi_opendata_xlsx,127,gumi_opendata
+safety,cctv,16-1-07-4,36.1399424112895,128.456674869207,경북 구미시 산동읍 임봉길 28-4,,,gumi_opendata_xlsx,128,gumi_opendata
+safety,cctv,16-1-07-5,36.1672141461992,128.425684811199,경북 구미시 산동읍 적림리 425-8,,,gumi_opendata_xlsx,129,gumi_opendata
+safety,cctv,16-1-07-6,36.1398087519942,128.438840771023,경북 구미시 산동읍 산호대로41길 13,,,gumi_opendata_xlsx,130,gumi_opendata
+safety,cctv,17-1-07-1,36.167552453122,128.429453394934,경북 구미시 산동읍 적림4길 1,,,gumi_opendata_xlsx,131,gumi_opendata
+safety,cctv,17-1-07-2,36.1632701006471,128.454793079555,경북 구미시 산동읍 인덕리 523-3,,,gumi_opendata_xlsx,132,gumi_opendata
+safety,cctv,17-1-07-3,36.1405909502788,128.441468926806,경북 구미시 산동읍 첨단기업1로 36,,,gumi_opendata_xlsx,133,gumi_opendata
+safety,cctv,17-1-07-4,,,산동 인덕리 산20-12,,,gumi_opendata_xlsx,134,gumi_opendata
+safety,cctv,17-1-07-5,36.1664576855648,128.435635277903,경북 구미시 산동읍 강동로 1019-27,,,gumi_opendata_xlsx,135,gumi_opendata
+safety,cctv,17-1-07-6,,,산동 첨단기업1로 6,,,gumi_opendata_xlsx,136,gumi_opendata
+safety,cctv,17-1-07-7,36.1398330890834,128.456320566173,경북 구미시 산동읍 봉산리 195-7,,,gumi_opendata_xlsx,137,gumi_opendata
+safety,cctv,17-1-07-8,,,산동 임천리 584-4,,,gumi_opendata_xlsx,138,gumi_opendata
+safety,cctv,17-1-07-9,36.161794230506,128.415373022496,경북 구미시 산동읍 성수리 133-6,,,gumi_opendata_xlsx,139,gumi_opendata
+safety,cctv,17-1-07-10,36.2040166574336,128.470824654647,경북 구미시 산동읍 송백로 712-3,,,gumi_opendata_xlsx,140,gumi_opendata
+safety,cctv,17-1-07-11,36.1927436720878,128.470785408183,경북 구미시 산동읍 백현리 산 292-5,,,gumi_opendata_xlsx,141,gumi_opendata
+safety,cctv,17-1-07-12,36.1804874443573,128.485429024864,경북 구미시 산동읍 백현리 산 188,,,gumi_opendata_xlsx,142,gumi_opendata
+safety,cctv,17-1-07-13,,,산동 인덕리 1087,,,gumi_opendata_xlsx,143,gumi_opendata
+safety,cctv,17-1-07-14,,,산동 신당리 291-12,,,gumi_opendata_xlsx,144,gumi_opendata
+safety,cctv,17-1-07-15,,,산동 인덕리 산36-3,,,gumi_opendata_xlsx,145,gumi_opendata
+safety,cctv,19-1-07-1,36.1552369816572,128.394502870304,경북 구미시 산동읍 성수리 623-149,,,gumi_opendata_xlsx,146,gumi_opendata
+safety,cctv,19-1-07-2,36.1678436033318,128.438158420971,경북 구미시 산동읍 동곡리 941-3,,,gumi_opendata_xlsx,147,gumi_opendata
+safety,cctv,20-1-07-1,36.1544038653236,128.435510820663,경북 구미시 산동읍 신당리 182-3,,,gumi_opendata_xlsx,148,gumi_opendata
+safety,cctv,20-1-07-2,36.1558426054286,128.439315719615,경북 구미시 산동읍 신당인덕1로 56,,,gumi_opendata_xlsx,149,gumi_opendata
+safety,cctv,20-1-07-3,36.1548391549625,128.439971853299,경북 구미시 산동읍 신당리 1684,,,gumi_opendata_xlsx,150,gumi_opendata
+safety,cctv,20-1-07-4,36.1571937600741,128.439157404893,경북 구미시 산동읍 신당리 1607,,,gumi_opendata_xlsx,151,gumi_opendata
+safety,cctv,20-1-07-5,,,산동 신당리 1152 쌍용예가 앞,,,gumi_opendata_xlsx,152,gumi_opendata
+safety,cctv,20-1-07-6,,,산동 신당리 361 물빛공원 물놀이장,,,gumi_opendata_xlsx,153,gumi_opendata
+safety,cctv,20-1-07-7,,,산동 신당리 산 94 물빛공원 야외공연장 앞,,,gumi_opendata_xlsx,154,gumi_opendata
+safety,cctv,20-1-07-8,,,산동 신당리 356 물빛공원 화장실,,,gumi_opendata_xlsx,155,gumi_opendata
+safety,cctv,20-1-07-9,36.1569339073714,128.426338595225,경북 구미시 산동읍 신당2로3길,,,gumi_opendata_xlsx,156,gumi_opendata
+safety,cctv,20-1-07-10,36.1550868685169,128.426354028384,경북 구미시 산동읍 신당1로7길,,,gumi_opendata_xlsx,157,gumi_opendata
+safety,cctv,20-1-07-11,36.1550868685169,128.426354028384,경북 구미시 산동읍 신당1로7길,,,gumi_opendata_xlsx,158,gumi_opendata
+safety,cctv,20-1-07-12,36.1512950520698,128.426646683129,경북 구미시 산동읍 신당리 산 114,,,gumi_opendata_xlsx,159,gumi_opendata
+safety,cctv,20-1-07-13,36.1470945316646,128.426867137104,경북 구미시 산동읍 신당리 1489,,,gumi_opendata_xlsx,160,gumi_opendata
+safety,cctv,20-1-27-1,36.1455313548609,128.420591366496,경북 구미시 옥계신당로1길 1-15,,,gumi_opendata_xlsx,161,gumi_opendata
+safety,cctv,20-1-27-2,36.1448761876397,128.422310972018,경북 구미시 옥계신당로5길 13,,,gumi_opendata_xlsx,162,gumi_opendata
+safety,cctv,20-1-07-14,36.1683844466164,128.437416472614,경북 구미시 산동읍 적림리 524-44,,,gumi_opendata_xlsx,163,gumi_opendata
+safety,cctv,20-1-07-15,36.1674766633779,128.442053857278,경북 구미시 산동읍 강동로 962,,,gumi_opendata_xlsx,164,gumi_opendata
+safety,cctv,14-1-03-1,36.2443568862672,128.205268712399,경북 구미시 무을면 삼원로 392,,,gumi_opendata_xlsx,165,gumi_opendata
+safety,cctv,14-1-03-7,36.2716769344125,128.144994199396,경북 구미시 무을면 안곡1길 31,,,gumi_opendata_xlsx,166,gumi_opendata
+safety,cctv,14-1-03-6,36.2710056934632,128.160194776477,경북 구미시 무을면 상송길 15,,,gumi_opendata_xlsx,167,gumi_opendata
+safety,cctv,14-1-03-8,36.2759180051197,128.149713579461,경북 구미시 무을면 상무로 517-65,,,gumi_opendata_xlsx,168,gumi_opendata
+safety,cctv,14-1-03-3,36.2567708011306,128.221915069909,경북 구미시 무을면 무이1길 27,,,gumi_opendata_xlsx,169,gumi_opendata
+safety,cctv,14-1-03-5,36.2656123957062,128.177032948615,경북 구미시 무을면 오가1길 7,,,gumi_opendata_xlsx,170,gumi_opendata
+safety,cctv,14-1-03-4,36.2451903602876,128.228580676657,경북 구미시 무을면 백자길 87-6,,,gumi_opendata_xlsx,171,gumi_opendata
+safety,cctv,14-1-03-09,36.2525738455926,128.234169030566,경북 구미시 무을면 상무로 1319-12,,,gumi_opendata_xlsx,172,gumi_opendata
+safety,cctv,14-1-03-10,36.2658415886754,128.191941481704,경북 구미시 무을면 무수길 65,,,gumi_opendata_xlsx,173,gumi_opendata
+safety,cctv,15-1-03-1,36.2601483084378,128.231467765424,경북 구미시 무을면 웅곡리 245-3,,,gumi_opendata_xlsx,174,gumi_opendata
+safety,cctv,15-1-03-2,36.2490844400498,128.206795614158,경북 구미시 무을면 원리 258-3,,,gumi_opendata_xlsx,175,gumi_opendata
+safety,cctv,15-1-03-3,36.2594485689318,128.175095523861,경북 구미시 무을면 무등리 753,,,gumi_opendata_xlsx,176,gumi_opendata
+safety,cctv,15-1-03-4,36.2610299537694,128.194698513826,경북 구미시 무을면 상무로 958,,,gumi_opendata_xlsx,177,gumi_opendata
+safety,cctv,15-1-03-5,36.2576660120219,128.194509425817,경북 구미시 무을면 원3길 44,,,gumi_opendata_xlsx,178,gumi_opendata
+safety,cctv,15-1-03-6,36.2582848593146,128.208686230716,경북 구미시 무을면 송삼리 921-20,,,gumi_opendata_xlsx,179,gumi_opendata
+safety,cctv,15-1-03-7,36.2668721947978,128.171111477364,경북 구미시 무을면 오가2길 17,,,gumi_opendata_xlsx,180,gumi_opendata
+safety,cctv,15-1-03-8,36.2634529967429,128.186145223581,경북 구미시 무을면 상무로 877,,,gumi_opendata_xlsx,181,gumi_opendata
+safety,cctv,15-1-03-9,36.2584827862518,128.188214617859,경북 구미시 무을면 무등리 316-5,,,gumi_opendata_xlsx,182,gumi_opendata
+safety,cctv,16-1-03-1,36.2752583812983,128.17718331287,경북 구미시 무을면 오가리 85-2,,,gumi_opendata_xlsx,183,gumi_opendata
+safety,cctv,16-1-03-2,36.2621476917484,128.197782625612,경북 구미시 무을면 송삼1길 18-1,,,gumi_opendata_xlsx,184,gumi_opendata
+safety,cctv,16-1-03-3,36.2700050309054,128.161285123311,경북 구미시 무을면 상송리 72,,,gumi_opendata_xlsx,185,gumi_opendata
+safety,cctv,16-1-03-4,36.2611839670883,128.198884949951,경북 구미시 무을면 송삼리 807-6,,,gumi_opendata_xlsx,186,gumi_opendata
+safety,cctv,16-1-03-5,36.2730427086075,128.144353095474,경북 구미시 무을면 안곡리 530-11,,,gumi_opendata_xlsx,187,gumi_opendata
+safety,cctv,17-1-03-1,36.2703861922465,128.194767600704,경북 구미시 무을면 무수2길 16,,,gumi_opendata_xlsx,188,gumi_opendata
+safety,cctv,17-1-03-2,36.2621960227393,128.195879618566,경북 구미시 무을면 문화마을길 3-12,,,gumi_opendata_xlsx,189,gumi_opendata
+safety,cctv,17-1-03-3,36.2734351399838,128.147861616726,경북 구미시 무을면 안곡2길 5,,,gumi_opendata_xlsx,190,gumi_opendata
+safety,cctv,17-1-03-4,36.2889580641945,128.191735347763,경북 구미시 무을면 무수길 350,,,gumi_opendata_xlsx,191,gumi_opendata
+safety,cctv,17-1-03-5,36.254597000116,128.224646147693,경북 구미시 무을면 무이리 168,,,gumi_opendata_xlsx,192,gumi_opendata
+safety,cctv,17-1-03-6,,,무을 백자리 126,,,gumi_opendata_xlsx,193,gumi_opendata
+safety,cctv,20-1-03-1,36.2567194767728,128.17524201425,경북 구미시 무을면 무등1길 94-1,,,gumi_opendata_xlsx,194,gumi_opendata
+safety,cctv,20-1-03-2,36.2608580367905,128.197570769851,경북 구미시 무을면 상무로 981,,,gumi_opendata_xlsx,195,gumi_opendata
+safety,cctv,14-1-04-1,36.2693684121028,128.251164981818,경북 구미시 옥성면 대원2길 2,,,gumi_opendata_xlsx,196,gumi_opendata
+safety,cctv,14-1-04-4,36.3464121201727,128.276283509628,경북 구미시 옥성면 선상동로 1449,,,gumi_opendata_xlsx,197,gumi_opendata
+safety,cctv,14-1-04-5,36.2957980022201,128.278773920661,경북 구미시 옥성면 주아령로 415,,,gumi_opendata_xlsx,198,gumi_opendata
+safety,cctv,14-1-04-2,36.3042936727136,128.216188562213,경북 구미시 옥성면 선상서로 1205,,,gumi_opendata_xlsx,199,gumi_opendata
+safety,cctv,14-1-04-3,36.3433105864537,128.274239082185,경북 구미시 옥성면 산촌옥관로 965,,,gumi_opendata_xlsx,200,gumi_opendata
+safety,cctv,14-1-04-6,36.354360566918,128.263550825233,경북 구미시 옥성면 구봉1길 154,,,gumi_opendata_xlsx,201,gumi_opendata
+safety,cctv,14-1-04-7,36.2927807088949,128.21867314195,경북 구미시 옥성면 태봉리 370,,,gumi_opendata_xlsx,202,gumi_opendata
+safety,cctv,14-1-04-8,36.2946518721855,128.320092759626,경북 구미시 옥성면 초곡리 6-1,,,gumi_opendata_xlsx,203,gumi_opendata
+safety,cctv,15-1-04-1,36.2708564612693,128.244332121437,경북 구미시 옥성면 대원리 165-2,,,gumi_opendata_xlsx,204,gumi_opendata
+safety,cctv,15-1-04-2,36.3459246290443,128.245939535845,경북 구미시 옥성면 옥관리 1055-1,,,gumi_opendata_xlsx,205,gumi_opendata
+safety,cctv,15-1-04-3,36.3275151889989,128.275447243347,경북 구미시 옥성면 옥관리 69-5,,,gumi_opendata_xlsx,206,gumi_opendata
+safety,cctv,15-1-04-4,36.294651489531,128.320674045665,경북 구미시 옥성면 초곡리 5-2,,,gumi_opendata_xlsx,207,gumi_opendata
+safety,cctv,15-1-04-5,36.2995509392021,128.284754260481,경북 구미시 옥성면 중농소길 6,,,gumi_opendata_xlsx,208,gumi_opendata
+safety,cctv,15-1-04-6,36.2868382518167,128.266309841741,경북 구미시 옥성면 주아리 965-1,,,gumi_opendata_xlsx,209,gumi_opendata
+safety,cctv,15-1-04-7,36.2889260825041,128.213406476946,경북 구미시 옥성면 태봉리,,,gumi_opendata_xlsx,210,gumi_opendata
+safety,cctv,15-1-04-8,36.2590273987958,128.253249610981,경북 구미시 옥성면 덕촌1길 93,,,gumi_opendata_xlsx,211,gumi_opendata
+safety,cctv,16-1-04-1,36.3146417484226,128.278818441432,경북 구미시 옥성면 농소리 343-7,,,gumi_opendata_xlsx,212,gumi_opendata
+safety,cctv,16-1-04-2,36.2944260510216,128.276631729772,경북 구미시 옥성면 주아리 349-2,,,gumi_opendata_xlsx,213,gumi_opendata
+safety,cctv,16-1-04-3,36.3410600085419,128.257477612296,경북 구미시 옥성면 옥관리 500-2,,,gumi_opendata_xlsx,214,gumi_opendata
+safety,cctv,16-1-04-4,36.3053191975996,128.241439430146,경북 구미시 옥성면 산촌리 591,,,gumi_opendata_xlsx,215,gumi_opendata
+safety,cctv,16-1-04-5,36.2748869189191,128.24579654851,경북 구미시 옥성면 대원리 1067-6,,,gumi_opendata_xlsx,216,gumi_opendata
+safety,cctv,16-1-04-6,,,옥성 구봉리 369-10 초등학교 앞 사거리,,,gumi_opendata_xlsx,217,gumi_opendata
+safety,cctv,17-1-04-1,36.3522296717992,128.257789035973,경북 구미시 옥성면 구봉리 648-1,,,gumi_opendata_xlsx,218,gumi_opendata
+safety,cctv,17-1-04-2,,,옥성 대원리 입구,,,gumi_opendata_xlsx,219,gumi_opendata
+safety,cctv,17-1-04-3,,,옥성 덕촌1리 초입,,,gumi_opendata_xlsx,220,gumi_opendata
+safety,cctv,17-1-04-4,,,옥성 초곡리 초입,,,gumi_opendata_xlsx,221,gumi_opendata
+safety,cctv,20-1-04-1,36.3395791384765,128.249012134502,경북 구미시 옥성면 옥관리 1199,,,gumi_opendata_xlsx,222,gumi_opendata
+safety,cctv,13-1-05-1,36.3226797431949,128.313431905779,경북 구미시 도개면 도안로 422,,,gumi_opendata_xlsx,223,gumi_opendata
+safety,cctv,14-1-05-1,36.2955979974737,128.334099619856,경북 구미시 도개면 궁기리 176-44,,,gumi_opendata_xlsx,224,gumi_opendata
+safety,cctv,14-1-05-2,36.2811791712117,128.352552430914,경북 구미시 도개면 도군로 123,,,gumi_opendata_xlsx,225,gumi_opendata
+safety,cctv,14-1-05-3,36.268216152546,128.418208042279,경북 구미시 도개면 다곡리 산 40-7,,,gumi_opendata_xlsx,226,gumi_opendata
+safety,cctv,14-1-05-4,36.3370349784723,128.304187527913,경북 구미시 도개면 용산리 440-6,,,gumi_opendata_xlsx,227,gumi_opendata
+safety,cctv,14-1-05-5,36.3090535731333,128.314658023762,경북 구미시 도개면 월림리 870-2,,,gumi_opendata_xlsx,228,gumi_opendata
+safety,cctv,14-1-05-6,36.3102855633651,128.33638766001,경북 구미시 도개면 궁기리 537-1,,,gumi_opendata_xlsx,229,gumi_opendata
+safety,cctv,15-1-05-1,,,도개 석적읍 도개리 441-2 도개1리 모례교,,,gumi_opendata_xlsx,230,gumi_opendata
+safety,cctv,15-1-05-2,36.3370349784723,128.304187527913,경북 구미시 도개면 용산리 440-6,,,gumi_opendata_xlsx,231,gumi_opendata
+safety,cctv,15-1-05-3,36.346167061568,128.289071859393,경북 구미시 도개면 용산리 469,,,gumi_opendata_xlsx,232,gumi_opendata
+safety,cctv,16-1-05-1,36.305083696928,128.328287635701,경북 구미시 도개면 궁기리 578-3,,,gumi_opendata_xlsx,233,gumi_opendata
+safety,cctv,16-1-05-2,36.3224782960419,128.311220562977,경북 구미시 도개면 동산리 734-2,,,gumi_opendata_xlsx,234,gumi_opendata
+safety,cctv,16-1-05-3,36.3251355171598,128.320687435193,경북 구미시 도개면 동산리 249-2,,,gumi_opendata_xlsx,235,gumi_opendata
+safety,cctv,16-1-05-4,36.3298926216322,128.298290881574,경북 구미시 도개면 가산리 684-2,,,gumi_opendata_xlsx,236,gumi_opendata
+safety,cctv,16-1-05-5,,,도개 궁기리 783 중앙교회,,,gumi_opendata_xlsx,237,gumi_opendata
+safety,cctv,17-1-05-1,36.3367988958547,128.289189437663,경북 구미시 도개면 가산리 1033-2,,,gumi_opendata_xlsx,238,gumi_opendata
+safety,cctv,17-1-05-2,36.3082925581206,128.307529121129,경북 구미시 도개면 월림2길 135,,,gumi_opendata_xlsx,239,gumi_opendata
+safety,cctv,17-1-05-3,36.2910787533483,128.340533343484,경북 구미시 도개면 궁기리 140-2,,,gumi_opendata_xlsx,240,gumi_opendata
+safety,cctv,17-1-05-4,36.3137996347267,128.376188007856,경북 구미시 도개면 도개리 947,,,gumi_opendata_xlsx,241,gumi_opendata
+safety,cctv,17-1-05-5,36.273748293672,128.349761707904,경북 구미시 도개면 신림리 산 39-2,,,gumi_opendata_xlsx,242,gumi_opendata
+safety,cctv,17-1-05-6,36.2999642246836,128.33903525452,경북 구미시 도개면 궁기리 375-1,,,gumi_opendata_xlsx,243,gumi_opendata
+safety,cctv,17-1-05-7,36.2766333472182,128.393079502029,경북 구미시 도개면 다곡리 산 75-4,,,gumi_opendata_xlsx,244,gumi_opendata
+safety,cctv,17-1-05-8,36.2884992269887,128.351808908518,경북 구미시 도개면 도개리 595-2,,,gumi_opendata_xlsx,245,gumi_opendata
+safety,cctv,20-1-05-2,36.3258137304844,128.307061676281,경북 구미시 도개면 동산리 756-1,,,gumi_opendata_xlsx,246,gumi_opendata
+safety,cctv,14-1-06-1,36.183345548245,128.398017929744,경북 구미시 해평면 강동로 1478,,,gumi_opendata_xlsx,247,gumi_opendata
+safety,cctv,14-1-06-2,36.2676160879595,128.35104756182,경북 구미시 해평면 수류길 14,,,gumi_opendata_xlsx,248,gumi_opendata
+safety,cctv,14-1-06-3,36.2704914841319,128.349433671223,경북 구미시 해평면 수류길 46,,,gumi_opendata_xlsx,249,gumi_opendata
+safety,cctv,14-1-06-4,36.1926473972235,128.394426063031,경북 구미시 해평면 오상6길 4,,,gumi_opendata_xlsx,250,gumi_opendata
+safety,cctv,14-1-06-5,36.2255426577274,128.426608877259,경북 구미시 해평면 도문리 25,,,gumi_opendata_xlsx,251,gumi_opendata
+safety,cctv,14-1-06-6,36.2215364153951,128.375300567428,경북 구미시 해평면 강동로 1970,,,gumi_opendata_xlsx,252,gumi_opendata
+safety,cctv,15-1-06-1,36.2322851227779,128.359315085922,경북 구미시 해평면 월곡리 808,,,gumi_opendata_xlsx,253,gumi_opendata
+safety,cctv,15-1-06-2,36.2199721045331,128.392289968191,경북 구미시 해평면 송곡리 803-37,,,gumi_opendata_xlsx,254,gumi_opendata
+safety,cctv,15-1-06-3,36.2527953159994,128.363030597888,경북 구미시 해평면 낙산1길 125-2,,,gumi_opendata_xlsx,255,gumi_opendata
+safety,cctv,15-1-06-4,36.1959951743502,128.369948937321,경북 구미시 해평면 해평리 460-30,,,gumi_opendata_xlsx,256,gumi_opendata
+safety,cctv,16-1-06-1,,,해평 원호3길,,,gumi_opendata_xlsx,257,gumi_opendata
+safety,cctv,16-1-06-2,36.1806280712956,128.400126565947,경북 구미시 해평면 문량리 403,,,gumi_opendata_xlsx,258,gumi_opendata
+safety,cctv,16-1-06-3,36.268460884544,128.351565985558,경북 구미시 해평면 수류길 18-10,,,gumi_opendata_xlsx,259,gumi_opendata
+safety,cctv,16-1-06-4,36.2690249360797,128.35009446963,경북 구미시 해평면 일선리 1-107,,,gumi_opendata_xlsx,260,gumi_opendata
+safety,cctv,16-1-06-5,,,해평 습문천 복개주차장 주차장에서 도문리 방향,,,gumi_opendata_xlsx,261,gumi_opendata
+safety,cctv,16-1-06-6,,,해평 해평리 211-3 해평김씨 사당,,,gumi_opendata_xlsx,262,gumi_opendata
+safety,cctv,17-1-06-1,36.1671265229029,128.415938891359,경북 구미시 해평면 강동로 1218,,,gumi_opendata_xlsx,263,gumi_opendata
+safety,cctv,17-1-06-2,36.2271970283876,128.372032182865,경북 구미시 해평면 산양2길,,,gumi_opendata_xlsx,264,gumi_opendata
+safety,cctv,17-1-06-3,36.1804500001411,128.412040327709,경북 구미시 해평면 괴곡4길,,,gumi_opendata_xlsx,265,gumi_opendata
+safety,cctv,17-1-06-4,36.2660782665778,128.353953387883,경북 구미시 해평면 칠창길,,,gumi_opendata_xlsx,266,gumi_opendata
+safety,cctv,17-1-06-5,36.2213668349773,128.384713631478,경북 구미시 해평면 송곡1길,,,gumi_opendata_xlsx,267,gumi_opendata
+safety,cctv,17-1-06-6,36.2528630571342,128.363973224003,경북 구미시 해평면 낙산1길,,,gumi_opendata_xlsx,268,gumi_opendata
+safety,cctv,17-1-06-7,36.1911037708945,128.396559244275,경북 구미시 해평면 오상4길,,,gumi_opendata_xlsx,269,gumi_opendata
+safety,cctv,19-1-06-1,36.1960256195841,128.392676932194,경북 구미시 해평면 강동로 1630,,,gumi_opendata_xlsx,270,gumi_opendata
+safety,cctv,20-1-06-1,36.1952801002721,128.393305757544,경북 구미시 해평면 강동로 1618-1,,,gumi_opendata_xlsx,271,gumi_opendata
+safety,cctv,11-1-08-1,36.1267052718754,128.494724556233,경북 구미시 장천면 강동로 193,,,gumi_opendata_xlsx,272,gumi_opendata
+safety,cctv,11-1-08-2,,,장천 신장6길 51-8 신장리 신호대 앞 삼거리,,,gumi_opendata_xlsx,273,gumi_opendata
+safety,cctv,14-1-08-1,36.1258310910791,128.494681543585,경북 구미시 장천면 강동로 183,,,gumi_opendata_xlsx,274,gumi_opendata
+safety,cctv,14-1-08-2,36.1508351817966,128.489444031907,경북 구미시 장천면 강동로 471,,,gumi_opendata_xlsx,275,gumi_opendata
+safety,cctv,14-1-08-3,36.1242602063709,128.495486910071,경북 구미시 장천면 강동로 163,,,gumi_opendata_xlsx,276,gumi_opendata
+safety,cctv,14-1-08-4,36.1227100420647,128.484575957187,경북 구미시 장천면 신장리 79-1,,,gumi_opendata_xlsx,277,gumi_opendata
+safety,cctv,14-1-08-5,36.1367268719322,128.491293225355,경북 구미시 장천면 하장리 724,,,gumi_opendata_xlsx,278,gumi_opendata
+safety,cctv,14-1-08-6,36.1386469408204,128.490890862672,경북 구미시 장천면 묵어길 1,,,gumi_opendata_xlsx,279,gumi_opendata
+safety,cctv,14-1-08-7,36.1251678101025,128.522769414339,경북 구미시 장천면 장군로 269,,,gumi_opendata_xlsx,280,gumi_opendata
+safety,cctv,15-1-08-1,36.1262760381142,128.496934697853,경북 구미시 장천면 장군로 20,,,gumi_opendata_xlsx,281,gumi_opendata
+safety,cctv,16-1-08-1,36.1998067077471,128.522848241878,경북 구미시 장천면 장천오로4길 323,,,gumi_opendata_xlsx,282,gumi_opendata
+safety,cctv,16-1-08-2,36.1192007053034,128.484096491256,경북 구미시 장천면 학신로 250,,,gumi_opendata_xlsx,283,gumi_opendata
+safety,cctv,16-1-08-3,36.118322602981,128.476510275076,경북 구미시 장천면 신장2길,,,gumi_opendata_xlsx,284,gumi_opendata
+safety,cctv,16-1-08-4,36.1340194276853,128.48583686709,경북 구미시 장천면 하장3길 77,,,gumi_opendata_xlsx,285,gumi_opendata
+safety,cctv,16-1-08-5,36.1206401550289,128.504967011694,경북 구미시 장천면 상장리,,,gumi_opendata_xlsx,286,gumi_opendata
+safety,cctv,16-1-08-6,36.1712473448886,128.48544919242,경북 구미시 장천면 송백로 229,,,gumi_opendata_xlsx,287,gumi_opendata
+safety,cctv,16-1-08-7,36.1382048948663,128.520570556643,경북 구미시 장천면 여남1길 199,,,gumi_opendata_xlsx,288,gumi_opendata
+safety,cctv,17-1-08-1,36.1341741382453,128.483839228767,경북 구미시 장천면 하장3길 57-1,,,gumi_opendata_xlsx,289,gumi_opendata
+safety,cctv,17-1-08-2,,,장천 군위군 효령면 산 143,,,gumi_opendata_xlsx,290,gumi_opendata
+safety,cctv,17-1-08-3,,,장천 상장3리 848-2,,,gumi_opendata_xlsx,291,gumi_opendata
+safety,cctv,19-1-08-1,36.1353409224361,128.480518225573,경북 구미시 장천면 산호대로 1394,,,gumi_opendata_xlsx,292,gumi_opendata
+safety,cctv,19-1-08-2,36.118946208553,128.478845323145,경북 구미시 장천면 신장리 825-1,,,gumi_opendata_xlsx,293,gumi_opendata
+safety,cctv,20-1-08-1,36.1260254201202,128.493095637092,경북 구미시 장천면 상장4길 16,,,gumi_opendata_xlsx,294,gumi_opendata
+safety,cctv,20-1-08-2,36.1801451469258,128.540859855596,경북 구미시 장천면 오로리 183-2,,,gumi_opendata_xlsx,295,gumi_opendata
+safety,cctv,06-1-09-1,36.1164064799124,128.3433000214,경북 구미시 신시로12길 34,,,gumi_opendata_xlsx,296,gumi_opendata
+safety,cctv,09-1-09-4,36.1203767742381,128.340165984508,경북 구미시 신시로24길 15,,,gumi_opendata_xlsx,297,gumi_opendata
+safety,cctv,14-1-09-1,36.1186171335355,128.342249007137,경북 구미시 백산로4길 23,,,gumi_opendata_xlsx,298,gumi_opendata
+safety,cctv,14-1-09-5,36.1154683917982,128.346598690311,경북 구미시 신시로10길 76-8,,,gumi_opendata_xlsx,299,gumi_opendata
+safety,cctv,14-1-09-2,36.1165586442283,128.344740999022,경북 구미시 송정대로6길 15,,,gumi_opendata_xlsx,300,gumi_opendata
+safety,cctv,14-1-09-4,36.1149496943762,128.347640473451,경북 구미시 송정대로6길 51-1,,,gumi_opendata_xlsx,301,gumi_opendata
+safety,cctv,15-1-09-1,36.1139800186538,128.351100634881,경북 구미시 신시로10길 120-12,,,gumi_opendata_xlsx,302,gumi_opendata
+safety,cctv,15-1-09-2,36.1159271816181,128.347109861087,경북 구미시 신시로10길,,,gumi_opendata_xlsx,303,gumi_opendata
+safety,cctv,15-1-09-3,36.1205996766614,128.353169771009,경북 구미시 구미중앙로 298,,,gumi_opendata_xlsx,304,gumi_opendata
+safety,cctv,15-1-09-4,36.1175816626047,128.344672814111,경북 구미시 송정대로 54,,,gumi_opendata_xlsx,305,gumi_opendata
+safety,cctv,16-1-09-1,36.1186539967128,128.33943898174,경북 구미시 신시로20길 9,,,gumi_opendata_xlsx,306,gumi_opendata
+safety,cctv,16-1-09-2,36.1149151055423,128.351614098803,경북 구미시 백산로 199,,,gumi_opendata_xlsx,307,gumi_opendata
+safety,cctv,16-1-09-4,36.1176783978941,128.340351470536,경북 구미시 백산로2길 43,,,gumi_opendata_xlsx,308,gumi_opendata
+safety,cctv,16-1-09-5,36.1218535612528,128.341856266274,경북 구미시 백산로1길 16,,,gumi_opendata_xlsx,309,gumi_opendata
+safety,cctv,16-1-09-6,36.1156285110829,128.340671138876,경북 구미시 신시로12길 7,,,gumi_opendata_xlsx,310,gumi_opendata
+safety,cctv,16-1-09-7,36.1180072550132,128.340928382825,경북 구미시 신시로20길 24,,,gumi_opendata_xlsx,311,gumi_opendata
+safety,cctv,17-1-09-1,36.1150148796139,128.353129020057,경북 구미시 신시로16길 141,,,gumi_opendata_xlsx,312,gumi_opendata
+safety,cctv,17-1-09-2,36.1227203218588,128.338679353449,경북 구미시 송정동 1-81,,,gumi_opendata_xlsx,313,gumi_opendata
+safety,cctv,17-1-09-3,36.1209224638,128.339541273241,경북 구미시 신시로24길 9-10,,,gumi_opendata_xlsx,314,gumi_opendata
+safety,cctv,17-1-09-4,36.1200993875034,128.339321479078,경북 구미시 신시로24길 8,,,gumi_opendata_xlsx,315,gumi_opendata
+safety,cctv,17-1-09-5,36.1177572631431,128.339318903203,경북 구미시 신시로18길 5-2,,,gumi_opendata_xlsx,316,gumi_opendata
+safety,cctv,19-1-09-1,36.1203234794086,128.342245623293,경북 구미시 백산로4길 5,,,gumi_opendata_xlsx,317,gumi_opendata
+safety,cctv,19-1-09-2,36.1130610030357,128.352939902514,경북 구미시 신시로10길 140-10,,,gumi_opendata_xlsx,318,gumi_opendata
+safety,cctv,20-1-09-1,36.1200397747973,128.352166543334,경북 구미시 구미중앙로42길 11,,,gumi_opendata_xlsx,319,gumi_opendata
+safety,cctv,06-1-10-1,36.1271037497691,128.342526132673,경북 구미시 산업로22길 8,,,gumi_opendata_xlsx,320,gumi_opendata
+safety,cctv,06-1-10-2,36.1282809643512,128.335613775621,경북 구미시 문화로 39-1,,,gumi_opendata_xlsx,321,gumi_opendata
+safety,cctv,14-1-10-1,36.125616908081,128.342780056209,경북 구미시 구미중앙로29길 17,,,gumi_opendata_xlsx,322,gumi_opendata
+safety,cctv,14-1-10-2,36.1280381294346,128.336597272738,경북 구미시 문화로 49,,,gumi_opendata_xlsx,323,gumi_opendata
+safety,cctv,14-1-10-3,36.127579863332,128.335978676836,경북 구미시 구미중앙로21길 9,,,gumi_opendata_xlsx,324,gumi_opendata
+safety,cctv,14-1-10-4,36.1237401738007,128.349173039705,경북 구미시 송원서로8길 50,,,gumi_opendata_xlsx,325,gumi_opendata
+safety,cctv,14-1-10-5,36.1248536356702,128.347330474104,경북 구미시 구미중앙로35길 28,,,gumi_opendata_xlsx,326,gumi_opendata
+safety,cctv,14-1-10-6,36.1258479328301,128.333685132368,경북 구미시 금오산로12길 9,,,gumi_opendata_xlsx,327,gumi_opendata
+safety,cctv,14-1-10-7,36.1236997927387,128.344550128137,경북 구미시 송원서로4길 8,,,gumi_opendata_xlsx,328,gumi_opendata
+safety,cctv,14-1-10-8,36.1256343617919,128.340095301477,경북 구미시 금오시장로1길 4,,,gumi_opendata_xlsx,329,gumi_opendata
+safety,cctv,15-1-10-1,36.1270329982106,128.340000558422,경북 구미시 구미중앙로25길 20,,,gumi_opendata_xlsx,330,gumi_opendata
+safety,cctv,15-1-10-2,36.1279087442086,128.341174229707,경북 구미시 금오시장로9길 10,,,gumi_opendata_xlsx,331,gumi_opendata
+safety,cctv,15-1-10-3,36.1227721071932,128.352989245183,경북 구미시 송원동로 72,,,gumi_opendata_xlsx,332,gumi_opendata
+safety,cctv,15-1-10-4,36.1246782989027,128.341861916004,경북 구미시 구미중앙로27길 6,,,gumi_opendata_xlsx,333,gumi_opendata
+safety,cctv,16-1-10-1,36.1229791316568,128.348215453651,경북 구미시 송원서로4길 39,,,gumi_opendata_xlsx,334,gumi_opendata
+safety,cctv,16-1-10-2,36.1253984122777,128.346004650647,경북 구미시 송원서로8길 15,,,gumi_opendata_xlsx,335,gumi_opendata
+safety,cctv,16-1-10-3,36.1216903680002,128.351441902795,경북 구미시 송원동로 58-7,,,gumi_opendata_xlsx,336,gumi_opendata
+safety,cctv,16-1-10-4,,,원평1 금오산로 36 희망약국 사거리,,,gumi_opendata_xlsx,337,gumi_opendata
+safety,cctv,16-1-10-5,36.1209787123914,128.354276533384,경북 구미시 구미중앙로41길 6-15,,,gumi_opendata_xlsx,338,gumi_opendata
+safety,cctv,16-1-10-6,,,원평1 중앙로 25길 7 에센스 모텔,,,gumi_opendata_xlsx,339,gumi_opendata
+safety,cctv,17-1-10-1,36.122896798072,128.350700181858,경북 구미시 송원동로 69,,,gumi_opendata_xlsx,340,gumi_opendata
+safety,cctv,17-1-10-2,36.1250821509688,128.345961151619,경북 구미시 송원서로8길 20,,,gumi_opendata_xlsx,341,gumi_opendata
+safety,cctv,17-1-10-3,36.1256162020389,128.340333029665,경북 구미시 금오시장로 5,,,gumi_opendata_xlsx,342,gumi_opendata
+safety,cctv,19-1-10-1,36.1287932327711,128.339408874085,경북 구미시 산업로 168-8,,,gumi_opendata_xlsx,343,gumi_opendata
+safety,cctv,19-1-10-2,36.1265506588755,128.341590768333,경북 구미시 금오시장로 22,,,gumi_opendata_xlsx,344,gumi_opendata
+safety,cctv,19-1-10-3,36.1263180760738,128.337207135762,경북 구미시 금오산로 53-9,,,gumi_opendata_xlsx,345,gumi_opendata
+safety,cctv,06-1-11-1,36.1321116039467,128.329037429572,경북 구미시 산업로4길 21-1,,,gumi_opendata_xlsx,346,gumi_opendata
+safety,cctv,11-1-11-1,36.1287503769853,128.331307121762,경북 구미시 구미중앙로 80,,,gumi_opendata_xlsx,347,gumi_opendata
+safety,cctv,11-1-11-2,36.1301966614303,128.330483987187,경북 구미시 구미중앙로11길 9,,,gumi_opendata_xlsx,348,gumi_opendata
+safety,cctv,13-1-11-1,36.1317567270787,128.326762527567,경북 구미시 구미중앙로3길 11,,,gumi_opendata_xlsx,349,gumi_opendata
+safety,cctv,14-1-11-1,36.1319778959826,128.331672013433,경북 구미시 구미중앙로11길 31,,,gumi_opendata_xlsx,350,gumi_opendata
+safety,cctv,14-1-11-2,36.1298755238541,128.332483496176,경북 구미시 문화로 7,,,gumi_opendata_xlsx,351,gumi_opendata
+safety,cctv,14-1-11-3,36.1329092043512,128.3293782535,경북 구미시 산업로6길 9-4,,,gumi_opendata_xlsx,352,gumi_opendata
+safety,cctv,14-1-11-4,36.1311951077326,128.33137740989,경북 구미시 구미중앙로11길 24,,,gumi_opendata_xlsx,353,gumi_opendata
+safety,cctv,14-1-11-5,36.1324173401481,128.330913721677,경북 구미시 구미중앙로9길 33,,,gumi_opendata_xlsx,354,gumi_opendata
+safety,cctv,14-1-11-6,36.1311319247202,128.328319077564,경북 구미시 구미중앙로5길 9,,,gumi_opendata_xlsx,355,gumi_opendata
+safety,cctv,15-1-11-1,36.1327683783592,128.327580938572,경북 구미시 산업로4길 5,,,gumi_opendata_xlsx,356,gumi_opendata
+safety,cctv,15-1-11-2,36.1320248692416,128.3256672931,경북 구미시 산업로2길 11-1,,,gumi_opendata_xlsx,357,gumi_opendata
+safety,cctv,16-1-11-1,36.1314282312518,128.333863759705,경북 구미시 원평동 188-50,,,gumi_opendata_xlsx,358,gumi_opendata
+safety,cctv,16-1-11-2,,,원평2 문장로 13-18 구미천변,,,gumi_opendata_xlsx,359,gumi_opendata
+safety,cctv,17-1-11-1,36.129898320336,128.333778993837,경북 구미시 역전로2길 18,,,gumi_opendata_xlsx,360,gumi_opendata
+safety,cctv,17-1-11-2,36.1323347331347,128.332094615764,경북 구미시 구미중앙로11길 36,,,gumi_opendata_xlsx,361,gumi_opendata
+safety,cctv,17-1-11-3,36.1318378175206,128.329745536514,경북 구미시 구미중앙로7길 14,,,gumi_opendata_xlsx,362,gumi_opendata
+safety,cctv,20-1-11-1,36.1293347456707,128.328379209924,경북 구미시 원평동 104-4,,,gumi_opendata_xlsx,363,gumi_opendata
+safety,cctv,20-1-11-2,36.1296864286473,128.328593305505,경북 구미시 구미중앙로 52,,,gumi_opendata_xlsx,364,gumi_opendata
+safety,cctv,14-1-12-1,36.1360334248656,128.344009792992,경북 구미시 지산3길 16-34,,,gumi_opendata_xlsx,365,gumi_opendata
+safety,cctv,CCTV-366,,,지산,,,gumi_opendata_xlsx,366,gumi_opendata
+safety,cctv,14-1-12-2,36.1375842748201,128.345109962408,경북 구미시 지산7길 8-5,,,gumi_opendata_xlsx,367,gumi_opendata
+safety,cctv,14-1-12-3,36.1433628964073,128.346184983761,경북 구미시 지산15길 5,,,gumi_opendata_xlsx,368,gumi_opendata
+safety,cctv,14-1-12-4,36.1340442279906,128.344469765102,경북 구미시 지산1길 16-18,,,gumi_opendata_xlsx,369,gumi_opendata
+safety,cctv,15-1-12-1,36.1352329182528,128.344887081324,경북 구미시 지산3길 4-1,,,gumi_opendata_xlsx,370,gumi_opendata
+safety,cctv,15-1-12-2,36.1480571245966,128.347543952634,경북 구미시 지산25길 11,,,gumi_opendata_xlsx,371,gumi_opendata
+safety,cctv,15-1-12-3,36.1471930358517,128.347623165921,경북 구미시 지산21길 6-7,,,gumi_opendata_xlsx,372,gumi_opendata
+safety,cctv,16-1-12-1,36.1320733884525,128.341943494013,경북 구미시 지산1길 46-2,,,gumi_opendata_xlsx,373,gumi_opendata
+safety,cctv,16-1-12-2,36.1332303568731,128.343743922426,경북 구미시 지산1길 20-4,,,gumi_opendata_xlsx,374,gumi_opendata
+safety,cctv,16-1-12-3,36.1363899345741,128.364360945374,경북 구미시 지산양호길 97,,,gumi_opendata_xlsx,375,gumi_opendata
+safety,cctv,16-1-12-4,36.1286323143543,128.361797098492,경북 구미시 지산양호길 8,,,gumi_opendata_xlsx,376,gumi_opendata
+safety,cctv,16-1-12-5,36.146050887904,128.34772361895,경북 구미시 지산19길 6,,,gumi_opendata_xlsx,377,gumi_opendata
+safety,cctv,16-1-12-6,36.1454095266772,128.346331841309,경북 구미시 지산17길 22,,,gumi_opendata_xlsx,378,gumi_opendata
+safety,cctv,16-1-12-7,36.1485674082242,128.346905807801,경북 구미시 지산25길 19-2,,,gumi_opendata_xlsx,379,gumi_opendata
+safety,cctv,17-1-12-1,36.1326036862171,128.343038725672,경북 구미시 지산1안길 7,,,gumi_opendata_xlsx,380,gumi_opendata
+safety,cctv,17-1-12-2,36.1384670856764,128.344944393628,경북 구미시 지산9길 12,,,gumi_opendata_xlsx,381,gumi_opendata
+safety,cctv,17-1-12-3,36.1386948231505,128.344774084296,경북 구미시 지산9길 16-4,,,gumi_opendata_xlsx,382,gumi_opendata
+safety,cctv,19-1-12-1,36.1350550971691,128.364549570165,경북 구미시 지산양호10길 6,,,gumi_opendata_xlsx,383,gumi_opendata
+safety,cctv,20-1-12-2,36.1376942418675,128.344224647352,경북 구미시 지산동 853-111,,,gumi_opendata_xlsx,384,gumi_opendata
+safety,cctv,06-1-13-1,36.1374016845232,128.330876259205,경북 구미시 문장로5길 14-1,,,gumi_opendata_xlsx,385,gumi_opendata
+safety,cctv,12-1-13-1,36.1398157998389,128.335040498658,경북 구미시 문장로10안길 10-30,,,gumi_opendata_xlsx,386,gumi_opendata
+safety,cctv,14-1-13-1,36.1389995941648,128.324592578979,경북 구미시 송동로 70-26,,,gumi_opendata_xlsx,387,gumi_opendata
+safety,cctv,14-1-13-2,36.1402322224303,128.333017587166,경북 구미시 문장로10안길 14,,,gumi_opendata_xlsx,388,gumi_opendata
+safety,cctv,14-1-13-3,36.1454713012853,128.33011230425,경북 구미시 문장로17길 10,,,gumi_opendata_xlsx,389,gumi_opendata
+safety,cctv,14-1-13-4,36.1378497903508,128.325752622852,경북 구미시 개화길 13,,,gumi_opendata_xlsx,390,gumi_opendata
+safety,cctv,14-1-13-5,36.1392077955695,128.330928541178,경북 구미시 문장로9길 16-1,,,gumi_opendata_xlsx,391,gumi_opendata
+safety,cctv,14-1-13-6,36.1424518887636,128.32099208392,경북 구미시 송동로7안길 16,,,gumi_opendata_xlsx,392,gumi_opendata
+safety,cctv,14-1-13-7,36.1454200218465,128.329341817059,경북 구미시 문장로17길 16,,,gumi_opendata_xlsx,393,gumi_opendata
+safety,cctv,14-1-13-8,36.1402350023536,128.333593450972,경북 구미시 문장로12안길 2,,,gumi_opendata_xlsx,394,gumi_opendata
+safety,cctv,14-1-13-9,36.1418952898107,128.319632222833,경북 구미시 도봉로5길 41,,,gumi_opendata_xlsx,395,gumi_opendata
+safety,cctv,14-1-13-10,36.1463855903879,128.329804424735,경북 구미시 문장로17길 10-23,,,gumi_opendata_xlsx,396,gumi_opendata
+safety,cctv,14-1-13-11,36.1379857294963,128.333288865979,경북 구미시 문장로8길 9,,,gumi_opendata_xlsx,397,gumi_opendata
+safety,cctv,15-1-13-1,36.135333316274,128.328911131059,경북 구미시 야은로 424-16,,,gumi_opendata_xlsx,398,gumi_opendata
+safety,cctv,15-1-13-2,36.1404442527569,128.322933848904,경북 구미시 송동로 91-3,,,gumi_opendata_xlsx,399,gumi_opendata
+safety,cctv,15-1-13-3,36.1456049793765,128.319986351005,경북 구미시 송동로7길 31-10,,,gumi_opendata_xlsx,400,gumi_opendata
+safety,cctv,15-1-13-4,36.143412844483,128.336028487145,경북 구미시 문장로14길 46,,,gumi_opendata_xlsx,401,gumi_opendata
+safety,cctv,15-1-13-5,36.1387693216051,128.32653298549,경북 구미시 개화4길 11-2,,,gumi_opendata_xlsx,402,gumi_opendata
+safety,cctv,16-1-13-2,36.1406380109549,128.320842795442,경북 구미시 도봉로5안길 4-15,,,gumi_opendata_xlsx,403,gumi_opendata
+safety,cctv,16-1-13-3,36.1373212189216,128.328473399781,경북 구미시 문장로5길 36-1,,,gumi_opendata_xlsx,404,gumi_opendata
+safety,cctv,16-1-13-4,36.1410090191207,128.32074391629,경북 구미시 도봉로5안길 7-3,,,gumi_opendata_xlsx,405,gumi_opendata
+safety,cctv,16-1-13-5,36.1414900683661,128.335626364316,경북 구미시 문장로12안길 25,,,gumi_opendata_xlsx,406,gumi_opendata
+safety,cctv,16-1-13-6,,,도량 도량동 784-4,,,gumi_opendata_xlsx,407,gumi_opendata
+safety,cctv,16-1-13-7,36.1379542587407,128.334625571573,경북 구미시 문장로8길 21,,,gumi_opendata_xlsx,408,gumi_opendata
+safety,cctv,16-1-13-8,36.1450737925034,128.32939974794,경북 구미시 문장로17길 15-7,,,gumi_opendata_xlsx,409,gumi_opendata
+safety,cctv,16-1-13-9,36.1459525674634,128.320981569593,경북 구미시 송동로 147,,,gumi_opendata_xlsx,410,gumi_opendata
+safety,cctv,16-1-13-10,36.1451553049395,128.320689772363,경북 구미시 송동로7길 27,,,gumi_opendata_xlsx,411,gumi_opendata
+safety,cctv,17-1-13-1,36.1418003805002,128.335872266379,경북 구미시 문장로12길 40,,,gumi_opendata_xlsx,412,gumi_opendata
+safety,cctv,17-1-13-2,36.141962764347,128.321121535052,경북 구미시 도봉로5안길 11-24,,,gumi_opendata_xlsx,413,gumi_opendata
+safety,cctv,17-1-13-3,36.1415672828192,128.321347656077,경북 구미시 도봉로5안길 11-14,,,gumi_opendata_xlsx,414,gumi_opendata
+safety,cctv,17-1-13-4,,,도량 개화6길7-1(추가),,,gumi_opendata_xlsx,415,gumi_opendata
+safety,cctv,17-1-13-5,36.1396541225762,128.325868194132,경북 구미시 개화2길 19-4,,,gumi_opendata_xlsx,416,gumi_opendata
+safety,cctv,17-1-13-6,36.1368111021089,128.329803352051,경북 구미시 문장로3길 21-5,,,gumi_opendata_xlsx,417,gumi_opendata
+safety,cctv,17-1-13-7,36.1389567308454,128.333327071713,경북 구미시 문장로10길 10,,,gumi_opendata_xlsx,418,gumi_opendata
+safety,cctv,17-1-13-8,36.1475018019211,128.324367333885,경북 구미시 송동로 154,,,gumi_opendata_xlsx,419,gumi_opendata
+safety,cctv,17-1-13-9,36.1345896838972,128.319327575658,경북 구미시 송선로 472,,,gumi_opendata_xlsx,420,gumi_opendata
+safety,cctv,17-1-13-10,36.1377914743184,128.326689495915,경북 구미시 개화2길 2-16,,,gumi_opendata_xlsx,421,gumi_opendata
+safety,cctv,17-1-13-11,36.1416907986656,128.334490555884,경북 구미시 문장로12길 27-10,,,gumi_opendata_xlsx,422,gumi_opendata
+safety,cctv,19-1-13-1,36.1398200945133,128.323809031864,경북 구미시 송동로 78-1,,,gumi_opendata_xlsx,423,gumi_opendata
+safety,cctv,20-1-13-2,36.1375420072423,128.330388262891,경북 구미시 문장로7길 17-1,,,gumi_opendata_xlsx,424,gumi_opendata
+safety,cctv,09-1-14-1,36.1523417299452,128.313839289373,경북 구미시 봉곡로20길 30,,,gumi_opendata_xlsx,425,gumi_opendata
+safety,cctv,09-1-14-2,36.1299093893929,128.32558261214,경북 구미시 원남로1길 36-1,,,gumi_opendata_xlsx,426,gumi_opendata
+safety,cctv,10-1-14-1,36.1482341206524,128.309400526475,경북 구미시 봉곡남로12길 7-1,,,gumi_opendata_xlsx,427,gumi_opendata
+safety,cctv,12-1-14-1,36.1271915855013,128.330666528153,경북 구미시 금오산로22길 36-1,,,gumi_opendata_xlsx,428,gumi_opendata
+safety,cctv,13-1-14-1,36.1227634641959,128.322939211432,경북 구미시 금오산로 198-5,,,gumi_opendata_xlsx,429,gumi_opendata
+safety,cctv,13-1-14-2,36.101324047594,128.320248521403,경북 구미시 남통동 358-3,,,gumi_opendata_xlsx,430,gumi_opendata
+safety,cctv,14-1-14-1,36.1475692276364,128.308983151759,경북 구미시 봉곡로9길 26,,,gumi_opendata_xlsx,431,gumi_opendata
+safety,cctv,14-1-14-2,36.1255264043069,128.330127911248,경북 구미시 금오산로18길 10,,,gumi_opendata_xlsx,432,gumi_opendata
+safety,cctv,14-1-14-3,36.1511589821803,128.313231770763,경북 구미시 봉곡로18길 24,,,gumi_opendata_xlsx,433,gumi_opendata
+safety,cctv,14-1-14-4,36.1527382093193,128.309802757482,경북 구미시 봉곡로 155-8,,,gumi_opendata_xlsx,434,gumi_opendata
+safety,cctv,14-1-14-5,36.1524077511197,128.311384423487,경북 구미시 봉곡로18길 5-12,,,gumi_opendata_xlsx,435,gumi_opendata
+safety,cctv,14-1-14-6,36.1295695337335,128.322398610061,경북 구미시 원남로 12-13,,,gumi_opendata_xlsx,436,gumi_opendata
+safety,cctv,14-1-14-7,36.150241867468,128.309193682163,경북 구미시 봉곡로15길 13,,,gumi_opendata_xlsx,437,gumi_opendata
+safety,cctv,14-1-14-8,36.1467356541284,128.311480310332,경북 구미시 봉곡로10길 9-8,,,gumi_opendata_xlsx,438,gumi_opendata
+safety,cctv,14-1-14-9,36.1289174122298,128.328006829995,경북 구미시 원남로1길 60-1,,,gumi_opendata_xlsx,439,gumi_opendata
+safety,cctv,14-1-14-10,36.1308595653969,128.322859259195,경북 구미시 원남로 9,,,gumi_opendata_xlsx,440,gumi_opendata
+safety,cctv,14-1-14-11,36.1529450033189,128.305422802106,경북 구미시 봉곡서로5길 12,,,gumi_opendata_xlsx,441,gumi_opendata
+safety,cctv,15-1-14-1,36.1262933896039,128.330936835087,경북 구미시 원남로8길 13,,,gumi_opendata_xlsx,442,gumi_opendata
+safety,cctv,15-1-14-2,36.1487597883101,128.31498096327,경북 구미시 봉곡남로18길 15-36,,,gumi_opendata_xlsx,443,gumi_opendata
+safety,cctv,15-1-14-3,36.1251644269162,128.328673705716,경북 구미시 금오산로22길 7-4,,,gumi_opendata_xlsx,444,gumi_opendata
+safety,cctv,15-1-14-4,36.1515622712027,128.309229854367,경북 구미시 봉곡로17길 14,,,gumi_opendata_xlsx,445,gumi_opendata
+safety,cctv,15-1-14-5,36.132553296392,128.319244939359,경북 구미시 선기로2길 51,,,gumi_opendata_xlsx,446,gumi_opendata
+safety,cctv,15-1-14-7,36.1499261368711,128.306906098287,경북 구미시 봉곡남로 44-14,,,gumi_opendata_xlsx,447,gumi_opendata
+safety,cctv,15-1-14-6,36.1314436325002,128.305776182643,경북 구미시 선기동 747-122,,,gumi_opendata_xlsx,448,gumi_opendata
+safety,cctv,15-1-14-8,36.1555491221254,128.306330924236,경북 구미시 봉곡북로7길 10,,,gumi_opendata_xlsx,449,gumi_opendata
+safety,cctv,16-1-14-1,36.1310004355925,128.318239737201,경북 구미시 선기로2길 6,,,gumi_opendata_xlsx,450,gumi_opendata
+safety,cctv,16-1-14-2,36.1289762626032,128.320508380148,경북 구미시 선기로1길 21,,,gumi_opendata_xlsx,451,gumi_opendata
+safety,cctv,16-1-14-3,36.1285939233804,128.322801683355,경북 구미시 남통동 2-3,,,gumi_opendata_xlsx,452,gumi_opendata
+safety,cctv,16-1-14-4,36.1525104795544,128.315647830896,경북 구미시 봉곡동로4길 7,,,gumi_opendata_xlsx,453,gumi_opendata
+safety,cctv,16-1-14-5,36.1448507217925,128.305478418556,경북 구미시 야은로7길 20-3,,,gumi_opendata_xlsx,454,gumi_opendata
+safety,cctv,16-1-14-6,36.1295412233901,128.325766259708,경북 구미시 원남로3길,,,gumi_opendata_xlsx,455,gumi_opendata
+safety,cctv,16-1-14-7,36.1424961603255,128.311940347826,경북 구미시 야은로11길 29,,,gumi_opendata_xlsx,456,gumi_opendata
+safety,cctv,16-1-14-8,36.1407574127231,128.311726303955,경북 구미시 도봉로1길 17,,,gumi_opendata_xlsx,457,gumi_opendata
+safety,cctv,16-1-14-9,36.1428384799901,128.310436405791,경북 구미시 봉곡로4길 5-4,,,gumi_opendata_xlsx,458,gumi_opendata
+safety,cctv,16-1-14-10,36.1561301463694,128.308553517957,경북 구미시 봉곡북로13길 20-1,,,gumi_opendata_xlsx,459,gumi_opendata
+safety,cctv,16-1-14-11,36.1559289021583,128.307284964773,경북 구미시 봉곡북로9길 13,,,gumi_opendata_xlsx,460,gumi_opendata
+safety,cctv,16-1-14-13,36.1512934908397,128.315492164457,경북 구미시 봉곡동로2길 5,,,gumi_opendata_xlsx,461,gumi_opendata
+safety,cctv,16-1-14-14,36.1516682083007,128.306997897233,경북 구미시 봉곡로15길 39,,,gumi_opendata_xlsx,462,gumi_opendata
+safety,cctv,16-1-14-15,36.1251864132424,128.332040679214,경북 구미시 금오산로16길 6,,,gumi_opendata_xlsx,463,gumi_opendata
+safety,cctv,16-1-14-16,36.1258514071487,128.332636291859,경북 구미시 금오산로10길 28,,,gumi_opendata_xlsx,464,gumi_opendata
+safety,cctv,16-1-14-17,36.1413628847397,128.314003472383,경북 구미시 도봉로3길 3-13,,,gumi_opendata_xlsx,465,gumi_opendata
+safety,cctv,16-1-14-18,36.1506678561495,128.293821369071,경북 구미시 부곡동 217-2,,,gumi_opendata_xlsx,466,gumi_opendata
+safety,cctv,16-1-14-19,36.1522228404144,128.293064445788,경북 구미시 부곡1길 36-19,,,gumi_opendata_xlsx,467,gumi_opendata
+safety,cctv,16-1-14-20,36.1569069818585,128.314381391334,경북 구미시 봉곡동 산 7-9,,,gumi_opendata_xlsx,468,gumi_opendata
+safety,cctv,16-1-14-21,,,선주원남 봉곡e편한세상 근처 e편한세상 뒤편,,,gumi_opendata_xlsx,469,gumi_opendata
+safety,cctv,16-1-14-22,36.1434873984677,128.305890568494,경북 구미시 야은로 193,,,gumi_opendata_xlsx,470,gumi_opendata
+safety,cctv,16-1-14-23,36.1510226977838,128.312840270475,경북 구미시 봉곡남로15길 18-13,,,gumi_opendata_xlsx,471,gumi_opendata
+safety,cctv,17-1-14-1,36.1479750959175,128.313057687341,경북 구미시 봉곡남로16길 18,,,gumi_opendata_xlsx,472,gumi_opendata
+safety,cctv,17-1-14-2,36.1533376075499,128.316281565171,경북 구미시 봉곡남로23길 30,,,gumi_opendata_xlsx,473,gumi_opendata
+safety,cctv,17-1-14-3,36.1271338201483,128.331550517396,경북 구미시 원남로8길 4-1,,,gumi_opendata_xlsx,474,gumi_opendata
+safety,cctv,17-1-14-4,36.124090709587,128.325893407933,경북 구미시 금오산로26길 3,,,gumi_opendata_xlsx,475,gumi_opendata
+safety,cctv,17-1-14-5,36.1262574120351,128.331871055958,경북 구미시 원남로10길 13-3,,,gumi_opendata_xlsx,476,gumi_opendata
+safety,cctv,17-1-14-6,36.1453736274059,128.310735452715,경북 구미시 봉곡로8길 7-5,,,gumi_opendata_xlsx,477,gumi_opendata
+safety,cctv,17-1-14-7,36.1275718397666,128.326631767721,경북 구미시 원남로4길 5-11,,,gumi_opendata_xlsx,478,gumi_opendata
+safety,cctv,17-1-14-8,36.1514748335084,128.311060660374,경북 구미시 봉곡로18길 3,,,gumi_opendata_xlsx,479,gumi_opendata
+safety,cctv,17-1-14-9,36.146146018003,128.30954725087,경북 구미시 봉곡로9길 5,,,gumi_opendata_xlsx,480,gumi_opendata
+safety,cctv,17-1-14-10,36.1288920572995,128.328188576082,경북 구미시 원남로1길 62,,,gumi_opendata_xlsx,481,gumi_opendata
+safety,cctv,17-1-14-11,36.1484543821998,128.315359301712,경북 구미시 봉곡남로18길 15-46,,,gumi_opendata_xlsx,482,gumi_opendata
+safety,cctv,17-1-14-12,36.1499327177658,128.31672688,경북 구미시 봉곡남로24길,,,gumi_opendata_xlsx,483,gumi_opendata
+safety,cctv,17-1-14-13,36.1429078492134,128.293271727009,경북 구미시 선기동 803,,,gumi_opendata_xlsx,484,gumi_opendata
+safety,cctv,17-1-14-14,36.1250617182725,128.331519959183,경북 구미시 금오산로 122,,,gumi_opendata_xlsx,485,gumi_opendata
+safety,cctv,19-1-14-1,36.1142541129712,128.315776521449,경북 구미시 남통동 250-3,,,gumi_opendata_xlsx,486,gumi_opendata
+safety,cctv,19-1-14-2,36.1495203066292,128.307257140468,경북 구미시 봉곡남로 44-7,,,gumi_opendata_xlsx,487,gumi_opendata
+safety,cctv,20-1-14-2,36.158276532717,128.305543751785,경북 구미시 봉곡서로11안길 10,,,gumi_opendata_xlsx,488,gumi_opendata
+safety,cctv,20-1-14-1,36.1531704257971,128.312392276461,경북 구미시 봉곡남로15길 44,,,gumi_opendata_xlsx,489,gumi_opendata
+safety,cctv,09-1-15-1,,,형곡1 신시로 131 비둘기아파트 뒷길,,,gumi_opendata_xlsx,490,gumi_opendata
+safety,cctv,12-1-15-1,36.1176126682896,128.328910851565,경북 구미시 형곡로8길 40-9,,,gumi_opendata_xlsx,491,gumi_opendata
+safety,cctv,12-1-15-2,36.112535338787,128.338254129549,경북 구미시 신시로7길 11,,,gumi_opendata_xlsx,492,gumi_opendata
+safety,cctv,14-1-15-1,36.1168125753756,128.329849965623,경북 구미시 형곡로8길 28-5,,,gumi_opendata_xlsx,493,gumi_opendata
+safety,cctv,CCTV-494,36.116134323338,128.329765447775,경북 구미시 형곡로10길 27-5,,,gumi_opendata_xlsx,494,gumi_opendata
+safety,cctv,14-1-15-2,36.1115823936652,128.331095342938,경북 구미시 형곡로18길 12,,,gumi_opendata_xlsx,495,gumi_opendata
+safety,cctv,14-1-15-3,36.112929354066,128.331903928009,경북 구미시 형곡로16길 6,,,gumi_opendata_xlsx,496,gumi_opendata
+safety,cctv,14-1-15-4,36.116224248794,128.329571381563,경북 구미시 형곡로10길 27-10,,,gumi_opendata_xlsx,497,gumi_opendata
+safety,cctv,15-1-15-1,36.1172424413662,128.337238024688,경북 구미시 신시로17길 13-2,,,gumi_opendata_xlsx,498,gumi_opendata
+safety,cctv,15-1-15-2,36.1166286783834,128.329206247354,경북 구미시 형곡로10길 31,,,gumi_opendata_xlsx,499,gumi_opendata
+safety,cctv,15-1-15-3,36.1180421338743,128.329667673638,경북 구미시 형곡로8길 28-42,,,gumi_opendata_xlsx,500,gumi_opendata
+safety,cctv,15-1-15-4,36.1150138925601,128.335584731903,경북 구미시 경은로 36,,,gumi_opendata_xlsx,501,gumi_opendata
+safety,cctv,16-1-15-1,36.1136519463102,128.340445958934,경북 구미시 신시로8길 7-6,,,gumi_opendata_xlsx,502,gumi_opendata
+safety,cctv,16-1-15-2,36.1173415590005,128.327631034388,경북 구미시 형곡로10길 51,,,gumi_opendata_xlsx,503,gumi_opendata
+safety,cctv,16-1-15-3,36.1121916234248,128.330903611184,경북 구미시 형곡로16길 19,,,gumi_opendata_xlsx,504,gumi_opendata
+safety,cctv,16-1-15-4,36.1120543617618,128.340554406917,경북 구미시 새마을로 9-6,,,gumi_opendata_xlsx,505,gumi_opendata
+safety,cctv,16-1-15-5,36.1156907390612,128.329533843264,경북 구미시 형곡로12길 30,,,gumi_opendata_xlsx,506,gumi_opendata
+safety,cctv,16-1-15-6,36.1150167701449,128.335601439879,경북 구미시 경은로 36,,,gumi_opendata_xlsx,507,gumi_opendata
+safety,cctv,16-1-15-7,36.1165723637826,128.330966660124,경북 구미시 형곡로8길 16-5,,,gumi_opendata_xlsx,508,gumi_opendata
+safety,cctv,16-1-15-8,36.1156632773521,128.33448310578,경북 구미시 형곡로5길 6,,,gumi_opendata_xlsx,509,gumi_opendata
+safety,cctv,16-1-15-9,36.1149876779639,128.331796199089,경북 구미시 형곡로12길 6,,,gumi_opendata_xlsx,510,gumi_opendata
+safety,cctv,16-1-15-10,36.1118413710279,128.335735017683,경북 구미시 형곡동로 107,,,gumi_opendata_xlsx,511,gumi_opendata
+safety,cctv,16-1-15-11,36.1150186487967,128.336628680469,경북 구미시 경은로 28,,,gumi_opendata_xlsx,512,gumi_opendata
+safety,cctv,16-1-15-13,36.1139924612269,128.334427400518,경북 구미시 경은로 52,,,gumi_opendata_xlsx,513,gumi_opendata
+safety,cctv,17-1-15-1,36.1153492875263,128.329526531624,경북 구미시 형곡로12길 23,,,gumi_opendata_xlsx,514,gumi_opendata
+safety,cctv,17-1-15-2,36.11428743335,128.331858117751,경북 구미시 형곡로14길 6,,,gumi_opendata_xlsx,515,gumi_opendata
+safety,cctv,17-1-15-3,36.1150225724948,128.334773684819,경북 구미시 형곡로5길 12-1,,,gumi_opendata_xlsx,516,gumi_opendata
+safety,cctv,17-1-15-4,36.1155142807399,128.336733261195,경북 구미시 경은로 16-10,,,gumi_opendata_xlsx,517,gumi_opendata
+safety,cctv,19-1-15-1,36.1128654686445,128.339878742632,경북 구미시 신시로8길 8-10,,,gumi_opendata_xlsx,518,gumi_opendata
+safety,cctv,20-1-15-1,36.1134150485852,128.332165123925,경북 구미시 형곡로 88,,,gumi_opendata_xlsx,519,gumi_opendata
+safety,cctv,20-1-15-2,36.1127175304333,128.336253950645,경북 구미시 경은로 72,,,gumi_opendata_xlsx,520,gumi_opendata
+safety,cctv,10-1-16-1,36.107080965918,128.33941823568,경북 구미시 형곡로36길 9,,,gumi_opendata_xlsx,521,gumi_opendata
+safety,cctv,11-1-16-1,36.1091453421663,128.333825774261,경북 구미시 형곡로27길 18,,,gumi_opendata_xlsx,522,gumi_opendata
+safety,cctv,11-1-16-2,36.1099644436593,128.331917716067,경북 구미시 형곡로20길 5,,,gumi_opendata_xlsx,523,gumi_opendata
+safety,cctv,13-1-16-1,36.106100871613,128.333198950214,경북 구미시 형곡서로1길 15,,,gumi_opendata_xlsx,524,gumi_opendata
+safety,cctv,14-1-16-2,36.1080546261512,128.338049509084,경북 구미시 신시로1길 9-20,,,gumi_opendata_xlsx,525,gumi_opendata
+safety,cctv,14-1-16-3,36.1076495637713,128.336862941106,경북 구미시 형곡로31길 10,,,gumi_opendata_xlsx,526,gumi_opendata
+safety,cctv,14-1-16-4,36.1082349791157,128.3315765673,경북 구미시 형곡로26길 6-37,,,gumi_opendata_xlsx,527,gumi_opendata
+safety,cctv,14-1-16-5,36.1095927754569,128.341394225815,경북 구미시 형곡로41길 6-5,,,gumi_opendata_xlsx,528,gumi_opendata
+safety,cctv,14-1-16-6,36.1029723477475,128.335094803857,경북 구미시 형곡동로1길 9,,,gumi_opendata_xlsx,529,gumi_opendata
+safety,cctv,14-1-16-7,36.1097688422618,128.340791975055,경북 구미시 형곡로41길 11,,,gumi_opendata_xlsx,530,gumi_opendata
+safety,cctv,14-1-16-8,36.1110418061276,128.33973581687,경북 구미시 신시로6길 4,,,gumi_opendata_xlsx,531,gumi_opendata
+safety,cctv,14-1-16-10,36.1100073770358,128.333938857174,경북 구미시 형곡로19길 18-6,,,gumi_opendata_xlsx,532,gumi_opendata
+safety,cctv,14-1-16-9,36.1059517744869,128.337496019459,경북 구미시 형곡로32길 9-2,,,gumi_opendata_xlsx,533,gumi_opendata
+safety,cctv,15-1-16-1,36.1059615809285,128.331649129797,경북 구미시 형곡서로1길 23-9,,,gumi_opendata_xlsx,534,gumi_opendata
+safety,cctv,15-1-16-2,36.1031286439754,128.33436344217,경북 구미시 형곡서로 11-5,,,gumi_opendata_xlsx,535,gumi_opendata
+safety,cctv,15-1-16-3,36.1054245274395,128.339350133453,경북 구미시 형곡로34길 26,,,gumi_opendata_xlsx,536,gumi_opendata
+safety,cctv,15-1-16-4,36.1037084149884,128.337888398854,경북 구미시 형곡동로6길 16-33,,,gumi_opendata_xlsx,537,gumi_opendata
+safety,cctv,15-1-16-5,36.1109794366501,128.334521571454,경북 구미시 형곡중앙로 24,,,gumi_opendata_xlsx,538,gumi_opendata
+safety,cctv,15-1-16-6,36.1107582867453,128.33512896865,경북 구미시 형곡서로 96,,,gumi_opendata_xlsx,539,gumi_opendata
+safety,cctv,16-1-16-1,36.1075729994645,128.339409266472,경북 구미시 형곡로36길 5-5,,,gumi_opendata_xlsx,540,gumi_opendata
+safety,cctv,16-1-16-2,36.1101164772001,128.342628619927,경북 구미시 신시로6길 33,,,gumi_opendata_xlsx,541,gumi_opendata
+safety,cctv,16-1-16-3,36.1031359252396,128.336846528654,경북 구미시 형곡동로2길 8,,,gumi_opendata_xlsx,542,gumi_opendata
+safety,cctv,16-1-16-4,36.1056769280374,128.339906995536,경북 구미시 형곡로34길 32,,,gumi_opendata_xlsx,543,gumi_opendata
+safety,cctv,16-1-16-5,36.1070850792186,128.332836346742,경북 구미시 형곡로26길 11-5,,,gumi_opendata_xlsx,544,gumi_opendata
+safety,cctv,16-1-16-6,36.10876084834,128.335562579414,경북 구미시 형곡로29길 24,,,gumi_opendata_xlsx,545,gumi_opendata
+safety,cctv,16-1-16-7,36.105909214955,128.334031242372,경북 구미시 형곡서로 33-18,,,gumi_opendata_xlsx,546,gumi_opendata
+safety,cctv,16-1-16-8,36.1059085423963,128.334026900095,경북 구미시 형곡서로 33-18,,,gumi_opendata_xlsx,547,gumi_opendata
+safety,cctv,16-1-16-9,36.1056693182177,128.339902535395,경북 구미시 형곡로34길 32,,,gumi_opendata_xlsx,548,gumi_opendata
+safety,cctv,16-1-16-10,36.1102105456348,128.339715922226,경북 구미시 신시로4길 3,,,gumi_opendata_xlsx,549,gumi_opendata
+safety,cctv,16-1-16-11,36.1098193980299,128.33282979917,경북 구미시 형곡로 125-6,,,gumi_opendata_xlsx,550,gumi_opendata
+safety,cctv,17-1-16-1,36.1076747545922,128.33555784947,경북 구미시 형곡동로 61-3,,,gumi_opendata_xlsx,551,gumi_opendata
+safety,cctv,17-1-16-2,36.1091522707438,128.333146688982,경북 구미시 형곡로23길 6-1,,,gumi_opendata_xlsx,552,gumi_opendata
+safety,cctv,17-1-16-3,36.1079979299816,128.33424547041,경북 구미시 형곡로23길 16-27,,,gumi_opendata_xlsx,553,gumi_opendata
+safety,cctv,17-1-16-4,36.10876084834,128.335562579414,경북 구미시 형곡로29길 24,,,gumi_opendata_xlsx,554,gumi_opendata
+safety,cctv,19-1-16-1,36.1060025150239,128.335314435764,경북 구미시 형곡동로5길 6-17,,,gumi_opendata_xlsx,555,gumi_opendata
+safety,cctv,20-1-16-1,36.1079895267589,128.331720788968,경북 구미시 형곡로26길 6-35,,,gumi_opendata_xlsx,556,gumi_opendata
+safety,cctv,06-1-17-1,36.1221702740297,128.358050104175,경북 구미시 칠성로2길 7,,,gumi_opendata_xlsx,557,gumi_opendata
+safety,cctv,09-1-17-1,36.1238817172294,128.362952502832,경북 구미시 야은로45길 7,,,gumi_opendata_xlsx,558,gumi_opendata
+safety,cctv,11-1-17-1,36.115975990479,128.364104728642,경북 구미시 구미대로26길 9-4,,,gumi_opendata_xlsx,559,gumi_opendata
+safety,cctv,14-1-17-1,36.1219202274437,128.365862305239,경북 구미시 신비로4길 15,,,gumi_opendata_xlsx,560,gumi_opendata
+safety,cctv,14-1-17-2,36.1276035994391,128.362183430811,경북 구미시 신평동 1,,,gumi_opendata_xlsx,561,gumi_opendata
+safety,cctv,15-1-17-1,36.1267849226677,128.362087863015,경북 구미시 야은로43길 33,,,gumi_opendata_xlsx,562,gumi_opendata
+safety,cctv,15-1-17-2,36.1246170323948,128.361170691973,경북 구미시 야은로41길 6-4,,,gumi_opendata_xlsx,563,gumi_opendata
+safety,cctv,15-1-17-3,36.1211673766689,128.364165887754,경북 구미시 신비로4길 16-3,,,gumi_opendata_xlsx,564,gumi_opendata
+safety,cctv,15-1-17-4,36.1276035994391,128.362183430811,경북 구미시 신평동 1,,,gumi_opendata_xlsx,565,gumi_opendata
+safety,cctv,16-1-17-1,36.1276035994391,128.362183430811,경북 구미시 신평동 1,,,gumi_opendata_xlsx,566,gumi_opendata
+safety,cctv,16-1-17-2,36.1276035994391,128.362183430811,경북 구미시 신평동 1,,,gumi_opendata_xlsx,567,gumi_opendata
+safety,cctv,16-1-17-3,36.1276035994391,128.362183430811,경북 구미시 신평동 1,,,gumi_opendata_xlsx,568,gumi_opendata
+safety,cctv,16-1-17-4,36.1276035994391,128.362183430811,경북 구미시 신평동 1,,,gumi_opendata_xlsx,569,gumi_opendata
+safety,cctv,16-1-17-5,36.1276035994391,128.362183430811,경북 구미시 신평동 1,,,gumi_opendata_xlsx,570,gumi_opendata
+safety,cctv,16-1-17-6,36.1276035994391,128.362183430811,경북 구미시 신평동 1,,,gumi_opendata_xlsx,571,gumi_opendata
+safety,cctv,19-1-17-1,36.1166642891525,128.363700258253,경북 구미시 구미대로26길 9-11,,,gumi_opendata_xlsx,572,gumi_opendata
+safety,cctv,19-1-17-2,36.122722801411,128.363258130271,경북 구미시 구미대로 404-3,,,gumi_opendata_xlsx,573,gumi_opendata
+safety,cctv,20-1-17-1,36.1276035994391,128.362183430811,경북 구미시 신평동 1,,,gumi_opendata_xlsx,574,gumi_opendata
+safety,cctv,14-1-18-1,36.1249375923061,128.363283879321,경북 구미시 야은로45길 20,,,gumi_opendata_xlsx,575,gumi_opendata
+safety,cctv,14-1-18-2,36.125558237683,128.367912377233,경북 구미시 신비로3길 32-119,,,gumi_opendata_xlsx,576,gumi_opendata
+safety,cctv,14-1-18-3,36.1240450327394,128.364509028642,경북 구미시 신비로1길 12-16,,,gumi_opendata_xlsx,577,gumi_opendata
+safety,cctv,14-1-18-4,36.1231513817248,128.365702364659,경북 구미시 신비로7길 9,,,gumi_opendata_xlsx,578,gumi_opendata
+safety,cctv,14-1-18-5,36.1272681194428,128.362356580698,경북 구미시 낙동강변로 889,,,gumi_opendata_xlsx,579,gumi_opendata
+safety,cctv,15-1-18-1,36.1245455250449,128.365291770764,경북 구미시 신평동 70-163,,,gumi_opendata_xlsx,580,gumi_opendata
+safety,cctv,16-1-18-1,36.1272681194428,128.362356580698,경북 구미시 낙동강변로 889,,,gumi_opendata_xlsx,581,gumi_opendata
+safety,cctv,16-1-18-2,36.1272681194428,128.362356580698,경북 구미시 낙동강변로 889,,,gumi_opendata_xlsx,582,gumi_opendata
+safety,cctv,19-1-18-1,36.1238261838543,128.366710829164,경북 구미시 신비로7길 21-2,,,gumi_opendata_xlsx,583,gumi_opendata
+safety,cctv,20-1-18-2,36.1272681194428,128.362356580698,경북 구미시 낙동강변로 889,,,gumi_opendata_xlsx,584,gumi_opendata
+safety,cctv,12-1-19-1,36.1211623023359,128.384423029281,경북 구미시 비산로7길 14-45,,,gumi_opendata_xlsx,585,gumi_opendata
+safety,cctv,14-1-19-1,36.1208075930343,128.374244643609,경북 구미시 신비로 112,,,gumi_opendata_xlsx,586,gumi_opendata
+safety,cctv,14-1-19-2,36.1205988421218,128.376046208142,경북 구미시 비산로1안길 20,,,gumi_opendata_xlsx,587,gumi_opendata
+safety,cctv,14-1-19-3,36.1209341851758,128.384106807951,경북 구미시 비산로7길 14-13,,,gumi_opendata_xlsx,588,gumi_opendata
+safety,cctv,14-1-19-4,36.1215674665013,128.38219030296,경북 구미시 비산로5안길 19-10,,,gumi_opendata_xlsx,589,gumi_opendata
+safety,cctv,14-1-19-5,36.1209288516676,128.369739893044,경북 구미시 신비로9길 5,,,gumi_opendata_xlsx,590,gumi_opendata
+safety,cctv,14-1-19-6,,,비산 수출대로 3길 100 공단주공 300단지 앞,,,gumi_opendata_xlsx,591,gumi_opendata
+safety,cctv,15-1-19-1,36.1236401251706,128.372264711062,경북 구미시 수출대로3길 130,,,gumi_opendata_xlsx,592,gumi_opendata
+safety,cctv,16-1-19-1,36.124418031891,128.382400561583,경북 구미시 비산동 63,,,gumi_opendata_xlsx,593,gumi_opendata
+safety,cctv,16-1-19-2,36.1211333845931,128.37850006936,경북 구미시 비산로3길 14-27,,,gumi_opendata_xlsx,594,gumi_opendata
+safety,cctv,16-1-19-3,36.1214824460443,128.383918728429,경북 구미시 비산로7길 26-16,,,gumi_opendata_xlsx,595,gumi_opendata
+safety,cctv,16-1-19-4,36.1210600422863,128.381955602875,경북 구미시 비산로5안길 5-20,,,gumi_opendata_xlsx,596,gumi_opendata
+safety,cctv,16-1-19-5,36.117663847227,128.37467242791,경북 구미시 수출대로3길 68-23,,,gumi_opendata_xlsx,597,gumi_opendata
+safety,cctv,16-1-19-6,36.1218201313104,128.36981380099,경북 구미시 신비로9길 13-4,,,gumi_opendata_xlsx,598,gumi_opendata
+safety,cctv,16-1-19-7,,,비산 공단1동 334-2 LG이토넥공장 4거리,,,gumi_opendata_xlsx,599,gumi_opendata
+safety,cctv,17-1-19-1,36.1209091310817,128.379881848959,경북 구미시 비산로5길 15,,,gumi_opendata_xlsx,600,gumi_opendata
+safety,cctv,17-1-19-2,36.1200359931292,128.38839181377,경북 구미시 비산로 147,,,gumi_opendata_xlsx,601,gumi_opendata
+safety,cctv,17-1-19-4,36.1197395425888,128.377228076442,경북 구미시 비산로 49,,,gumi_opendata_xlsx,602,gumi_opendata
+safety,cctv,17-1-19-5,36.1118310284013,128.385095023447,경북 구미시 수출대로 179,,,gumi_opendata_xlsx,603,gumi_opendata
+safety,cctv,19-1-19-1,36.122402479595,128.378943997706,경북 구미시 신비로 158,,,gumi_opendata_xlsx,604,gumi_opendata
+safety,cctv,19-1-19-2,36.1208807849392,128.382824131973,경북 구미시 비산로7길 18,,,gumi_opendata_xlsx,605,gumi_opendata
+safety,cctv,19-1-19-3,36.1209810585498,128.371548345417,경북 구미시 수출대로3길 111,,,gumi_opendata_xlsx,606,gumi_opendata
+safety,cctv,14-1-21-2,36.0996215590281,128.384975379591,경북 구미시 산호대로 179,,,gumi_opendata_xlsx,607,gumi_opendata
+safety,cctv,14-1-21-1,36.1014072013274,128.382865839002,경북 구미시 1공단로 186-10,,,gumi_opendata_xlsx,608,gumi_opendata
+safety,cctv,14-1-21-3,36.1099672501697,128.37796550809,경북 구미시 1공단로7길 86-5,,,gumi_opendata_xlsx,609,gumi_opendata
+safety,cctv,15-1-21-1,36.1013932369184,128.384472812335,경북 구미시 1공단로 198-8,,,gumi_opendata_xlsx,610,gumi_opendata
+safety,cctv,15-1-21-2,,,공단 1공단로 9길 30-2 공단새마을금고 앞,,,gumi_opendata_xlsx,611,gumi_opendata
+safety,cctv,16-1-21-1,36.0995568091815,128.38420762885,경북 구미시 1공단로10길 31-25,,,gumi_opendata_xlsx,612,gumi_opendata
+safety,cctv,16-1-21-2,36.1008213026236,128.384018945857,경북 구미시 1공단로 198-14,,,gumi_opendata_xlsx,613,gumi_opendata
+safety,cctv,16-1-21-3,36.1026622064424,128.384341285091,경북 구미시 1공단로9길 30-12,,,gumi_opendata_xlsx,614,gumi_opendata
+safety,cctv,16-1-21-4,36.1027591175988,128.382012067957,경북 구미시 공단동 266-7,,,gumi_opendata_xlsx,615,gumi_opendata
+safety,cctv,16-1-21-5,36.1068972254866,128.384314770614,경북 구미시 공단동 256-16,,,gumi_opendata_xlsx,616,gumi_opendata
+safety,cctv,17-1-21-1,36.1065077497235,128.384455519754,경북 구미시 산호대로 253,,,gumi_opendata_xlsx,617,gumi_opendata
+safety,cctv,17-1-21-2,36.0848302246795,128.383520621058,경북 구미시 남구미로 69,,,gumi_opendata_xlsx,618,gumi_opendata
+safety,cctv,17-1-21-3,36.1092128803757,128.392904356857,경북 구미시 공단동 343-14,,,gumi_opendata_xlsx,619,gumi_opendata
+safety,cctv,19-1-21-1,36.1012178792056,128.384511486844,경북 구미시 1공단로 198-10,,,gumi_opendata_xlsx,620,gumi_opendata
+safety,cctv,20-1-21-1,36.1043466427781,128.393316360826,경북 구미시 공단동 343-18,,,gumi_opendata_xlsx,621,gumi_opendata
+safety,cctv,11-1-22-1,36.1093384492302,128.354816815979,경북 구미시 광평동 300-3,,,gumi_opendata_xlsx,622,gumi_opendata
+safety,cctv,14-1-22-1,36.1051627251333,128.365438406466,경북 구미시 광평길 48-1,,,gumi_opendata_xlsx,623,gumi_opendata
+safety,cctv,14-1-22-2,36.106396055172,128.363600237907,경북 구미시 구미대로 220,,,gumi_opendata_xlsx,624,gumi_opendata
+safety,cctv,14-1-22-3,36.1162259615646,128.355500450763,경북 구미시 화신로10길 11-13,,,gumi_opendata_xlsx,625,gumi_opendata
+safety,cctv,14-1-22-4,36.1148603456034,128.355463316669,경북 구미시 화신로 140-1,,,gumi_opendata_xlsx,626,gumi_opendata
+safety,cctv,15-1-22-1,36.1150028831099,128.356826378642,경북 구미시 화신로8길 13,,,gumi_opendata_xlsx,627,gumi_opendata
+safety,cctv,15-1-22-2,36.1096547891969,128.352787966172,경북 구미시 박정희로25길 35-4,,,gumi_opendata_xlsx,628,gumi_opendata
+safety,cctv,15-1-22-3,36.1156125021112,128.355322090872,경북 구미시 화신로10길 5-5,,,gumi_opendata_xlsx,629,gumi_opendata
+safety,cctv,16-1-22-1,36.1076930281322,128.364885306803,경북 구미시 광평길 18,,,gumi_opendata_xlsx,630,gumi_opendata
+safety,cctv,16-1-22-2,36.1159244930694,128.354755036364,경북 구미시 화신로 154,,,gumi_opendata_xlsx,631,gumi_opendata
+safety,cctv,16-1-22-3,36.1115215217441,128.360075631233,경북 구미시 화신로 135,,,gumi_opendata_xlsx,632,gumi_opendata
+safety,cctv,16-1-22-4,36.1152997543352,128.35593188664,경북 구미시 화신로10길 9,,,gumi_opendata_xlsx,633,gumi_opendata
+safety,cctv,16-1-22-5,36.1040467173808,128.364286868056,경북 구미시 1공단로 15-49,,,gumi_opendata_xlsx,634,gumi_opendata
+safety,cctv,16-1-22-6,36.1094127493652,128.358361695726,경북 구미시 화신로4길 4,,,gumi_opendata_xlsx,635,gumi_opendata
+safety,cctv,17-1-22-1,36.1143889342307,128.35661979377,경북 구미시 광평동 113-3,,,gumi_opendata_xlsx,636,gumi_opendata
+safety,cctv,17-1-22-2,36.1066358628375,128.364422040011,경북 구미시 광평길 28-11,,,gumi_opendata_xlsx,637,gumi_opendata
+safety,cctv,17-1-22-3,36.1057713311285,128.365108356028,경북 구미시 구미대로12길 19-15,,,gumi_opendata_xlsx,638,gumi_opendata
+safety,cctv,19-1-22-1,36.1082916636338,128.364045897457,경북 구미시 구미대로 244,,,gumi_opendata_xlsx,639,gumi_opendata
+safety,cctv,19-1-22-2,36.1094358913223,128.354519422687,경북 구미시 박정희로25길 8-21,,,gumi_opendata_xlsx,640,gumi_opendata
+safety,cctv,06-1-23-1,36.0880753041295,128.357746288072,경북 구미시 상모로10길 21-8,,,gumi_opendata_xlsx,641,gumi_opendata
+safety,cctv,11-1-23-1,36.0961548824328,128.360507926558,경북 구미시 상사동로16길 16,,,gumi_opendata_xlsx,642,gumi_opendata
+safety,cctv,12-1-23-1,36.0992686593883,128.356433179485,경북 구미시 상사서로23길 13-7,,,gumi_opendata_xlsx,643,gumi_opendata
+safety,cctv,12-1-23-2,36.1018259839913,128.356976281525,경북 구미시 상사서로27길 1,,,gumi_opendata_xlsx,644,gumi_opendata
+safety,cctv,13-1-23-2,36.0867409966013,128.354249364437,경북 구미시 상모로4길 30,,,gumi_opendata_xlsx,645,gumi_opendata
+safety,cctv,13-1-23-3,36.0910595947225,128.354204880855,경북 구미시 상모로5길 19,,,gumi_opendata_xlsx,646,gumi_opendata
+safety,cctv,14-1-23-9,36.0891228497196,128.35589498126,경북 구미시 상모로8길 5-2,,,gumi_opendata_xlsx,647,gumi_opendata
+safety,cctv,13-1-23-5,36.0846827655088,128.354864959301,경북 구미시 상사서로 33-9,,,gumi_opendata_xlsx,648,gumi_opendata
+safety,cctv,13-1-23-6,36.0884507554087,128.356796497192,경북 구미시 상모로10길 18,,,gumi_opendata_xlsx,649,gumi_opendata
+safety,cctv,13-1-23-7,36.0849878474391,128.348958539136,경북 구미시 상모동 339-1,,,gumi_opendata_xlsx,650,gumi_opendata
+safety,cctv,14-1-23-1,36.0963819525955,128.357299708843,경북 구미시 상사동로15길 13,,,gumi_opendata_xlsx,651,gumi_opendata
+safety,cctv,14-1-23-2,36.0868654294022,128.354984020283,경북 구미시 상사서로3길 5,,,gumi_opendata_xlsx,652,gumi_opendata
+safety,cctv,14-1-23-3,36.0981729345038,128.360488756039,경북 구미시 상사동로20길 15,,,gumi_opendata_xlsx,653,gumi_opendata
+safety,cctv,14-1-23-4,36.0909592576647,128.353626260605,경북 구미시 상사서로9길 16,,,gumi_opendata_xlsx,654,gumi_opendata
+safety,cctv,14-1-23-5,36.089330199884,128.353089273123,경북 구미시 상사서로7길 21,,,gumi_opendata_xlsx,655,gumi_opendata
+safety,cctv,14-1-23-6,36.0863551759794,128.354053676963,경북 구미시 상모로2길 31,,,gumi_opendata_xlsx,656,gumi_opendata
+safety,cctv,14-1-23-7,36.0872307832867,128.353578088819,경북 구미시 상모로2길 21,,,gumi_opendata_xlsx,657,gumi_opendata
+safety,cctv,14-1-23-8,36.0962207025928,128.359472662575,경북 구미시 사곡로5길 16,,,gumi_opendata_xlsx,658,gumi_opendata
+safety,cctv,14-1-23-10,36.0968478307037,128.356290190631,경북 구미시 상사서로 157-10,,,gumi_opendata_xlsx,659,gumi_opendata
+safety,cctv,14-1-23-11,36.0885148654201,128.354355737106,경북 구미시 상모로4길 9,,,gumi_opendata_xlsx,660,gumi_opendata
+safety,cctv,14-1-23-12,36.0917584473761,128.354697625252,경북 구미시 상사서로11길 7,,,gumi_opendata_xlsx,661,gumi_opendata
+safety,cctv,15-1-23-1,36.0975607276735,128.357483319202,경북 구미시 상사서로18길 3,,,gumi_opendata_xlsx,662,gumi_opendata
+safety,cctv,15-1-23-2,36.0969236069482,128.361011180769,경북 구미시 상사동로16길 19-8,,,gumi_opendata_xlsx,663,gumi_opendata
+safety,cctv,15-1-23-3,36.0949415294062,128.359425311049,경북 구미시 사곡로5길 2,,,gumi_opendata_xlsx,664,gumi_opendata
+safety,cctv,15-1-23-4,36.0954204499424,128.358896269014,경북 구미시 상사동로 122,,,gumi_opendata_xlsx,665,gumi_opendata
+safety,cctv,13-1-23-8,36.0933932880938,128.360488298633,경북 구미시 상림로 81-8,,,gumi_opendata_xlsx,666,gumi_opendata
+safety,cctv,15-1-23-5,36.0922680348435,128.35956723327,경북 구미시 사곡로6길 30,,,gumi_opendata_xlsx,667,gumi_opendata
+safety,cctv,15-1-23-6,36.0943075700236,128.359417943734,경북 구미시 사곡로6길 6,,,gumi_opendata_xlsx,668,gumi_opendata
+safety,cctv,15-1-23-7,36.0899553148911,128.358068071038,경북 구미시 상모로12길 5,,,gumi_opendata_xlsx,669,gumi_opendata
+safety,cctv,15-1-23-8,36.0898137459222,128.356540695752,경북 구미시 상모로10길 4,,,gumi_opendata_xlsx,670,gumi_opendata
+safety,cctv,15-1-23-9,36.0891973310278,128.356257091788,경북 구미시 상모로8길 5-6,,,gumi_opendata_xlsx,671,gumi_opendata
+safety,cctv,15-1-23-10,36.0882423257389,128.356047835159,경북 구미시 상모로8길 15,,,gumi_opendata_xlsx,672,gumi_opendata
+safety,cctv,15-1-23-11,36.0880383790013,128.356789742218,경북 구미시 상모로8길 19-10,,,gumi_opendata_xlsx,673,gumi_opendata
+safety,cctv,15-1-23-12,36.0881094751154,128.358030984716,경북 구미시 상모로12길 26,,,gumi_opendata_xlsx,674,gumi_opendata
+safety,cctv,15-1-23-13,36.0885294564061,128.354507868346,경북 구미시 상모로6길 10-1,,,gumi_opendata_xlsx,675,gumi_opendata
+safety,cctv,15-1-23-14,36.085846078721,128.355085648828,경북 구미시 상사서로 39-6,,,gumi_opendata_xlsx,676,gumi_opendata
+safety,cctv,15-1-23-15,36.0878809717475,128.353329554579,경북 구미시 상모로2길 11-2,,,gumi_opendata_xlsx,677,gumi_opendata
+safety,cctv,15-1-23-17,36.0860971865885,128.349387938397,경북 구미시 박정희로7길 9,,,gumi_opendata_xlsx,678,gumi_opendata
+safety,cctv,16-1-23-1,36.1001328688649,128.356153224027,경북 구미시 상사서로23길 20,,,gumi_opendata_xlsx,679,gumi_opendata
+safety,cctv,16-1-23-2,36.0879093599594,128.350885754383,경북 구미시 박정희로 98-15,,,gumi_opendata_xlsx,680,gumi_opendata
+safety,cctv,16-1-23-3,36.0974559322412,128.359874465102,경북 구미시 상사동로18길 9-1,,,gumi_opendata_xlsx,681,gumi_opendata
+safety,cctv,16-1-23-4,36.1011571202653,128.356613552621,경북 구미시 상사서로25길 9,,,gumi_opendata_xlsx,682,gumi_opendata
+safety,cctv,16-1-23-5,36.099930863946,128.358655814991,경북 구미시 상사동로27길 17,,,gumi_opendata_xlsx,683,gumi_opendata
+safety,cctv,16-1-23-6,36.0904604539414,128.353731841817,경북 구미시 상사서로7길 14-9,,,gumi_opendata_xlsx,684,gumi_opendata
+safety,cctv,16-1-23-7,36.0921232030186,128.358726802271,경북 구미시 상사동로 91-13,,,gumi_opendata_xlsx,685,gumi_opendata
+safety,cctv,16-1-23-8,36.0929202559539,128.358210799077,경북 구미시 상사동로13길 9-12,,,gumi_opendata_xlsx,686,gumi_opendata
+safety,cctv,16-1-23-10,36.0978013176603,128.358740622158,경북 구미시 상사동로 147,,,gumi_opendata_xlsx,687,gumi_opendata
+safety,cctv,16-1-23-11,36.1021546944319,128.357463751513,경북 구미시 상사서로 218-3,,,gumi_opendata_xlsx,688,gumi_opendata
+safety,cctv,16-1-23-12,36.0991108033472,128.361190258378,경북 구미시 상사동로24길 21,,,gumi_opendata_xlsx,689,gumi_opendata
+safety,cctv,16-1-23-13,36.085438302525,128.349040952433,경북 구미시 박정희로5길 14,,,gumi_opendata_xlsx,690,gumi_opendata
+safety,cctv,16-1-23-14,,,상모사곡 한신휴플러스 옆길 철로변 주변,,,gumi_opendata_xlsx,691,gumi_opendata
+safety,cctv,17-1-23-14,36.0981975867092,128.35947607424,경북 구미시 상사동로20길 5-1,,,gumi_opendata_xlsx,692,gumi_opendata
+safety,cctv,17-1-23-15,36.096315601308,128.357055512072,경북 구미시 사곡로1길 18,,,gumi_opendata_xlsx,693,gumi_opendata
+safety,cctv,17-1-23-1,36.1004431782893,128.355488204284,경북 구미시 상사서로25길 20-18,,,gumi_opendata_xlsx,694,gumi_opendata
+safety,cctv,17-1-23-2,36.0868102486448,128.35571170798,경북 구미시 상사서로 50,,,gumi_opendata_xlsx,695,gumi_opendata
+safety,cctv,17-1-23-3,36.1006037649221,128.361329276033,경북 구미시 상사동로26길 21,,,gumi_opendata_xlsx,696,gumi_opendata
+safety,cctv,17-1-23-4,36.0943183261195,128.354753001979,경북 구미시 상모로1길 64,,,gumi_opendata_xlsx,697,gumi_opendata
+safety,cctv,17-1-23-5,36.0874522749357,128.348896290009,경북 구미시 박정희로9길 14,,,gumi_opendata_xlsx,698,gumi_opendata
+safety,cctv,17-1-23-6,36.0900437716174,128.353045215129,경북 구미시 상모로1길 14,,,gumi_opendata_xlsx,699,gumi_opendata
+safety,cctv,17-1-23-7,36.097975215635,128.360179994644,경북 구미시 상사동로20길 12,,,gumi_opendata_xlsx,700,gumi_opendata
+safety,cctv,17-1-23-8,36.0949038261174,128.360079533867,경북 구미시 사곡로 39,,,gumi_opendata_xlsx,701,gumi_opendata
+safety,cctv,17-1-23-9,36.0874179075099,128.355040910013,경북 구미시 상사서로 55,,,gumi_opendata_xlsx,702,gumi_opendata
+safety,cctv,17-1-23-10,36.0941186390527,128.356472789124,경북 구미시 상사서로 128,,,gumi_opendata_xlsx,703,gumi_opendata
+safety,cctv,17-1-23-11,36.0920208757704,128.354138213506,경북 구미시 상모로5길 31,,,gumi_opendata_xlsx,704,gumi_opendata
+safety,cctv,17-1-23-12,36.093300537686,128.354836124654,경북 구미시 상사서로13길 6-3,,,gumi_opendata_xlsx,705,gumi_opendata
+safety,cctv,17-1-23-13,36.0842177272587,128.353649324999,경북 구미시 상모동 460,,,gumi_opendata_xlsx,706,gumi_opendata
+safety,cctv,18-1-23-1,36.0869031824087,128.348274066849,경북 구미시 상모동 527,,,gumi_opendata_xlsx,707,gumi_opendata
+safety,cctv,18-1-23-2,36.0994471227844,128.356191072442,경북 구미시 상사서로23길 13-4,,,gumi_opendata_xlsx,708,gumi_opendata
+safety,cctv,19-1-23-1,36.098842480702,128.356634716734,경북 구미시 사곡동 470-4,,,gumi_opendata_xlsx,709,gumi_opendata
+safety,cctv,19-1-23-2,36.1016497541937,128.360223352171,경북 구미시 상사동로28길 11,,,gumi_opendata_xlsx,710,gumi_opendata
+safety,cctv,20-1-23-1,36.0872489700588,128.356806372072,경북 구미시 상모동 69-1,,,gumi_opendata_xlsx,711,gumi_opendata
+safety,cctv,11-1-25-1,36.0957764745041,128.43396136248,경북 구미시 인동35길 18-9,,,gumi_opendata_xlsx,712,gumi_opendata
+safety,cctv,11-1-25-2,36.0955121691257,128.434067037288,경북 구미시 인동35길 18-14,,,gumi_opendata_xlsx,713,gumi_opendata
+safety,cctv,11-1-25-3,36.0960415328897,128.436343071903,경북 구미시 인동35길 28-47,,,gumi_opendata_xlsx,714,gumi_opendata
+safety,cctv,11-1-25-4,36.1093059611511,128.426603660485,경북 구미시 여헌로16길 11,,,gumi_opendata_xlsx,715,gumi_opendata
+safety,cctv,11-1-25-5,36.0985431372202,128.429187192368,경북 구미시 인동19길 16-21,,,gumi_opendata_xlsx,716,gumi_opendata
+safety,cctv,12-1-25-1,36.1000846438973,128.429539681824,경북 구미시 인동19길 34,,,gumi_opendata_xlsx,717,gumi_opendata
+safety,cctv,13-1-25-1,36.0991230189738,128.427985384123,경북 구미시 인동19길 13-2,,,gumi_opendata_xlsx,718,gumi_opendata
+safety,cctv,13-1-25-3,36.0972381289219,128.431985959668,경북 구미시 인동31길 27,,,gumi_opendata_xlsx,719,gumi_opendata
+safety,cctv,13-1-25-4,36.1020248369704,128.424830123087,경북 구미시 인동9길 12-1,,,gumi_opendata_xlsx,720,gumi_opendata
+safety,cctv,13-1-25-5,36.0927062981739,128.440760601522,경북 구미시 인동46길 5,,,gumi_opendata_xlsx,721,gumi_opendata
+safety,cctv,14-1-25-1,36.094787929092,128.433185941475,경북 구미시 인동35길 6,,,gumi_opendata_xlsx,722,gumi_opendata
+safety,cctv,14-1-25-2,36.0923184346857,128.442574270858,경북 구미시 인동48길 5-66,,,gumi_opendata_xlsx,723,gumi_opendata
+safety,cctv,14-1-25-3,36.0984864141326,128.431077901674,경북 구미시 인동21길 36-16,,,gumi_opendata_xlsx,724,gumi_opendata
+safety,cctv,14-1-25-4,36.099088918816,128.429786688862,경북 구미시 인동21길 25,,,gumi_opendata_xlsx,725,gumi_opendata
+safety,cctv,14-1-25-5,36.0910491082609,128.442498777221,경북 구미시 인동50길 22,,,gumi_opendata_xlsx,726,gumi_opendata
+safety,cctv,14-1-25-6,36.1072758886637,128.423847011057,경북 구미시 여헌로11길 15,,,gumi_opendata_xlsx,727,gumi_opendata
+safety,cctv,14-1-25-7,36.1134460699664,128.425684247339,경북 구미시 검성로 32-10,,,gumi_opendata_xlsx,728,gumi_opendata
+safety,cctv,14-1-25-8,36.1163438391707,128.425661226099,경북 구미시 수출대로31길 64,,,gumi_opendata_xlsx,729,gumi_opendata
+safety,cctv,14-1-25-9,36.1040841394901,128.42592535132,경북 구미시 인동11안길 26,,,gumi_opendata_xlsx,730,gumi_opendata
+safety,cctv,14-1-25-10,36.1109052535354,128.425986028726,경북 구미시 수출대로 557,,,gumi_opendata_xlsx,731,gumi_opendata
+safety,cctv,14-1-25-11,36.1052950055924,128.421268176817,경북 구미시 여헌로7길 39-1,,,gumi_opendata_xlsx,732,gumi_opendata
+safety,cctv,14-1-25-12,36.1088800246107,128.421454263356,경북 구미시 인동중앙로7길 13,,,gumi_opendata_xlsx,733,gumi_opendata
+safety,cctv,14-1-25-13,36.1079002824793,128.41964836344,경북 구미시 인동중앙로3길 18-2,,,gumi_opendata_xlsx,734,gumi_opendata
+safety,cctv,14-1-25-14,36.0970073366006,128.427660515859,경북 구미시 인동남길 112,,,gumi_opendata_xlsx,735,gumi_opendata
+safety,cctv,14-1-25-15,36.1087366951267,128.424098704092,경북 구미시 인동중앙로10길 15-3,,,gumi_opendata_xlsx,736,gumi_opendata
+safety,cctv,14-1-25-16,36.1090331586969,128.41851725541,경북 구미시 인동중앙로11길 36,,,gumi_opendata_xlsx,737,gumi_opendata
+safety,cctv,14-1-25-17,36.08995097016,128.432209465465,경북 구미시 인동36길 45,,,gumi_opendata_xlsx,738,gumi_opendata
+safety,cctv,14-1-25-18,36.101290312618,128.429535987525,경북 구미시 인동17길 36,,,gumi_opendata_xlsx,739,gumi_opendata
+safety,cctv,14-1-25-19,36.1079371541292,128.420103223286,경북 구미시 인동중앙로3길 18-8,,,gumi_opendata_xlsx,740,gumi_opendata
+safety,cctv,14-1-25-20,36.1000442768805,128.427438422293,경북 구미시 인동19길 15-14,,,gumi_opendata_xlsx,741,gumi_opendata
+safety,cctv,15-1-25-1,36.0996019685245,128.427025129578,경북 구미시 인동19길 13-13,,,gumi_opendata_xlsx,742,gumi_opendata
+safety,cctv,15-1-25-2,36.0955741289779,128.437716811263,경북 구미시 인동43길 26-2,,,gumi_opendata_xlsx,743,gumi_opendata
+safety,cctv,15-1-25-3,36.1123105616507,128.427567672445,경북 구미시 수출대로35길 8-40,,,gumi_opendata_xlsx,744,gumi_opendata
+safety,cctv,15-1-25-4,36.104588078612,128.422891698552,경북 구미시 인동5길 15,,,gumi_opendata_xlsx,745,gumi_opendata
+safety,cctv,15-1-25-5,36.106997981302,128.425407785994,경북 구미시 여헌로 61,,,gumi_opendata_xlsx,746,gumi_opendata
+safety,cctv,15-1-25-6,36.0957184783097,128.43291892997,경북 구미시 인동35길 13-6,,,gumi_opendata_xlsx,747,gumi_opendata
+safety,cctv,15-1-25-7,36.1120672318723,128.422798181065,경북 구미시 수출대로25길 15,,,gumi_opendata_xlsx,748,gumi_opendata
+safety,cctv,15-1-25-9,36.0955518831878,128.434739063093,경북 구미시 인동39길 20,,,gumi_opendata_xlsx,749,gumi_opendata
+safety,cctv,15-1-25-12,36.1115042715975,128.426543029524,경북 구미시 수출대로35길 9,,,gumi_opendata_xlsx,750,gumi_opendata
+safety,cctv,15-1-25-13,36.1079223796904,128.42397428428,경북 구미시 인동중앙로8길 17,,,gumi_opendata_xlsx,751,gumi_opendata
+safety,cctv,16-1-25-1,36.1005145483555,128.425904808594,경북 구미시 인동11길 12-12,,,gumi_opendata_xlsx,752,gumi_opendata
+safety,cctv,16-1-25-2,36.1124396123325,128.427067810229,경북 구미시 수출대로35길 8-13,,,gumi_opendata_xlsx,753,gumi_opendata
+safety,cctv,16-1-25-3,36.103261075252,128.42561998432,경북 구미시 인동11안길 15,,,gumi_opendata_xlsx,754,gumi_opendata
+safety,cctv,16-1-25-4,36.1147254161483,128.426758002846,경북 구미시 검성로 42-15,,,gumi_opendata_xlsx,755,gumi_opendata
+safety,cctv,16-1-25-5,36.0936197285926,128.444760475361,경북 구미시 인동가산로 337-7,,,gumi_opendata_xlsx,756,gumi_opendata
+safety,cctv,16-1-25-6,36.1132733115583,128.426532937911,경북 구미시 수출대로35길 27-1,,,gumi_opendata_xlsx,757,gumi_opendata
+safety,cctv,16-1-25-7,36.1009080745793,128.42806077477,경북 구미시 인동17길 25,,,gumi_opendata_xlsx,758,gumi_opendata
+safety,cctv,16-1-25-8,36.0974352278621,128.433754777917,경북 구미시 인동31길 28-27,,,gumi_opendata_xlsx,759,gumi_opendata
+safety,cctv,16-1-25-9,36.0930654869196,128.43393297708,경북 구미시 인동38길 5-16,,,gumi_opendata_xlsx,760,gumi_opendata
+safety,cctv,16-1-25-10,36.0909016274361,128.441237933967,경북 구미시 인동46길 21-56,,,gumi_opendata_xlsx,761,gumi_opendata
+safety,cctv,16-1-25-13,36.0915176631085,128.445910538543,경북 구미시 인동54안길 5,,,gumi_opendata_xlsx,762,gumi_opendata
+safety,cctv,16-1-25-14,36.0915821175792,128.445042155797,경북 구미시 인동54안길 15,,,gumi_opendata_xlsx,763,gumi_opendata
+safety,cctv,16-1-25-15,36.0974634527658,128.464380918542,경북 구미시 신동 390-3,,,gumi_opendata_xlsx,764,gumi_opendata
+safety,cctv,16-1-25-16,36.0958095071138,128.430678268067,경북 구미시 인동북길 141,,,gumi_opendata_xlsx,765,gumi_opendata
+safety,cctv,16-1-25-17,36.1047301684018,128.421321962886,경북 구미시 인동북길 11,,,gumi_opendata_xlsx,766,gumi_opendata
+safety,cctv,16-1-25-18,36.1076844903393,128.42784196935,경북 구미시 여헌로12길 21,,,gumi_opendata_xlsx,767,gumi_opendata
+safety,cctv,16-1-25-19,36.110330573317,128.421697515388,경북 구미시 수출대로 518,,,gumi_opendata_xlsx,768,gumi_opendata
+safety,cctv,17-1-25-17,36.0964520470671,128.43408234105,경북 구미시 인동35길 28-6,,,gumi_opendata_xlsx,769,gumi_opendata
+safety,cctv,17-1-25-18,36.0944908511779,128.434253108521,경북 구미시 인동39길 6,,,gumi_opendata_xlsx,770,gumi_opendata
+safety,cctv,17-1-25-19,36.094351762117,128.434715911939,경북 구미시 인동북길 183,,,gumi_opendata_xlsx,771,gumi_opendata
+safety,cctv,17-1-25-20,36.094923547048,128.43605335996,경북 구미시 인동39길 18-32,,,gumi_opendata_xlsx,772,gumi_opendata
+safety,cctv,17-1-25-21,36.0898718792293,128.442206029153,경북 구미시 인동48길 33-10,,,gumi_opendata_xlsx,773,gumi_opendata
+safety,cctv,17-1-25-22,36.0901464506234,128.441524911344,경북 구미시 인동48길 31,,,gumi_opendata_xlsx,774,gumi_opendata
+safety,cctv,17-1-25-23,36.0901927052597,128.440421278189,경북 구미시 인동46길 33-1,,,gumi_opendata_xlsx,775,gumi_opendata
+safety,cctv,17-1-25-1,36.1084004251089,128.425853457499,경북 구미시 여헌로14길 2,,,gumi_opendata_xlsx,776,gumi_opendata
+safety,cctv,17-1-25-2,36.0965775090108,128.432046254726,경북 구미시 인동31길 22-2,,,gumi_opendata_xlsx,777,gumi_opendata
+safety,cctv,17-1-25-3,36.0972928896181,128.429128128216,경북 구미시 인동21길 10-10,,,gumi_opendata_xlsx,778,gumi_opendata
+safety,cctv,17-1-25-4,36.1101058306428,128.423768830944,경북 구미시 수출대로28길 6-15,,,gumi_opendata_xlsx,779,gumi_opendata
+safety,cctv,17-1-25-5,36.0962247637236,128.431386197607,경북 구미시 인동31길 13-2,,,gumi_opendata_xlsx,780,gumi_opendata
+safety,cctv,17-1-25-6,36.1086839846126,128.423582695937,경북 구미시 인동중앙로10길 7-6,,,gumi_opendata_xlsx,781,gumi_opendata
+safety,cctv,17-1-25-7,36.1117023980422,128.424478534976,경북 구미시 검성로 9,,,gumi_opendata_xlsx,782,gumi_opendata
+safety,cctv,17-1-25-8,36.1175760354815,128.426842567564,경북 구미시 검성로 90,,,gumi_opendata_xlsx,783,gumi_opendata
+safety,cctv,17-1-25-9,,,인동 수출대로 528,,,gumi_opendata_xlsx,784,gumi_opendata
+safety,cctv,17-1-25-10,36.0861409625075,128.443886086962,경북 구미시 인동52길 78-1,,,gumi_opendata_xlsx,785,gumi_opendata
+safety,cctv,17-1-25-11,36.1154533424456,128.435214129966,경북 구미시 검성로 186,,,gumi_opendata_xlsx,786,gumi_opendata
+safety,cctv,17-1-25-12,36.1121554661604,128.426502056615,경북 구미시 수출대로35길 15,,,gumi_opendata_xlsx,787,gumi_opendata
+safety,cctv,17-1-25-13,36.1064337168229,128.426541275265,경북 구미시 인의동 492-1,,,gumi_opendata_xlsx,788,gumi_opendata
+safety,cctv,17-1-25-14,36.0903274064506,128.446914273824,경북 구미시 인동54길 25,,,gumi_opendata_xlsx,789,gumi_opendata
+safety,cctv,17-1-25-15,36.110169961567,128.425074756209,경북 구미시 수출대로28길 5-5,,,gumi_opendata_xlsx,790,gumi_opendata
+safety,cctv,17-1-25-16,36.1153978533714,128.425651897565,경북 구미시 검성로 54-10,,,gumi_opendata_xlsx,791,gumi_opendata
+safety,cctv,18-1-25-1,36.0924729928032,128.445391885052,경북 구미시 구평동 973,,,gumi_opendata_xlsx,792,gumi_opendata
+safety,cctv,19-1-25-1,36.1176536035834,128.432792668366,경북 구미시 검성로 146,,,gumi_opendata_xlsx,793,gumi_opendata
+safety,cctv,20-1-25-1,36.1047332925185,128.451795725027,경북 구미시 구평동 2-3,,,gumi_opendata_xlsx,794,gumi_opendata
+safety,cctv,20-1-25-2,36.1036661687439,128.426888657006,경북 구미시 여헌로 32-77,,,gumi_opendata_xlsx,795,gumi_opendata
+safety,cctv,20-1-25-3,36.1073450695467,128.429848596726,경북 구미시 인의동 130-28,,,gumi_opendata_xlsx,796,gumi_opendata
+safety,cctv,10-1-24-1,36.0708399918992,128.352649693122,경북 구미시 금오대로20길 22,,,gumi_opendata_xlsx,797,gumi_opendata
+safety,cctv,13-1-24-1,36.0802858110324,128.374779604426,경북 구미시 지주중류4길,,,gumi_opendata_xlsx,798,gumi_opendata
+safety,cctv,14-1-24-11,36.0707803408731,128.36164125881,경북 구미시 오태동 364,,,gumi_opendata_xlsx,799,gumi_opendata
+safety,cctv,14-1-24-2,36.0720661506594,128.34754899679,경북 구미시 금오대로3길 16-8,,,gumi_opendata_xlsx,800,gumi_opendata
+safety,cctv,14-1-24-3,36.087096430963,128.359213371273,경북 구미시 임은동 486-3,,,gumi_opendata_xlsx,801,gumi_opendata
+safety,cctv,14-1-24-4,36.0719444182047,128.350509864045,경북 구미시 금오대로14길 5-7,,,gumi_opendata_xlsx,802,gumi_opendata
+safety,cctv,15-1-24-1,36.0878436993355,128.363651059047,경북 구미시 임은동 295-13,,,gumi_opendata_xlsx,803,gumi_opendata
+safety,cctv,15-1-24-2,36.093770697416,128.359288449061,경북 구미시 상사동로,,,gumi_opendata_xlsx,804,gumi_opendata
+safety,cctv,15-1-24-3,36.0875872615681,128.365334172288,경북 구미시 임은길 22-2,,,gumi_opendata_xlsx,805,gumi_opendata
+safety,cctv,15-1-24-4,36.0904955642059,128.359584443538,경북 구미시 임은동 483,,,gumi_opendata_xlsx,806,gumi_opendata
+safety,cctv,15-1-24-5,36.0702335878799,128.355419372524,경북 구미시 금오대로22길 29-26,,,gumi_opendata_xlsx,807,gumi_opendata
+safety,cctv,16-1-24-1,36.0702473195146,128.354539613463,경북 구미시 금오대로22길 27,,,gumi_opendata_xlsx,808,gumi_opendata
+safety,cctv,16-1-24-2,36.0674305524586,128.351974849142,경북 구미시 금오대로10길 48,,,gumi_opendata_xlsx,809,gumi_opendata
+safety,cctv,16-1-24-3,36.0884371222247,128.364899669736,경북 구미시 임은3길 10,,,gumi_opendata_xlsx,810,gumi_opendata
+safety,cctv,16-1-24-4,36.0708717235431,128.351882010799,경북 구미시 오태동 752-1,,,gumi_opendata_xlsx,811,gumi_opendata
+safety,cctv,16-1-24-5,36.0715835037456,128.348533771123,경북 구미시 금오대로3길 6-10,,,gumi_opendata_xlsx,812,gumi_opendata
+safety,cctv,16-1-24-6,,,임오 오태동 3길 84,,,gumi_opendata_xlsx,813,gumi_opendata
+safety,cctv,16-1-24-7,36.0746977344051,128.348136709996,경북 구미시 금오대로9길 24-20,,,gumi_opendata_xlsx,814,gumi_opendata
+safety,cctv,17-1-24-1,36.0869501604878,128.36015176208,경북 구미시 상림로 11,,,gumi_opendata_xlsx,815,gumi_opendata
+safety,cctv,17-1-24-2,36.0893915575157,128.359792473945,경북 구미시 상사동로6길 11-23,,,gumi_opendata_xlsx,816,gumi_opendata
+safety,cctv,17-1-24-3,36.0864897863526,128.360134171074,경북 구미시 상림로 5,,,gumi_opendata_xlsx,817,gumi_opendata
+safety,cctv,17-1-24-4,36.071407247361,128.34760380047,경북 구미시 금오대로3길 10-2,,,gumi_opendata_xlsx,818,gumi_opendata
+safety,cctv,19-1-24-1,36.0883422255699,128.367666180617,경북 구미시 왕산로5길 19,,,gumi_opendata_xlsx,819,gumi_opendata
+safety,cctv,19-1-24-2,36.0864897863526,128.360134171074,경북 구미시 상림로 5,,,gumi_opendata_xlsx,820,gumi_opendata
+safety,cctv,20-1-24-1,36.0873324528046,128.362964547682,경북 구미시 구미대로2길 15,,,gumi_opendata_xlsx,821,gumi_opendata
+safety,cctv,09-1-26-1,36.0993800471035,128.424546849856,경북 구미시 인동14길 4-1,,,gumi_opendata_xlsx,822,gumi_opendata
+safety,cctv,10-1-26-1,36.1033624778949,128.419387365683,경북 구미시 진평길 69,,,gumi_opendata_xlsx,823,gumi_opendata
+safety,cctv,11-1-26-1,36.1011019144601,128.420579360736,경북 구미시 진평4길 12,,,gumi_opendata_xlsx,824,gumi_opendata
+safety,cctv,06-1-26-1,36.0938240768649,128.426549027086,경북 구미시 인동26길 35-2,,,gumi_opendata_xlsx,825,gumi_opendata
+safety,cctv,11-1-26-2,36.0923140132828,128.428692113511,경북 구미시 인동32길 36-13,,,gumi_opendata_xlsx,826,gumi_opendata
+safety,cctv,11-1-26-3,36.0906998557589,128.429315616813,경북 구미시 인동32길 49-2,,,gumi_opendata_xlsx,827,gumi_opendata
+safety,cctv,11-1-26-4,36.0984523204113,128.425032654164,경북 구미시 인동18길 8-1,,,gumi_opendata_xlsx,828,gumi_opendata
+safety,cctv,11-1-26-5,36.0983235135687,128.422548543828,경북 구미시 인동14길 28,,,gumi_opendata_xlsx,829,gumi_opendata
+safety,cctv,12-1-26-1,36.0941511106632,128.428703275396,경북 구미시 인동28길 19-9,,,gumi_opendata_xlsx,830,gumi_opendata
+safety,cctv,13-1-26-1,36.0974072828656,128.425857651269,경북 구미시 인동20길 16,,,gumi_opendata_xlsx,831,gumi_opendata
+safety,cctv,13-1-26-3,36.0940486216047,128.423959850956,경북 구미시 인동22길 53-1,,,gumi_opendata_xlsx,832,gumi_opendata
+safety,cctv,14-1-26-1,36.0922874656233,128.431391950653,경북 구미시 인동36길 26,,,gumi_opendata_xlsx,833,gumi_opendata
+safety,cctv,14-1-26-2,36.10192545765,128.421848074638,경북 구미시 인동8길 9,,,gumi_opendata_xlsx,834,gumi_opendata
+safety,cctv,14-1-26-3,36.0978336633357,128.424247004486,경북 구미시 인동16길 23-3,,,gumi_opendata_xlsx,835,gumi_opendata
+safety,cctv,14-1-26-4,36.0967966340687,128.425467322858,경북 구미시 인동20길 21-1,,,gumi_opendata_xlsx,836,gumi_opendata
+safety,cctv,14-1-26-5,36.0952728501969,128.426789397788,경북 구미시 인동22길 21-12,,,gumi_opendata_xlsx,837,gumi_opendata
+safety,cctv,14-1-26-6,36.0988821686353,128.425554632343,경북 구미시 인동남길 84,,,gumi_opendata_xlsx,838,gumi_opendata
+safety,cctv,14-1-26-7,36.0963421475248,128.42857295014,경북 구미시 인동남길 122,,,gumi_opendata_xlsx,839,gumi_opendata
+safety,cctv,14-1-26-8,36.1037629428922,128.420398413427,경북 구미시 진평2길 41,,,gumi_opendata_xlsx,840,gumi_opendata
+safety,cctv,14-1-26-9,36.1029878949239,128.420427433034,경북 구미시 인동6길 14-1,,,gumi_opendata_xlsx,841,gumi_opendata
+safety,cctv,14-1-26-10,36.0976781159298,128.421281092038,경북 구미시 인동16길 48-4,,,gumi_opendata_xlsx,842,gumi_opendata
+safety,cctv,14-1-26-11,36.0968448174679,128.422148476483,경북 구미시 인동18길 32-20,,,gumi_opendata_xlsx,843,gumi_opendata
+safety,cctv,14-1-26-12,36.1045394467974,128.419204884104,경북 구미시 인동2길 12,,,gumi_opendata_xlsx,844,gumi_opendata
+safety,cctv,14-1-26-13,36.095594925785,128.428021357633,경북 구미시 인동26길 16,,,gumi_opendata_xlsx,845,gumi_opendata
+safety,cctv,14-1-26-14,36.1046968228049,128.41768716407,경북 구미시 진평길 91,,,gumi_opendata_xlsx,846,gumi_opendata
+safety,cctv,14-1-26-15,36.1005900072384,128.422650257125,경북 구미시 진평길 16,,,gumi_opendata_xlsx,847,gumi_opendata
+safety,cctv,14-1-26-16,36.095968073008,128.425941791368,경북 구미시 인동22길 24,,,gumi_opendata_xlsx,848,gumi_opendata
+safety,cctv,14-1-26-17,36.0937439897086,128.432015932589,경북 구미시 인동36길 14-4,,,gumi_opendata_xlsx,849,gumi_opendata
+safety,cctv,14-1-26-18,36.0936304385709,128.429941828228,경북 구미시 인동32길 18-9,,,gumi_opendata_xlsx,850,gumi_opendata
+safety,cctv,14-1-26-19,36.1025968656704,128.418566531467,경북 구미시 진평7길 9,,,gumi_opendata_xlsx,851,gumi_opendata
+safety,cctv,15-1-26-1,36.097089546269,128.423265569863,경북 구미시 인동18길 30,,,gumi_opendata_xlsx,852,gumi_opendata
+safety,cctv,15-1-26-2,36.094593443821,128.429212257411,경북 구미시 인동30길 12,,,gumi_opendata_xlsx,853,gumi_opendata
+safety,cctv,15-1-26-3,36.1004056965287,128.421324116855,경북 구미시 진평길 28,,,gumi_opendata_xlsx,854,gumi_opendata
+safety,cctv,15-1-26-4,36.1032763394158,128.420200100546,경북 구미시 진평4길 38,,,gumi_opendata_xlsx,855,gumi_opendata
+safety,cctv,15-1-26-5,36.0931010996588,128.427509686814,경북 구미시 인동28길 31-12,,,gumi_opendata_xlsx,856,gumi_opendata
+safety,cctv,15-1-26-6,36.0933124826365,128.430239289303,경북 구미시 인동32길 22-4,,,gumi_opendata_xlsx,857,gumi_opendata
+safety,cctv,15-1-26-7,36.0983235135687,128.422548543828,경북 구미시 인동14길 28,,,gumi_opendata_xlsx,858,gumi_opendata
+safety,cctv,15-1-26-8,36.0996068653953,128.424144876685,경북 구미시 인동14길 8-6,,,gumi_opendata_xlsx,859,gumi_opendata
+safety,cctv,16-1-26-1,36.092219698635,128.425201234434,경북 구미시 인동28길 53-2,,,gumi_opendata_xlsx,860,gumi_opendata
+safety,cctv,16-1-26-2,36.0955888899661,128.429381401471,경북 구미시 인동남길 134,,,gumi_opendata_xlsx,861,gumi_opendata
+safety,cctv,16-1-26-3,36.1022348347997,128.42082117826,경북 구미시 진평2길 33-12,,,gumi_opendata_xlsx,862,gumi_opendata
+safety,cctv,16-1-26-4,36.0918473082266,128.431146701887,경북 구미시 인동34길 29,,,gumi_opendata_xlsx,863,gumi_opendata
+safety,cctv,16-1-26-5,36.1041059074468,128.419075934662,경북 구미시 인동2길 14-3,,,gumi_opendata_xlsx,864,gumi_opendata
+safety,cctv,16-1-26-6,36.0927419561415,128.425439385055,경북 구미시 인동28길 50,,,gumi_opendata_xlsx,865,gumi_opendata
+safety,cctv,16-1-26-7,36.1034252867591,128.419204828811,경북 구미시 진평길 75-3,,,gumi_opendata_xlsx,866,gumi_opendata
+safety,cctv,16-1-26-8,36.1019244286005,128.419860627441,경북 구미시 진평4길 21,,,gumi_opendata_xlsx,867,gumi_opendata
+safety,cctv,16-1-26-9,36.0966257890885,128.426761007448,경북 구미시 인동20길 13-12,,,gumi_opendata_xlsx,868,gumi_opendata
+safety,cctv,16-1-26-10,36.0932580861978,128.425775911565,경북 구미시 인동26길 43-4,,,gumi_opendata_xlsx,869,gumi_opendata
+safety,cctv,16-1-26-11,36.0931718971319,128.43249530284,경북 구미시 인동36길 15,,,gumi_opendata_xlsx,870,gumi_opendata
+safety,cctv,16-1-26-12,36.0973557962501,128.422403518161,경북 구미시 인동18길 26-14,,,gumi_opendata_xlsx,871,gumi_opendata
+safety,cctv,16-1-26-13,36.0919091062115,128.43050697064,경북 구미시 인동32길 35-15,,,gumi_opendata_xlsx,872,gumi_opendata
+safety,cctv,17-1-26-17,36.0951003178297,128.423309080822,경북 구미시 인동20길 49-1,,,gumi_opendata_xlsx,873,gumi_opendata
+safety,cctv,17-1-26-18,36.0946238543668,128.421763698637,경북 구미시 인동20길 63-2,,,gumi_opendata_xlsx,874,gumi_opendata
+safety,cctv,17-1-26-19,36.0943296809104,128.421395215698,경북 구미시 인동20길 67-2,,,gumi_opendata_xlsx,875,gumi_opendata
+safety,cctv,17-1-26-1,36.0918498956409,128.429480668409,경북 구미시 인동32길 40-2,,,gumi_opendata_xlsx,876,gumi_opendata
+safety,cctv,17-1-26-2,36.0973518782419,128.422399561293,경북 구미시 인동18길 26-14,,,gumi_opendata_xlsx,877,gumi_opendata
+safety,cctv,17-1-26-3,,,진미 진평길 87~75-1,,,gumi_opendata_xlsx,878,gumi_opendata
+safety,cctv,17-1-26-4,36.0919967958048,128.42850472966,경북 구미시 인동32길 40-15,,,gumi_opendata_xlsx,879,gumi_opendata
+safety,cctv,17-1-26-5,36.091897060086,128.430519631515,경북 구미시 인동32길 35-15,,,gumi_opendata_xlsx,880,gumi_opendata
+safety,cctv,17-1-26-6,36.0939107393987,128.427466706803,경북 구미시 인동28길 29-3,,,gumi_opendata_xlsx,881,gumi_opendata
+safety,cctv,17-1-26-7,36.0924243555494,128.429285337418,경북 구미시 인동32길 32-7,,,gumi_opendata_xlsx,882,gumi_opendata
+safety,cctv,17-1-26-8,36.101973531831,128.419488743049,경북 구미시 진평길 53-1,,,gumi_opendata_xlsx,883,gumi_opendata
+safety,cctv,17-1-26-9,36.0909501683506,128.431008527483,경북 구미시 인동36길 44-4,,,gumi_opendata_xlsx,884,gumi_opendata
+safety,cctv,17-1-26-10,36.0978259345606,128.423851021211,경북 구미시 인동16길 25,,,gumi_opendata_xlsx,885,gumi_opendata
+safety,cctv,17-1-26-11,36.1026896825953,128.419715163977,경북 구미시 진평길 62,,,gumi_opendata_xlsx,886,gumi_opendata
+safety,cctv,17-1-26-12,36.0926454233669,128.431223683574,경북 구미시 인동34길 22,,,gumi_opendata_xlsx,887,gumi_opendata
+safety,cctv,17-1-26-13,36.1013331153473,128.419859757575,경북 구미시 진평길 46,,,gumi_opendata_xlsx,888,gumi_opendata
+safety,cctv,17-1-26-14,36.1029087273961,128.418857409376,경북 구미시 진평동 496-1,,,gumi_opendata_xlsx,889,gumi_opendata
+safety,cctv,17-1-26-15,,,진미 전자공고앞,,,gumi_opendata_xlsx,890,gumi_opendata
+safety,cctv,17-1-26-16,36.1035277565796,128.418511535308,경북 구미시 진평길 85-22,,,gumi_opendata_xlsx,891,gumi_opendata
+safety,cctv,19-1-26-1,36.1014738506679,128.420500111606,경북 구미시 인동6길 32,,,gumi_opendata_xlsx,892,gumi_opendata
+safety,cctv,20-1-26-1,36.0924630642592,128.424173174531,경북 구미시 인동26길 64,,,gumi_opendata_xlsx,893,gumi_opendata
+safety,cctv,11-1-27-1,36.1371346391233,128.426285601512,경북 구미시 옥계북로10길 14,,,gumi_opendata_xlsx,894,gumi_opendata
+safety,cctv,11-1-27-2,36.1372361018048,128.426898664284,경북 구미시 옥계북로10길 3-16,,,gumi_opendata_xlsx,895,gumi_opendata
+safety,cctv,12-1-27-1,36.1372340717461,128.421469911313,경북 구미시 산호대로29길 14-16,,,gumi_opendata_xlsx,896,gumi_opendata
+safety,cctv,13-1-27-1,36.1393091081172,128.416655621616,경북 구미시 산호대로25길 26-3,,,gumi_opendata_xlsx,897,gumi_opendata
+safety,cctv,14-1-27-1,36.1360897376269,128.415687800213,경북 구미시 산호대로24길 9-30,,,gumi_opendata_xlsx,898,gumi_opendata
+safety,cctv,14-1-27-2,36.143036287146,128.418160944917,경북 구미시 산호대로25안길 60,,,gumi_opendata_xlsx,899,gumi_opendata
+safety,cctv,14-1-27-3,36.1358863705241,128.416669291525,경북 구미시 산호대로24길 49,,,gumi_opendata_xlsx,900,gumi_opendata
+safety,cctv,14-1-27-4,36.1380299418899,128.42626014842,경북 구미시 옥계북로10길 4,,,gumi_opendata_xlsx,901,gumi_opendata
+safety,cctv,14-1-27-5,36.1379047840846,128.427650872538,경북 구미시 옥계북로12길 5,,,gumi_opendata_xlsx,902,gumi_opendata
+safety,cctv,14-1-27-6,36.137448966674,128.426148204948,경북 구미시 산호대로35길 12-31,,,gumi_opendata_xlsx,903,gumi_opendata
+safety,cctv,14-1-27-7,36.1367191541543,128.414171939696,경북 구미시 산호대로24길 9-3,,,gumi_opendata_xlsx,904,gumi_opendata
+safety,cctv,14-1-27-8,36.1542689347727,128.414831286809,경북 구미시 옥계동 489-1,,,gumi_opendata_xlsx,905,gumi_opendata
+safety,cctv,14-1-27-9,36.138086871735,128.397060926624,경북 구미시 대학로 23,,,gumi_opendata_xlsx,906,gumi_opendata
+safety,cctv,14-1-27-10,36.1377214538313,128.411638467057,경북 구미시 거양길 14-10,,,gumi_opendata_xlsx,907,gumi_opendata
+safety,cctv,14-1-27-11,36.1371984265728,128.428222193416,경북 구미시 옥계북로12길 13-12,,,gumi_opendata_xlsx,908,gumi_opendata
+safety,cctv,15-1-27-1,36.1367278016041,128.424618316563,경북 구미시 산호대로33길 6-10,,,gumi_opendata_xlsx,909,gumi_opendata
+safety,cctv,15-1-27-2,36.1359822594006,128.423484940102,경북 구미시 옥계동 780,,,gumi_opendata_xlsx,910,gumi_opendata
+safety,cctv,15-1-27-3,36.1353506948814,128.42234431103,경북 구미시 옥계남로5길 3-30,,,gumi_opendata_xlsx,911,gumi_opendata
+safety,cctv,15-1-27-4,36.1398379941431,128.417027635901,경북 구미시 산호대로25길 34-6,,,gumi_opendata_xlsx,912,gumi_opendata
+safety,cctv,15-1-27-5,36.1372595371723,128.420197037121,경북 구미시 산호대로29길 8-3,,,gumi_opendata_xlsx,913,gumi_opendata
+safety,cctv,15-1-27-6,36.1460321504852,128.418467309874,경북 구미시 흥안로1길 13-15,,,gumi_opendata_xlsx,914,gumi_opendata
+safety,cctv,16-1-27-1,36.1381170689157,128.410221896834,경북 구미시 거의동 137-1,,,gumi_opendata_xlsx,915,gumi_opendata
+safety,cctv,16-1-27-2,36.1369417106539,128.397223479106,경북 구미시 대학로 17-11,,,gumi_opendata_xlsx,916,gumi_opendata
+safety,cctv,16-1-27-3,36.1416886122314,128.416100701662,경북 구미시 옥계동 593-1,,,gumi_opendata_xlsx,917,gumi_opendata
+safety,cctv,16-1-27-4,36.1456332800833,128.417998269365,경북 구미시 흥안로1길 15,,,gumi_opendata_xlsx,918,gumi_opendata
+safety,cctv,16-1-27-5,36.149013387577,128.417284475219,경북 구미시 흥안로2길 28,,,gumi_opendata_xlsx,919,gumi_opendata
+safety,cctv,16-1-27-6,,,양포 구포동 688,,,gumi_opendata_xlsx,920,gumi_opendata
+safety,cctv,16-1-27-7,36.137440219689,128.411301374117,경북 구미시 거양길 4-17,,,gumi_opendata_xlsx,921,gumi_opendata
+safety,cctv,16-1-27-8,36.1393885800274,128.416001035684,경북 구미시 산호대로25길 25-4,,,gumi_opendata_xlsx,922,gumi_opendata
+safety,cctv,16-1-27-9,36.1475375716468,128.416846269898,경북 구미시 흥안로2길 5-4,,,gumi_opendata_xlsx,923,gumi_opendata
+safety,cctv,16-1-27-10,36.1481078652089,128.41778516199,경북 구미시 흥안로2길 6-65,,,gumi_opendata_xlsx,924,gumi_opendata
+safety,cctv,16-1-27-11,,,양포 양포동 358-3 금오공대 방면 우측 원룸촌,,,gumi_opendata_xlsx,925,gumi_opendata
+safety,cctv,16-1-27-12,36.1314727505885,128.392689487695,경북 구미시 거양길 231-7,,,gumi_opendata_xlsx,926,gumi_opendata
+safety,cctv,17-1-27-7,36.1379866416932,128.423204092767,경북 구미시 옥계북로 52,,,gumi_opendata_xlsx,927,gumi_opendata
+safety,cctv,17-1-27-8,36.137965770774,128.424603150489,경북 구미시 옥계북로 64,,,gumi_opendata_xlsx,928,gumi_opendata
+safety,cctv,17-1-27-9,36.1371821469127,128.422670541522,경북 구미시 산호대로31길 12-21,,,gumi_opendata_xlsx,929,gumi_opendata
+safety,cctv,17-1-27-10,36.13693057644,128.423836123387,경북 구미시 산호대로33길 6-1,,,gumi_opendata_xlsx,930,gumi_opendata
+safety,cctv,17-1-27-11,36.1374942162961,128.42539781983,경북 구미시 산호대로35길 12-1,,,gumi_opendata_xlsx,931,gumi_opendata
+safety,cctv,17-1-27-1,36.135161918796,128.421690812101,경북 구미시 산호대로32길 14,,,gumi_opendata_xlsx,932,gumi_opendata
+safety,cctv,17-1-27-2,36.1395467300725,128.396316921807,경북 구미시 대학로 39,,,gumi_opendata_xlsx,933,gumi_opendata
+safety,cctv,17-1-27-3,36.1360357266275,128.425414205641,경북 구미시 옥계남로 82-1,,,gumi_opendata_xlsx,934,gumi_opendata
+safety,cctv,17-1-27-4,36.1371137364294,128.408002323855,경북 구미시 거의동 73-7,,,gumi_opendata_xlsx,935,gumi_opendata
+safety,cctv,17-1-27-5,36.1338962663291,128.397075166988,경북 구미시 양호동 산 52-10,,,gumi_opendata_xlsx,936,gumi_opendata
+safety,cctv,17-1-27-6,36.1309104946913,128.393467576254,경북 구미시 양호동 237,,,gumi_opendata_xlsx,937,gumi_opendata
+safety,cctv,19-1-27-1,36.139265583004,128.41825437944,경북 구미시 옥계북로1길 3-9,,,gumi_opendata_xlsx,938,gumi_opendata
+safety,cctv,19-1-27-2,36.1390633650755,128.419600868611,경북 구미시 옥계북로1길 8-8,,,gumi_opendata_xlsx,939,gumi_opendata

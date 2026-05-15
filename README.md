@@ -52,11 +52,19 @@ PC별로 다른 두 가지만 보강해주세요.
 1. **Android SDK 경로** — `android/local.properties`에 `sdk.dir` 라인이 없습니다. Android Studio가 첫 sync 시 자동으로 채우거나, `ANDROID_HOME` 환경변수가 잡혀 있으면 그대로 사용합니다.
 2. **카카오/Google ARCore 키해시** — `build.gradle.kts:30`의 카카오 native 키와 `local.properties`의 `GEOSPATIAL_API_KEY`는 각각 카카오/Google Cloud 콘솔에서 *현재 PC의 디버그 keystore SHA1*에 묶여 있습니다. 새 PC에서는 본인 SHA1을 콘솔에 추가해야 카카오맵 타일 / Geospatial 앵커가 동작합니다.
    ```bash
+   # (1) 패키지 이름 확인 — 고정값. build.gradle.kts의 applicationId에서 확인 가능.
+   grep applicationId android/app/build.gradle.kts
+   # → applicationId = "com.arproperty.android"
+
+   # (2) 디지털 지문(SHA-1) 확인 — 본인 PC의 디버그 keystore에서 추출.
    keytool -list -v -keystore ~/.android/debug.keystore \
-     -alias androiddebugkey -storepass android -keypass android
-   # SHA1 라인을 복사해서 카카오 developers 콘솔 → 앱 → 플랫폼 → Android 키해시에 추가
-   # (카카오는 SHA1을 base64로 변환한 키해시를 요구)
-   # Google Cloud 콘솔 → API 및 서비스 → 사용자 인증 정보 → 해당 API 키의 "애플리케이션 제한사항(Android 앱)"에도 동일 SHA1 + 패키지명(com.arproperty.android) 추가 (미등록 시 ARCore Geospatial 앵커 비활성)
+     -alias androiddebugkey -storepass android -keypass android | grep SHA1
+   # → SHA1: BB:AC:B7:4F:E8:0E:... (이 라인의 16진수 값을 그대로 사용)
+
+   # (3) 위 두 값(패키지명 + SHA1)을 다음 두 콘솔에 등록:
+   #   - 카카오 developers 콘솔 → 앱 → 플랫폼 → Android 키해시 (카카오는 SHA1을 base64로 변환한 키해시를 요구)
+   #   - Google Cloud 콘솔 → API 및 서비스 → 사용자 인증 정보 → 해당 API 키 → "애플리케이션 제한사항(Android 앱)" → +Add
+   #     (미등록 시 ARCore Geospatial 앵커 비활성. 적용까지 최대 5분 소요)
    ```
 
 ### 지금 바로 가능한 것

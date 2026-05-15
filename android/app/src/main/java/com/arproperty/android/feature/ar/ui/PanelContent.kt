@@ -19,115 +19,140 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import com.arproperty.android.core.model.BuildingSummary
 
 @Composable
 fun PanelContent(
+    building: BuildingSummary?,
     onDetailClick: () -> Unit,
-    onMoveToMapPage: () -> Unit
+    onMoveToMapPage: () -> Unit,
 ) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .height(350.dp)
-            .padding(
-                start = 24.dp,
-                end = 24.dp,
-                top = 30.dp,
-                bottom = 10.dp
-            )
+            .padding(start = 24.dp, end = 24.dp, top = 30.dp, bottom = 10.dp),
     ) {
-        // 건물명
-        Text(
-            text = "[건물명]",
-            fontSize = 28.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color.Black
-        )
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Column(
-            modifier = Modifier.fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(8.dp) // 줄 사이 간격
-        ) {
-            // 1. 최근 거래가 줄
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween, // 양 끝으로 밀어내기
-                verticalAlignment = Alignment.CenterVertically
-            ) {
+        if (building == null) {
+            Text(
+                text = "주변 건물을 탭하세요",
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Gray,
+            )
+            Spacer(modifier = Modifier.height(12.dp))
+            Text(
+                text = "AR 카메라 화면 하단의 칩 목록에서 단지를 선택하면 정보가 표시됩니다.",
+                fontSize = 14.sp,
+                color = Color.Gray,
+            )
+        } else {
+            Text(
+                text = "${building.complexName} ${building.dongName}",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black,
+            )
+            building.distanceMeters?.let {
                 Text(
-                    text = "최근 거래가",
-                    fontSize = 16.sp,
-                    color = Color.Gray
-                )
-                Text(
-                    text = "1억",
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Black
-                )
-            }
-
-            // 2. 전용면적 줄
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "전용면적",
-                    fontSize = 16.sp,
-                    color = Color.Gray
-                )
-                Text(
-                    text = "84㎡",
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Black
-                )
-            }
-        }
-
-        Row(
-            verticalAlignment = Alignment.Bottom,
-            modifier = Modifier.padding(vertical = 8.dp)
-        ) {
-            Button(
-                onClick = onDetailClick,
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFFD2D2D2),
-                    contentColor = Color(0xFF005CAF)
-                ),
-                shape = RoundedCornerShape(12.dp),
-                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
-                elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp) // 평평한 디자인
-            ) {
-                Text(
-                    text = "상세정보",
+                    text = "거리 약 ${it.toInt()}m · 등급 ${building.livabilityGrade ?: "-"}",
                     fontSize = 14.sp,
-                    fontWeight = FontWeight.Bold
+                    color = Color.Gray,
                 )
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text("최근 거래가", fontSize = 16.sp, color = Color.Gray)
+                    Text(
+                        text = formatKoreanPrice(building.latestTrade?.dealAmount),
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.Black,
+                    )
+                }
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text("전용면적", fontSize = 16.sp, color = Color.Gray)
+                    Text(
+                        text = building.latestTrade?.exclusiveArea
+                            ?.let { "%.1f㎡".format(it) } ?: "—",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.Black,
+                    )
+                }
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text("지상 층수", fontSize = 16.sp, color = Color.Gray)
+                    Text(
+                        text = building.groundFloors?.let { "${it}층" } ?: "—",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.Black,
+                    )
+                }
+            }
+
+            Row(
+                verticalAlignment = Alignment.Bottom,
+                modifier = Modifier.padding(vertical = 8.dp),
+            ) {
+                Button(
+                    onClick = onDetailClick,
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFFD2D2D2),
+                        contentColor = Color(0xFF005CAF),
+                    ),
+                    shape = RoundedCornerShape(12.dp),
+                    contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+                    elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp),
+                ) {
+                    Text(text = "상세정보", fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                }
             }
         }
 
         Spacer(modifier = Modifier.height(30.dp))
 
-
         Button(
             onClick = onMoveToMapPage,
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFF005CAF),
-                contentColor = Color.White
+                contentColor = Color.White,
             ),
             shape = RoundedCornerShape(12.dp),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
         ) {
-            Text(
-                text = "지도 페이지 이동",
-                fontWeight = FontWeight.Bold
-            )
+            Text(text = "지도 페이지 이동", fontWeight = FontWeight.Bold)
         }
+    }
+}
+
+internal fun formatKoreanPrice(amountManwon: Int?): String {
+    if (amountManwon == null) return "—"
+    val eok = amountManwon / 10000
+    val man = amountManwon % 10000
+    return when {
+        eok > 0 && man > 0 -> "%d억 %,d".format(eok, man)
+        eok > 0 -> "%d억".format(eok)
+        else -> "%,d만".format(man)
     }
 }

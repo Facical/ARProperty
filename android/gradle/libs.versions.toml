@@ -11,7 +11,6 @@ serialization = "1.11.0"
 retrofit = "3.0.0"
 retrofitKotlinxSerialization = "1.0.0"
 okhttp = "5.3.2"
-mapsCompose = "8.3.0"
 playServicesLocation = "21.3.0"
 arcore = "1.53.0"
 arsceneview = "2.3.0"
@@ -37,7 +36,6 @@ kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-kotlinx-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerialization" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
-maps-compose = { group = "com.google.maps.android", name = "maps-compose", version.ref = "mapsCompose" }
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 arcore = { group = "com.google.ar", name = "core", version.ref = "arcore" }
 arsceneview = { group = "io.github.sceneview", name = "arsceneview", version.ref = "arsceneview" }

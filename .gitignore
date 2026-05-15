@@ -24,10 +24,15 @@ backend/local.properties
 .DS_Store
 Thumbs.db
 
+# macOS iCloud Drive duplicates ("X 2.kt", "X 2.java" 등)
+**/* 2.*
+**/* 2
+
 # Environment / Secrets
 .env
 .env.*
 !.env.example
+!backend/.env
 *.key
 credentials.json
 secrets/
@@ -40,7 +45,6 @@ secrets/
 *.aab
 *.dex
 *.aar
-android/local.properties
 android/.gradle/
 android/build/
 android/app/build/

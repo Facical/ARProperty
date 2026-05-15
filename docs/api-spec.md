@@ -7,6 +7,16 @@
 
 이 문서는 응답 형식과 필드 계약을 정의합니다. 실제 구현 진행 상태는 [README.md](../README.md)의 `현재 저장소 상태`를 기준으로 확인합니다.
 
+### 데이터 적재 (백엔드 내부)
+
+API 응답 스키마와는 별개로, `apt_complex_master.centroid` 좌표는 다음 파이프라인으로 적재됩니다.
+
+- **단지 목록**: 공공데이터 K-apt `AptListService3/getLegaldongAptList3` (`bjdCode` 단위)
+- **단지 좌표**: Kakao Local 키워드 검색(`/v2/local/search/keyword.json`)으로 `단지명 + 도로명주소`를 조회 → 응답의 `x`(lon)/`y`(lat) 사용
+- **트리거**: `./gradlew bootRun --args='--sync-okgye-complex'`
+
+응답 스키마에는 영향이 없습니다(단지/건물 좌표 필드는 그대로).
+
 ## 공통 규칙
 
 ### 응답 래퍼
@@ -104,13 +114,13 @@
 | `lat` | float | O | 위도 |
 | `lon` | float | O | 경도 |
 | `radius` | int | X | 반경(m), 기본값 `500`, 최대 `2000` |
-| `min_price` | int | X | 최소 거래가 |
-| `max_price` | int | X | 최대 거래가 |
-| `min_area` | float | X | 최소 전용면적 |
-| `max_area` | float | X | 최대 전용면적 |
-| `min_grade` | string | X | 최소 편의시설 등급 (`S`, `A`, `B`, `C`, `D`, `F`) |
-| `page` | int | X | 페이지 번호 |
-| `page_size` | int | X | 페이지 크기 |
+| `min_price` | int | X | 최소 거래가 *(v1 미구현, 무시됨)* |
+| `max_price` | int | X | 최대 거래가 *(v1 미구현, 무시됨)* |
+| `min_area` | float | X | 최소 전용면적 *(v1 미구현, 무시됨)* |
+| `max_area` | float | X | 최대 전용면적 *(v1 미구현, 무시됨)* |
+| `min_grade` | string | X | 최소 편의시설 등급 `S/A/B/C/D/F` *(v1 미구현, 무시됨)* |
+| `page` | int | X | 페이지 번호, 기본값 `1` |
+| `page_size` | int | X | 페이지 크기, 기본값 `20`, 최대 `100` |
 
 #### Response Example
 

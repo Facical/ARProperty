@@ -60,6 +60,18 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import androidx.activity.ComponentActivity
+import android.content.ContextWrapper
+import com.arproperty.android.feature.shared.SharedSelectionViewModel
+
+private fun Context.requireActivity(): ComponentActivity {
+    var current: Context = this
+    while (current is ContextWrapper) {
+        if (current is ComponentActivity) return current
+        current = current.baseContext
+    }
+    error("Context is not a ComponentActivity")
+}
 
 // 6개 카테고리 (백엔드 category enum과 일치)
 internal val INFRA_CATEGORIES: List<Pair<String, String>> = listOf(
@@ -269,6 +281,9 @@ fun MapRoute(
         factory = MapViewModelFactory(appContainer.livabilityRepository),
     )
     val uiState by viewModel.uiState.collectAsState()
+    val activity = remember(context) { context.requireActivity() }
+    val sharedVm: SharedSelectionViewModel = viewModel(viewModelStoreOwner = activity)
+    val selectedBuilding by sharedVm.selectedBuilding.collectAsState()
 
     var preparedMap by remember {
         mutableStateOf<KakaoMap?>(null)
@@ -312,6 +327,13 @@ fun MapRoute(
             style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier.padding(16.dp)
         )
+        selectedBuilding?.let {
+            Text(
+                text = "AR에서 선택: ${it.complexName} ${it.dongName}",
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(horizontal = 16.dp)
+            )
+        }
 
         Box(
             modifier = Modifier
@@ -345,27 +367,6 @@ fun MapRoute(
                 body = "local.properties에 KAKAO_NATIVE_APP_KEY를 넣으면 카카오맵을 사용할 수 있습니다."
             )
         }
-
-//구글맵 관련 내용이라 일단 주석처리
-//        if (BuildConfig.HAS_MAPS_API_KEY) {
-//            GoogleMap(
-//                modifier = Modifier
-//                    .fillMaxSize()
-//                    .weight(1f, fill = false),
-//                cameraPositionState = cameraPositionState,
-//            ) {
-//                Marker(
-//                    state = MarkerState(position = uiState.gumiCenter),
-//                    title = "구미 파일럿 위치",
-//                    snippet = "초기 지도 scaffold",
-//                )
-//            }
-//        } else {
-//            PlaceholderCard(
-//                title = "MAPS_API_KEY가 비어 있습니다",
-//                body = "지도 SDK는 연결됐지만 키가 없어 placeholder 상태로 유지됩니다. local.properties에 MAPS_API_KEY를 넣으면 실제 지도가 표시됩니다.",
-//            )
-//        }
 
 //        PlaceholderCard(
 //            title = "지도 화면 Placeholder",

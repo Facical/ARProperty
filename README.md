@@ -56,6 +56,7 @@ PC별로 다른 두 가지만 보강해주세요.
      -alias androiddebugkey -storepass android -keypass android
    # SHA1 라인을 복사해서 카카오 developers 콘솔 → 앱 → 플랫폼 → Android 키해시에 추가
    # (카카오는 SHA1을 base64로 변환한 키해시를 요구)
+   # Google Cloud 콘솔 → API 및 서비스 → 사용자 인증 정보 → 해당 API 키의 "애플리케이션 제한사항(Android 앱)"에도 동일 SHA1 + 패키지명(com.arproperty.android) 추가 (미등록 시 ARCore Geospatial 앵커 비활성)
    ```
 
 ### 지금 바로 가능한 것

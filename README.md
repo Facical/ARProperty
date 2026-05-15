@@ -13,9 +13,10 @@
 
 | 영역 | 현재 상태 | 비고 |
 |------|-----------|------|
-| Android 앱 | Android Studio Compose scaffold 존재 | Navigation, placeholder 화면, 네트워크/AR/Map 연결용 뼈대 포함 |
-| 백엔드 | Spring Boot 앱 부팅 가능 | `/health` + `GET /api/v1/buildings/nearby` 엔드포인트 동작. 그 외 `complexes`, `livability`, 거래 상세는 컨트롤러 스텁 상태 |
-| 데이터 수집 | Python 수집 스크립트와 법정동 매핑 존재 | 구미시 대상 수집 뼈대가 준비된 상태 |
+| Android 앱 | Compose 기반 실 UI 동작 | `ar`/`map`/`livability`/`building` 4개 feature 모듈, DetailPopup/PanelContent, 카카오맵, ARCore Geospatial 통합, BaseUrl 런타임 오버라이드 다이얼로그 포함 |
+| 백엔드 | Spring Boot 앱 정상 가동 | 동작: `/health`, `GET /api/v1/buildings/nearby`, `GET /api/v1/livability/infra/nearby`. 스텁: `ComplexController`, `TradeController` (클래스만 존재) |
+| 데이터 적재 | 옥계동 단지/건물 sync 검증 완료 | `--sync-okgye-complex` (단지 17개), `--sync-okgye-buildings` (동 99개) 완료. Python 수집 스크립트 11종은 보조 경로로 유지 |
+| 인프라 | `docker-compose up -d` 한 줄로 db/redis/backend 전부 가동 | `backend/.env`가 git에 포함되어 있어 clone 직후 즉시 부팅 가능 |
 | 문서 | 핵심 기준 문서 재정리 완료 | 과거 조사/초안 문서는 `docs/archive/`에 보존 |
 
 ## 현재 구현됨 vs 목표 범위
@@ -23,10 +24,11 @@
 ### 현재 구현됨
 
 - PostgreSQL/PostGIS 초기 스키마: `backend/scripts/init_db.sql`
-- Spring Boot 빌드 설정과 환경변수 예시
-- Docker Compose로 `db`, `redis` 실행 설정
-- 데이터 수집 스크립트 초안
-- Android Studio Compose 프로젝트 뼈대
+- Spring Boot 백엔드: `/health`, `buildings/nearby`, `livability/infra/nearby` 동작
+- 옥계동 데이터 적재 파이프라인: 공공데이터 K-apt → Kakao Local 좌표 → VWorld 동 폴리곤
+- Docker Compose로 `db`, `redis`, `backend` 일괄 가동 (`backend/.env` 포함)
+- Android Compose 앱: AR 카메라 + 카카오맵 + 동적 단지 마커(등급별 색상) + 단지 칩 선택 + DetailPopup + 런타임 BaseUrl 오버라이드
+- 데이터 수집 Python 스크립트 11종 (`data/collectors/`)
 - 프로젝트 기준 문서와 API 계약 문서
 
 ### 설계상 목표
@@ -87,33 +89,42 @@ PC별로 다른 두 가지만 보강해주세요.
 ### 지금 바로 가능한 것
 
 ```bash
-# DB / Redis 실행
-docker-compose up -d db redis
+# DB + Redis + 백엔드 한 번에 가동 (포트 8080)
+docker-compose up -d
 
-# 옥계동 데모 시드 데이터 적재 (선택, 멱등 SQL — 단지는 sync로 채워야 함)
+# (선택) 옥계동 데모 시드 SQL — 단지 좌표는 아래 sync로 채우는 게 우선
 docker exec -i $(docker-compose ps -q db) psql -U arproperty -d arproperty \
   < backend/scripts/seed_demo_okgye.sql
 
-# 백엔드 부팅 (포트 8080)
-cd backend
-./gradlew bootRun
-
 # 옥계동 실 단지 좌표 적재 (공공데이터 apt_list → Kakao Local 자동 조회)
-# 필요 env: DATA_GO_KR_API_KEY, KAKAO_REST_API_KEY
-./gradlew bootRun --args='--sync-okgye-complex'
+# 필요 env: DATA_GO_KR_API_KEY, KAKAO_REST_API_KEY (이미 backend/.env에 포함)
+docker run --rm --network arproperty_default --env-file backend/.env \
+  -e DB_HOST=db -e DB_PORT=5432 -e DB_NAME=arproperty \
+  -e DB_USERNAME=arproperty -e DB_PASSWORD=devpassword \
+  -e REDIS_HOST=redis -e REDIS_PORT=6379 \
+  arproperty-backend java -jar app.jar \
+  --sync-okgye-complex --spring.main.web-application-type=none
 
 # 옥계동 동(棟) 단위 폴리곤·centroid 적재 (VWorld 2D Data → 단지 매칭)
 # 필요 env: VWORLD_API_KEY (반드시 sync-okgye-complex 이후 실행)
-./gradlew bootRun --args='--sync-okgye-buildings'
+docker run --rm --network arproperty_default --env-file backend/.env \
+  -e DB_HOST=db -e DB_PORT=5432 -e DB_NAME=arproperty \
+  -e DB_USERNAME=arproperty -e DB_PASSWORD=devpassword \
+  -e REDIS_HOST=redis -e REDIS_PORT=6379 \
+  arproperty-backend java -jar app.jar \
+  --sync-okgye-buildings --spring.main.web-application-type=none
 
-# 주변 건물 API 확인
-curl 'http://localhost:8080/api/v1/buildings/nearby?lat=36.13&lon=128.34&radius=500'
+# 주변 건물 API 확인 (옥계동 좌표)
+curl 'http://localhost:8080/api/v1/buildings/nearby?lat=36.139&lon=128.432&radius=1000'
 
-# Android 앱 디버그 빌드
+# 도커 없이 호스트에서 백엔드 띄우려면 (포트 8080 충돌 시 위 docker-compose 중지 필요)
+cd backend && ./gradlew bootRun
+
+# Android 앱 디버그 빌드 + 실기기 설치
 cd android
-./gradlew :app:assembleDebug
+ANDROID_HOME=~/Library/Android/sdk ./gradlew :app:installDebug   # macOS 예시
 
-# Python 수집 스크립트용 가상환경 준비
+# Python 수집 스크립트용 가상환경 준비 (백엔드 sync 외 보조 분석용)
 cd data/collectors
 python -m venv .venv
 source .venv/bin/activate
@@ -122,10 +133,10 @@ pip install -r requirements.txt
 
 ### 아직 불가능하거나 미완성인 것
 
-- 백엔드는 `/health` 와 `GET /api/v1/buildings/nearby`만 동작합니다. `buildings/{id}`, `buildings/{id}/trades`, `complexes`, `livability` 엔드포인트는 컨트롤러 스텁 상태입니다.
-- Android AR 화면은 `nearby` API를 호출해 옥계동 주변 단지 마커를 동적으로 그리고 등급별 색상(녹/황/적)으로 표시하지만, 마커 직접 탭은 아직 없고 화면 하단 칩 목록에서 단지를 선택하는 방식입니다.
+- 백엔드 컨트롤러 중 `ComplexController`, `TradeController`는 클래스만 있고 매핑이 비어 있습니다. `buildings/{id}`, `buildings/{id}/trades`, `complexes/*` 엔드포인트도 아직 없습니다.
+- Android AR 화면은 `nearby` API로 옥계동 주변 단지 마커를 동적으로 그리고 등급별 색상(녹/황/적)으로 표시하지만, 마커 직접 탭은 아직 없고 화면 하단 칩 목록에서 단지를 선택하는 방식입니다.
 - DetailPopup의 거래 이력 다건/건물 상세는 `buildings/{id}` 엔드포인트가 추가될 때 함께 채워집니다.
-- ARCore Geospatial API는 `local.properties`에 `GEOSPATIAL_API_KEY=...`를 추가했을 때만 자동 활성화됩니다. 키가 없으면 카메라/세션은 정상 동작하고 Geospatial만 비활성으로 표시됩니다.
+- ARCore Geospatial API는 `local.properties`의 `GEOSPATIAL_API_KEY`가 채워지고 *현재 PC의 디버그 keystore SHA1*이 GCP 콘솔에 등록돼 있을 때만 활성화됩니다. 둘 중 하나라도 빠지면 카메라/세션은 정상 동작하고 Geospatial만 비활성으로 표시됩니다.
 
 ## 시연용 백엔드 외부 노출
 

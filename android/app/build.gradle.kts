@@ -20,6 +20,7 @@ fun localProperty(name: String, defaultValue: String): String =
 
 val geospatialApiKey = localProperty("GEOSPATIAL_API_KEY", "")
 val baseUrl = localProperty("ARPROPERTY_BASE_URL", "http://10.0.2.2:8080/")
+val debugBaseUrl = localProperty("ARPROPERTY_DEBUG_BASE_URL", baseUrl)
 
 // 외부 빌더 환경에서도 동작하도록 fallback에 실제 네이티브 앱 키를 둔다.
 // local.properties의 KAKAO_NATIVE_APP_KEY가 있으면 그 값이 우선.
@@ -49,6 +50,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"$debugBaseUrl\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -71,6 +75,7 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            pickFirsts += "assets/PublicSuffixDatabase.list"
         }
     }
 }

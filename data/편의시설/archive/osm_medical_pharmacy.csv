@@ -1,0 +1,6 @@
+﻿category,sub_category,name,lat,lon,address,phone,operator,osm_type,osm_id,data_source
+medical,pharmacy,아시아약국,36.1232713,128.3631841,,,,node,4663287693,manual
+medical,pharmacy,지키미약국,36.13837,128.4285238,옥계북로 98,,,node,12296828521,manual
+medical,pharmacy,손수약국,36.1582055,128.3395067,,,,node,13484064323,manual
+medical,pharmacy,호수약국,36.1615406,128.3439557,,,,node,13484159908,manual
+medical,pharmacy,미르약국,36.1105398,128.3357333,,,,way,503157530,manual

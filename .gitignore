@@ -3,8 +3,10 @@
 *.jar
 *.war
 backend/build/
+backend/bin/
 backend/.gradle/
 backend/out/
+backend/local.properties
 .gradle/
 !backend/gradle/wrapper/gradle-wrapper.jar
 
@@ -60,6 +62,12 @@ data/raw/*.json
 data/raw/*.xlsx
 data/raw/*.xml
 !data/raw/.gitkeep
+
+# 자동 생성 SQL (load_to_db.py가 재생성)
+data/exports/
+
+# 단지별 개인 다운로드 원본 (수동 다운로드 자료)
+data/삼구트리니엔 API/
 
 # Python (데이터 수집 스크립트용)
 __pycache__/

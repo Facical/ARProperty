@@ -1,0 +1,22 @@
+﻿category,sub_category,name,lat,lon,address,phone,operator,source_type,source_id,data_source
+safety,police_station,구미경찰서 해평파출소,36.1987393,128.3910849,,,,osm,node/368607513,manual
+safety,police_station,구미경찰서 선산파출소,36.2429855,128.2996288,,,,osm,node/368607522,manual
+safety,police_station,구미경찰서 인동파출소,36.1075187,128.4220188,,,,osm,node/368607529,manual
+safety,police_station,구미경찰서 도개파출소,36.3009407,128.3296491,,,,osm,node/368607551,manual
+safety,police_station,구미경찰서 산동파출소,36.1693621,128.4350692,,,,osm,node/368607553,manual
+safety,police_station,구미경찰서 상림지구대,36.084872,128.3599115,,,,osm,node/1721414455,manual
+safety,police_station,황상치안센터,36.1120997,128.4252356,,,,osm,node/5873317986,manual
+safety,police_station,구미경찰서 장천파출소,36.1248859,128.4954823,,,,osm,node/7790666355,manual
+safety,police_station,구미경찰서 옥성파출소,36.2959327,128.2785316,,,,osm,node/7790666356,manual
+safety,police_station,구미경찰서 양포파출소,36.1473132,128.4179208,,,,osm,node/7790666357,manual
+safety,police_station,구미경찰서 신평파출소,36.121841,128.360771,,,,osm,node/7790666358,manual
+safety,police_station,구미경찰서 무을파출소,36.2614756,128.194256,,,,osm,node/7790666359,manual
+safety,police_station,구미경찰서 도량지구대,36.1440279,128.330791,,,,osm,node/7790666360,manual
+safety,police_station,구미경찰서 고아파출소,36.2104477,128.3295394,,,,osm,node/7790666361,manual
+safety,police_station,구미경찰서 봉곡파출소,36.1511832,128.3047788,,,,osm,node/7790666362,manual
+safety,police_station,구미경찰서 형곡지구대,36.1135272,128.3344222,,,,osm,way/479835097,manual
+safety,police_station,구미경찰서,36.11792,128.3646146,구미시 구미대로 350-19,,경북지방경찰청,osm,way/834605341,manual
+safety,police_station,원평지구대,36.1301612,128.3192252,,,,osm,way/967042004,manual
+safety,police_station,경북경찰청 원남로별관,36.1303305,128.3196544,,,,osm,way/967042005,manual
+safety,police_station,공단치안센터,36.1016181,128.38444,,,,osm,way/1053589150,manual
+safety,police_station,구미경찰서 진평파출소,36.0952777,128.4255572,,,,osm,way/1454804467,manual

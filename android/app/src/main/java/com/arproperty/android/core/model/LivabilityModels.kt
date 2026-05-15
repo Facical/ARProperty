@@ -19,3 +19,15 @@ data class LivabilityComparisonItem(
     @SerialName("total_score") val totalScore: Double,
     val grade: String,
 )
+
+@Serializable
+data class InfraNearby(
+    @SerialName("infra_id") val infraId: Int? = null,
+    val category: String,
+    @SerialName("sub_category") val subCategory: String,
+    val name: String,
+    val lat: Double,
+    val lon: Double,
+    val address: String? = null,
+    @SerialName("distance_m") val distanceMeters: Double? = null,
+)

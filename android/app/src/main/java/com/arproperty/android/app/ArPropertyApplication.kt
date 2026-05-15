@@ -1,6 +1,7 @@
 package com.arproperty.android.app
 
 import android.app.Application
+import android.util.Log
 import com.arproperty.android.BuildConfig
 import com.arproperty.android.core.network.AppContainer
 import com.arproperty.android.core.network.DefaultAppContainer
@@ -14,7 +15,14 @@ class ArPropertyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        // local.properties에 KAKAO_NATIVE_APP_KEY를 넣으면 카카오맵 SDK가 초기화됩니다
-        KakaoMapSdk.init(this, BuildConfig.KAKAO_NATIVE_APP_KEY)
+        if (BuildConfig.HAS_KAKAO_NATIVE_APP_KEY) {
+            KakaoMapSdk.init(this, BuildConfig.KAKAO_NATIVE_APP_KEY)
+        } else {
+            Log.w(
+                "ArPropertyApp",
+                "KAKAO_NATIVE_APP_KEY 미설정 — 카카오맵 SDK init 스킵. " +
+                    "local.properties 또는 build.gradle.kts의 fallback에 실제 키를 넣어주세요.",
+            )
+        }
     }
 }

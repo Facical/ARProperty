@@ -11,10 +11,20 @@ data class BuildingSummary(
     @SerialName("dong_name") val dongName: String,
     val lat: Double,
     val lon: Double,
-    @SerialName("ground_floors") val groundFloors: Int,
+    @SerialName("ground_floors") val groundFloors: Int? = null,
     @SerialName("livability_grade") val livabilityGrade: String? = null,
     @SerialName("livability_score") val livabilityScore: Double? = null,
     @SerialName("distance_m") val distanceMeters: Double? = null,
+    @SerialName("latest_trade") val latestTrade: LatestTrade? = null,
+)
+
+@Serializable
+data class LatestTrade(
+    @SerialName("deal_amount") val dealAmount: Int? = null,
+    @SerialName("exclusive_area") val exclusiveArea: Double? = null,
+    val floor: Int? = null,
+    @SerialName("deal_date") val dealDate: String? = null,
+    @SerialName("trade_type") val tradeType: String? = null,
 )
 
 @Serializable

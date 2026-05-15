@@ -26,9 +26,6 @@
         android:theme="@style/Theme.ARProperty"
         android:usesCleartextTraffic="true">
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="${mapsApiKey}" />
-        <meta-data
             android:name="com.google.ar.core"
             android:value="optional" />
         <meta-data

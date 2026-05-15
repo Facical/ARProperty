@@ -22,6 +22,8 @@ interface AppContainer {
     val buildingRepository: BuildingRepository
     val complexRepository: ComplexRepository
     val livabilityRepository: LivabilityRepository
+    val baseUrlStore: BaseUrlStore
+    val baseBuildUrl: String
 }
 
 @OptIn(ExperimentalSerializationApi::class)
@@ -33,7 +35,11 @@ class DefaultAppContainer(
         explicitNulls = false
     }
 
+    override val baseUrlStore: BaseUrlStore = BaseUrlStore(context)
+    override val baseBuildUrl: String = BuildConfig.BASE_URL
+
     private val httpClient = OkHttpClient.Builder()
+        .addInterceptor(BaseUrlOverrideInterceptor(baseUrlStore))
         .addInterceptor(
             HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BASIC

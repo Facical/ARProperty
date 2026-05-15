@@ -1,6 +1,8 @@
 package com.arproperty.config;
 
 import com.arproperty.service.DataGoKrSyncService;
+import com.arproperty.service.OkgyeBuildingSyncService;
+import com.arproperty.service.OkgyeComplexSyncService;
 import com.arproperty.service.VWorldBuildingSyncService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +17,8 @@ public class VWorldSyncRunner implements ApplicationRunner {
 
     private final VWorldBuildingSyncService vWorldBuildingSyncService;
     private final DataGoKrSyncService dataGoKrSyncService;
+    private final OkgyeComplexSyncService okgyeComplexSyncService;
+    private final OkgyeBuildingSyncService okgyeBuildingSyncService;
 
     @Override
     public void run(ApplicationArguments args) {
@@ -39,6 +43,16 @@ public class VWorldSyncRunner implements ApplicationRunner {
             var result = dataGoKrSyncService.syncSamguFromLocalFiles();
             log.info("sync-local-samgu completed. buildingUpdated={}, tradeInserted={}",
                     result.buildingUpdated(), result.tradeInserted());
+        }
+
+        if (args.containsOption("sync-okgye-complex")) {
+            int updated = okgyeComplexSyncService.syncOkgyeComplexCoordinates();
+            log.info("sync-okgye-complex completed. updated={}", updated);
+        }
+
+        if (args.containsOption("sync-okgye-buildings")) {
+            int updated = okgyeBuildingSyncService.syncOkgyeBuildings();
+            log.info("sync-okgye-buildings completed. updated={}", updated);
         }
     }
 

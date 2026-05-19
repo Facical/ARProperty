@@ -1,3 +1,14 @@
 package com.arproperty;
 
-/** Spring Boot 애플리케이션 컨텍스트 로드 테스트 */
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+/** Spring Boot 애플리케이션 진입점 smoke test */
+class ArPropertyApplicationTests {
+
+    @Test
+    void applicationClassExists() {
+        assertThat(ArPropertyApplication.class).isNotNull();
+    }
+}

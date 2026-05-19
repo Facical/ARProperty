@@ -14,4 +14,5 @@ data class TradeItem(
     @SerialName("monthly_rent") val monthlyRent: Int? = null,
     @SerialName("deal_date") val dealDate: String,
     @SerialName("trade_type") val tradeType: String,
+    @SerialName("dealing_type") val dealingType: String? = null,
 )

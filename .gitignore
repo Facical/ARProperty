@@ -29,6 +29,7 @@ Thumbs.db
 **/* 2
 
 # Environment / Secrets
+# backend/.env is intentionally tracked as a private team/demo credential exception.
 .env
 .env.*
 !.env.example

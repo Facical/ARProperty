@@ -36,7 +36,14 @@ DB에 적재된 **4,971건의 구미시 편의시설 POI**를 조회하는 REST 
 {
   "status": "ok",
   "data": <결과 본문>,
-  "meta": { "count": 58, "radius_m": 1000, "center": { "lat": 36.1195, "lon": 128.3445 } }
+  "meta": {
+    "count": 1,
+    "total_count": 58,
+    "page": 1,
+    "page_size": 100,
+    "radius_m": 1000,
+    "center": { "lat": 36.1195, "lon": 128.3445 }
+  }
 }
 ```
 
@@ -53,7 +60,8 @@ DB에 적재된 **4,971건의 구미시 편의시설 POI**를 조회하는 REST 
 | HTTP | code | 의미 |
 |---|---|---|
 | 400 | `INVALID_PARAMETER` | 잘못된 쿼리 파라미터 (지원하지 않는 카테고리 등) |
-| 400 | (Spring 기본) | `lat`/`lon` 누락 또는 숫자 아님 |
+| 400 | `INVALID_PARAMETER` | `lat`/`lon` 누락 또는 숫자 아님 |
+| 400 | `INVALID_COORDINATES` | 구미 좌표 범위 밖 |
 | 500 | `INTERNAL_ERROR` | 서버 내부 오류 |
 
 ---
@@ -68,10 +76,12 @@ DB에 적재된 **4,971건의 구미시 편의시설 POI**를 조회하는 REST 
 
 | 이름 | 타입 | 필수 | 기본값 | 설명 |
 |---|---|---|---|---|
-| `lat` | `double` | ✅ | — | 중심 위도 (33 ~ 39 범위, 한국 영역) |
-| `lon` | `double` | ✅ | — | 중심 경도 (124 ~ 132 범위) |
-| `radius` | `int` | ❌ | `1000` | 반경(미터). 권장 500~3000 |
+| `lat` | `double` | ✅ | — | 중심 위도 (구미 범위 `36.05~36.25`) |
+| `lon` | `double` | ✅ | — | 중심 경도 (구미 범위 `128.20~128.50`) |
+| `radius` | `int` | ❌ | `1000` | 반경(미터). 서버에서 `1~3000`으로 보정 |
 | `category` | `string` | ❌ | (전체) | 카테고리 필터. 6종 enum 중 하나 |
+| `page` | `int` | ❌ | `1` | 페이지 번호. 서버에서 최소 `1`로 보정 |
+| `page_size` | `int` | ❌ | `100` | 페이지 크기. 서버에서 `1~100`으로 보정 |
 
 #### `category` 허용값 (6종 enum)
 
@@ -104,7 +114,10 @@ DB에 적재된 **4,971건의 구미시 편의시설 POI**를 조회하는 REST 
     }
   ],
   "meta": {
-    "count": 58,
+    "count": 1,
+    "total_count": 58,
+    "page": 1,
+    "page_size": 100,
     "radius_m": 1000,
     "center": { "lat": 36.1195, "lon": 128.3445 }
   }
@@ -125,6 +138,7 @@ DB에 적재된 **4,971건의 구미시 편의시설 POI**를 조회하는 REST 
 | `distance_m` | `double` | ✅ | 중심점에서의 거리(미터) |
 
 > 거리순(가까운 → 먼) 정렬되어 반환됩니다.
+> `count`는 현재 페이지에 포함된 응답 건수이고, `total_count`는 같은 좌표/반경/카테고리 조건의 전체 건수입니다.
 
 #### 에러 응답 예시
 
@@ -141,7 +155,11 @@ GET /api/v1/livability/infra/nearby?lat=36.1195&lon=128.3445&category=invalid
 **필수 파라미터 누락**
 ```
 GET /api/v1/livability/infra/nearby?lat=36.1195
-→ HTTP 400 (Spring 기본 응답)
+→ HTTP 400
+{
+  "status": "error",
+  "error": { "code": "INVALID_PARAMETER", "message": "lon is required" }
+}
 ```
 
 ---
@@ -192,6 +210,8 @@ interface LivabilityApiService {
         @Query("lon") lon: Double,
         @Query("radius") radius: Int? = null,
         @Query("category") category: String? = null,
+        @Query("page") page: Int? = null,
+        @Query("page_size") pageSize: Int? = null,
     ): ApiResponse<List<InfraNearby>>
 }
 
@@ -226,7 +246,7 @@ console.log(json.meta.count, json.data);
 
 - **장점**: 사용자가 켠 카테고리만 마커 그림 → 시각적으로 깔끔
 - **호출 수**: 사용자가 모든 카테고리를 켜도 최대 6번 (페이지 진입 시 0번)
-- **응답 크기**: 카테고리당 보통 10~100건 (반경 1km 기준)
+- **응답 크기**: 기본 `page_size=100`으로 제한됨. 추가 결과는 `page`를 증가시켜 조회
 
 안드로이드 측 참고 구현: [`MapRoute.kt`](../android/app/src/main/java/com/arproperty/android/feature/map/MapRoute.kt) (`MapViewModel.toggleCategory`)
 
@@ -234,7 +254,7 @@ console.log(json.meta.count, json.data);
 
 ## 8. 알려진 제약
 
-- **페이지네이션 없음** — 반경 5km 이상 + 카테고리 전체 호출 시 응답이 매우 클 수 있음. 권장 반경 ≤ 3km
+- **기본 첫 페이지만 반환** — 반경/카테고리 조건의 전체 건수는 `meta.total_count`를 확인하고, 추가 결과가 필요하면 `page`를 증가시켜 호출
 - **CORS 미설정** — 브라우저 기반 호출은 현재 차단됨. 웹 프론트 필요 시 `@CrossOrigin` 또는 `WebMvcConfigurer` 추가 요청
 - **인증 없음** — 내부 데모용. 운영 배포 시 토큰 인증 추가 필요
 - **CCTV 53건 좌표 누락** — 원본 주소 모호로 지오코딩 실패. DB에는 적재되지 않아 API 응답에는 영향 없음
@@ -253,4 +273,5 @@ console.log(json.meta.count, json.data);
 
 | 날짜 | 변경 |
 |---|---|
+| 2026-05-19 | `/livability/infra/nearby` radius clamp, `page/page_size`, `total_count` 메타 추가 |
 | 2026-05-14 | 최초 작성. `/infra/nearby` 정상 동작 검증 + `GlobalExceptionHandler`로 400 매핑 |

@@ -1,8 +1,13 @@
 package com.arproperty.service;
 
+import com.arproperty.controller.ApiException;
+import com.arproperty.dto.BuildingDto.BuildingDetailResponse;
 import com.arproperty.dto.BuildingDto.BuildingNearbyResponse;
+import com.arproperty.dto.BuildingDto.ComplexInfo;
+import com.arproperty.dto.BuildingDto.LivabilitySummary;
 import com.arproperty.dto.BuildingDto.LatestTrade;
 import com.arproperty.repository.AptBuildingRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,6 +30,18 @@ public class BuildingService {
     public record NearbyResult(List<BuildingNearbyResponse> items, long totalCount) {}
 
     @Transactional(readOnly = true)
+    public BuildingDetailResponse findDetail(int buildingId) {
+        return buildingRepository.findDetail(buildingId).stream()
+                .findFirst()
+                .map(this::mapDetailRow)
+                .orElseThrow(() -> new ApiException(
+                        HttpStatus.NOT_FOUND,
+                        "BUILDING_NOT_FOUND",
+                        "Building not found: " + buildingId
+                ));
+    }
+
+    @Transactional(readOnly = true)
     public NearbyResult findNearby(double lat, double lon, int radius, int page, int pageSize) {
         int clampedRadius = Math.min(Math.max(radius, 1), 2000);
         int clampedPage = Math.max(page, 1);
@@ -38,6 +55,42 @@ public class BuildingService {
         }
         long total = buildingRepository.countNearby(lat, lon, clampedRadius);
         return new NearbyResult(items, total);
+    }
+
+    private BuildingDetailResponse mapDetailRow(Object[] r) {
+        ComplexInfo complexInfo = new ComplexInfo(
+                (String) r[13],
+                toInteger(r[14]),
+                toInteger(r[15]),
+                toInteger(r[16]),
+                toInteger(r[17]),
+                (String) r[18],
+                (String) r[19]
+        );
+
+        Double livabilityScore = toDouble(r[20]);
+        String livabilityGrade = r[21] == null ? null : (String) r[21];
+        LivabilitySummary livability = (livabilityScore == null && livabilityGrade == null)
+                ? null
+                : new LivabilitySummary(livabilityScore, livabilityGrade);
+
+        return new BuildingDetailResponse(
+                toInteger(r[0]),
+                toInteger(r[1]),
+                (String) r[2],
+                (String) r[3],
+                toDoubleOrZero(r[4]),
+                toDoubleOrZero(r[5]),
+                toIntegerOrZero(r[6]),
+                toIntegerOrZero(r[7]),
+                toIntegerOrZero(r[8]),
+                toDouble(r[9]),
+                (String) r[10],
+                toDouble(r[11]),
+                mapLocalDate(r[12]),
+                complexInfo,
+                livability
+        );
     }
 
     private BuildingNearbyResponse mapRow(Object[] r) {
@@ -78,5 +131,30 @@ public class BuildingService {
         if (value instanceof LocalDate ld) return ld.toString();
         if (value instanceof Date sqlDate) return sqlDate.toLocalDate().toString();
         return value.toString();
+    }
+
+    private String mapLocalDate(Object value) {
+        if (value == null) return null;
+        if (value instanceof LocalDate localDate) return localDate.toString();
+        if (value instanceof Date sqlDate) return sqlDate.toLocalDate().toString();
+        return value.toString();
+    }
+
+    private Integer toInteger(Object value) {
+        return value == null ? null : ((Number) value).intValue();
+    }
+
+    private int toIntegerOrZero(Object value) {
+        Integer number = toInteger(value);
+        return number == null ? 0 : number;
+    }
+
+    private Double toDouble(Object value) {
+        return value == null ? null : ((Number) value).doubleValue();
+    }
+
+    private double toDoubleOrZero(Object value) {
+        Double number = toDouble(value);
+        return number == null ? 0.0 : number;
     }
 }

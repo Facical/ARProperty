@@ -39,4 +39,26 @@ data class BuildingDetail(
     @SerialName("underground_floors") val undergroundFloors: Int,
     @SerialName("highest_floor") val highestFloor: Int,
     @SerialName("building_height") val buildingHeight: Double? = null,
+    @SerialName("structure_type") val structureType: String? = null,
+    @SerialName("total_area") val totalArea: Double? = null,
+    @SerialName("use_approval_date") val useApprovalDate: String? = null,
+    @SerialName("complex_info") val complexInfo: BuildingComplexInfo? = null,
+    val livability: BuildingLivabilitySummary? = null,
+)
+
+@Serializable
+data class BuildingComplexInfo(
+    @SerialName("kapt_code") val kaptCode: String? = null,
+    val households: Int? = null,
+    @SerialName("building_count") val buildingCount: Int? = null,
+    @SerialName("parking_count") val parkingCount: Int? = null,
+    @SerialName("elevator_count") val elevatorCount: Int? = null,
+    @SerialName("heating_type") val heatingType: String? = null,
+    val constructor: String? = null,
+)
+
+@Serializable
+data class BuildingLivabilitySummary(
+    @SerialName("total_score") val totalScore: Double? = null,
+    val grade: String? = null,
 )

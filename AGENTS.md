@@ -27,8 +27,8 @@ The first priority is the Okgye-dong field demo: when a user points the phone ca
 This repository is no longer in the skeleton stage.
 
 - `android/` contains a Compose app with `ar`, `map`, `livability`, and `building` feature areas, Kakao Map integration, ARCore Geospatial wiring, runtime base URL override, and fallback AR tags when Geospatial is unavailable.
-- `backend/` contains a Spring Boot application with real source code, Dockerfile, application settings, DB schema scripts, and implemented `/health`, `GET /api/v1/buildings/nearby`, `GET /api/v1/buildings/{id}`, and `GET /api/v1/livability/infra/nearby` endpoints.
-- `backend/src/main/java` application source exists. Some controllers such as `ComplexController` and `TradeController` are still stubs, so do not describe every planned API as implemented.
+- `backend/` contains a Spring Boot application with real source code, Dockerfile, application settings, DB schema scripts, and implemented `/health`, `GET /api/v1/buildings/nearby`, `GET /api/v1/buildings/{id}`, `GET /api/v1/buildings/{id}/trades`, and `GET /api/v1/livability/infra/nearby` endpoints.
+- `backend/src/main/java` application source exists. `ComplexController` is still a stub, so do not describe every planned API as implemented.
 - `data/` contains implemented Python helper scripts, placeholder collector scripts, mapping files, and Okgye sync support paths.
 
 Do not describe the repo as skeleton-stage. Instead, distinguish implemented demo-critical paths from planned or stubbed endpoints.
@@ -48,17 +48,22 @@ Do not describe the repo as skeleton-stage. Instead, distinguish implemented dem
 These commands match the repository as it exists today:
 
 ```bash
-docker-compose up -d
+# Fast new-PC/Codex environment check. This avoids starting heavy services.
+./scripts/codex-doctor.sh
+
+# DB + Redis + backend. Prefer Docker Compose v2; use docker-compose if needed.
+docker compose up -d
+# docker-compose up -d
 
 curl 'http://localhost:8080/health'
 curl 'http://localhost:8080/api/v1/buildings/nearby?lat=36.139&lon=128.432&radius=1000'
 
 cd backend
-./gradlew test -Dorg.gradle.java.home=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
-./gradlew build -Dorg.gradle.java.home=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
+./gradlew test --no-daemon
+./gradlew build --no-daemon
 
 cd android
-ANDROID_HOME=$HOME/Library/Android/sdk ./gradlew test -Dorg.gradle.java.home=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
+ANDROID_HOME=$HOME/Library/Android/sdk ./gradlew test --no-daemon
 
 cd data/collectors
 python -m venv .venv
@@ -66,9 +71,11 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Plain Gradle commands can fail on machines where Java 17 is not the default toolchain. Use the explicit Java 17 path above on this Mac, or the equivalent local Java 17 path on another machine.
+Plain Gradle commands can fail on machines where Java 17 is not the default toolchain. Prefer fixing `JAVA_HOME`/`PATH`; if needed, pass `-Dorg.gradle.java.home=/absolute/path/to/jdk17`. The Homebrew path `/opt/homebrew/opt/openjdk@17/...` is only valid on this Mac.
 
-Do not claim that planned endpoints such as `buildings/{id}/trades` or `complexes/*` are working until their controller mappings and services are implemented.
+For Codex sessions on a new PC, run `./scripts/codex-doctor.sh` before long-running build or Docker work. Avoid data sync commands unless the task specifically requires them; those commands call public APIs and can still be slow even though backend HTTP clients now have connect/read timeouts.
+
+Do not claim that planned endpoints such as `complexes/*` are working until their controller mappings and services are implemented.
 
 ## Important Paths
 

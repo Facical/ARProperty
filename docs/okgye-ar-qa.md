@@ -15,7 +15,7 @@ All checks below protect this path. Rich detail data, recent trades, and charts 
 
 ### Backend / Data
 
-- `docker-compose up -d db redis backend` starts without container restart loops.
+- `docker compose up -d db redis backend` starts without container restart loops.
 - `apt_complex_master` has Okgye rows:
   ```sql
   SELECT count(*)

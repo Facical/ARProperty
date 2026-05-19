@@ -128,7 +128,7 @@
 
 - PostGIS 확장 + GIST 공간 인덱스 적용
 - 구미시 법정동 24건 초기 데이터 INSERT
-- 📸 **필수 캡처 #5**: `docker-compose up -d db redis` 실행 후 `psql` 접속 → `\dt` 결과 (테이블 7개 + 매핑 테이블이 존재함을 증빙. Redis 연동 로직 시연은 제외)
+- 📸 **필수 캡처 #5**: `docker compose up -d db redis` 실행 후 `psql` 접속 → `\dt` 결과 (테이블 7개 + 매핑 테이블이 존재함을 증빙. Redis 연동 로직 시연은 제외)
 
 ---
 

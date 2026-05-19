@@ -1,10 +1,12 @@
 package com.arproperty.controller;
 
 import com.arproperty.dto.ApiResponse;
+import com.arproperty.dto.BuildingDto.BuildingDetailResponse;
 import com.arproperty.dto.BuildingDto.BuildingNearbyResponse;
 import com.arproperty.service.BuildingService;
 import com.arproperty.service.BuildingService.NearbyResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,6 +34,8 @@ public class BuildingController {
             @RequestParam(name = "page", defaultValue = "1") int page,
             @RequestParam(name = "page_size", defaultValue = "20") int pageSize
     ) {
+        RequestValidation.requireGumiCoordinates(lat, lon);
+
         NearbyResult result = buildingService.findNearby(lat, lon, radius, page, pageSize);
 
         Map<String, Object> meta = new LinkedHashMap<>();
@@ -43,5 +47,12 @@ public class BuildingController {
         meta.put("radius", Math.min(Math.max(radius, 1), 2000));
 
         return ApiResponse.success(result.items(), meta);
+    }
+
+    @GetMapping("/{buildingId}")
+    public ApiResponse<BuildingDetailResponse> getDetail(
+            @PathVariable("buildingId") int buildingId
+    ) {
+        return ApiResponse.success(buildingService.findDetail(buildingId));
     }
 }

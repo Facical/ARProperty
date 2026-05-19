@@ -43,8 +43,28 @@ public interface LivingInfraRepository extends JpaRepository<LivingInfra, Intege
                   )
               AND (CAST(:category AS VARCHAR) IS NULL OR i.category = CAST(:category AS VARCHAR))
             ORDER BY distanceMeters ASC
+            LIMIT :limit OFFSET :offset
             """, nativeQuery = true)
     List<InfraNearbyProjection> findNearby(
+            @Param("lat") double lat,
+            @Param("lon") double lon,
+            @Param("radius") int radiusMeters,
+            @Param("category") String category,
+            @Param("limit") int limit,
+            @Param("offset") int offset
+    );
+
+    @Query(value = """
+            SELECT COUNT(*)
+            FROM living_infra_gumi i
+            WHERE ST_DWithin(
+                    i.point_geom::geography,
+                    ST_SetSRID(ST_MakePoint(:lon, :lat), 4326)::geography,
+                    :radius
+                  )
+              AND (CAST(:category AS VARCHAR) IS NULL OR i.category = CAST(:category AS VARCHAR))
+            """, nativeQuery = true)
+    long countNearby(
             @Param("lat") double lat,
             @Param("lon") double lon,
             @Param("radius") int radiusMeters,

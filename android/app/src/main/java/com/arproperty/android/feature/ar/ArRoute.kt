@@ -1,5 +1,6 @@
 package com.arproperty.android.feature.ar
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.ContextWrapper
 import android.view.MotionEvent
@@ -65,7 +66,9 @@ import com.arproperty.android.core.common.arRequiredPermissions
 import com.arproperty.android.core.common.hasAllPermissions
 import com.arproperty.android.core.designsystem.NotSupportedState
 import com.arproperty.android.core.designsystem.PermissionRequiredState
+import com.arproperty.android.core.model.BuildingDetail
 import com.arproperty.android.core.model.BuildingSummary
+import com.arproperty.android.core.model.TradeItem
 import com.arproperty.android.core.network.BuildingRepository
 import com.arproperty.android.feature.ar.ui.DetailPopupContent
 import com.arproperty.android.feature.ar.ui.PanelContent
@@ -74,6 +77,7 @@ import com.google.ar.core.ArCoreApk
 import com.google.ar.core.Config
 import com.google.ar.core.TrackingFailureReason
 import com.google.ar.core.TrackingState
+import com.google.android.gms.location.LocationServices
 import dev.romainguy.kotlin.math.Float2
 import dev.romainguy.kotlin.math.Float3
 import io.github.sceneview.ar.ARScene
@@ -100,6 +104,9 @@ private const val NEARBY_RADIUS_METERS = 500
 private const val SELECTED_SCALE = 1.6f
 private const val DEFAULT_SCALE = 1.0f
 private const val ANCHOR_ALTITUDE_OFFSET_METERS = 5.0
+private const val DEFAULT_OKGYE_LAT = 36.13918
+private const val DEFAULT_OKGYE_LON = 128.42137
+private const val FALLBACK_MARKER_LIMIT = 5
 
 data class ArUiState(
     val nearbyBuildings: List<BuildingSummary> = emptyList(),
@@ -107,6 +114,15 @@ data class ArUiState(
     val error: String? = null,
     val centerLat: Double? = null,
     val centerLon: Double? = null,
+    val detailBuildingId: Int? = null,
+    val selectedBuildingDetail: BuildingDetail? = null,
+    val isDetailLoading: Boolean = false,
+    val detailError: String? = null,
+    val tradesBuildingId: Int? = null,
+    val selectedBuildingTrades: List<TradeItem> = emptyList(),
+    val isTradesLoading: Boolean = false,
+    val tradesError: String? = null,
+    val tradesLoaded: Boolean = false,
 )
 
 class ArViewModel(
@@ -128,6 +144,115 @@ class ArViewModel(
                 .onFailure { e ->
                     _uiState.update {
                         it.copy(isLoading = false, error = e.message ?: "주변 건물 조회 실패")
+                    }
+                }
+        }
+    }
+
+    fun loadBuildingDetail(buildingId: Int) {
+        val current = _uiState.value
+        if (
+            current.detailBuildingId == buildingId &&
+            (current.isDetailLoading || current.selectedBuildingDetail != null)
+        ) {
+            return
+        }
+
+        _uiState.update {
+            it.copy(
+                detailBuildingId = buildingId,
+                selectedBuildingDetail = if (it.detailBuildingId == buildingId) {
+                    it.selectedBuildingDetail
+                } else {
+                    null
+                },
+                isDetailLoading = true,
+                detailError = null,
+            )
+        }
+
+        viewModelScope.launch {
+            buildingRepository.getBuildingDetail(buildingId)
+                .onSuccess { detail ->
+                    _uiState.update {
+                        if (it.detailBuildingId == buildingId) {
+                            it.copy(
+                                selectedBuildingDetail = detail,
+                                isDetailLoading = false,
+                                detailError = null,
+                            )
+                        } else {
+                            it
+                        }
+                    }
+                }
+                .onFailure { e ->
+                    _uiState.update {
+                        if (it.detailBuildingId == buildingId) {
+                            it.copy(
+                                selectedBuildingDetail = null,
+                                isDetailLoading = false,
+                                detailError = e.message ?: "건물 상세 조회 실패",
+                            )
+                        } else {
+                            it
+                        }
+                    }
+                }
+        }
+    }
+
+    fun loadBuildingTrades(buildingId: Int) {
+        val current = _uiState.value
+        if (
+            current.tradesBuildingId == buildingId &&
+            (current.isTradesLoading || current.tradesLoaded)
+        ) {
+            return
+        }
+
+        _uiState.update {
+            it.copy(
+                tradesBuildingId = buildingId,
+                selectedBuildingTrades = if (it.tradesBuildingId == buildingId) {
+                    it.selectedBuildingTrades
+                } else {
+                    emptyList()
+                },
+                isTradesLoading = true,
+                tradesError = null,
+                tradesLoaded = false,
+            )
+        }
+
+        viewModelScope.launch {
+            buildingRepository.getBuildingTrades(buildingId)
+                .onSuccess { trades ->
+                    _uiState.update {
+                        if (it.tradesBuildingId == buildingId) {
+                            it.copy(
+                                selectedBuildingTrades = trades,
+                                isTradesLoading = false,
+                                tradesError = null,
+                                tradesLoaded = true,
+                            )
+                        } else {
+                            it
+                        }
+                    }
+                }
+                .onFailure { e ->
+                    _uiState.update {
+                        if (it.tradesBuildingId == buildingId) {
+                            it.copy(
+                                selectedBuildingTrades = emptyList(),
+                                isTradesLoading = false,
+                                tradesError = e.message ?: "거래 이력 조회 실패",
+                                tradesLoaded = false,
+                            )
+                        } else {
+                            it
+                        }
                     }
                 }
         }
@@ -216,6 +341,8 @@ fun ArRoute(
                 uiState = uiState,
                 selectedBuilding = selectedBuilding,
                 onLoadNearby = viewModel::loadNearby,
+                onLoadBuildingDetail = viewModel::loadBuildingDetail,
+                onLoadBuildingTrades = viewModel::loadBuildingTrades,
                 onSelect = { sharedVm.select(it) },
                 onOpenMap = onOpenMap,
                 onOpenBuildingDetail = { id -> onOpenBuilding(id) },
@@ -230,6 +357,8 @@ private fun ArCameraSceneWithPanel(
     uiState: ArUiState,
     selectedBuilding: BuildingSummary?,
     onLoadNearby: (Double, Double) -> Unit,
+    onLoadBuildingDetail: (Int) -> Unit,
+    onLoadBuildingTrades: (Int) -> Unit,
     onSelect: (BuildingSummary) -> Unit,
     onOpenMap: () -> Unit,
     onOpenBuildingDetail: (Int) -> Unit,
@@ -250,7 +379,8 @@ private fun ArCameraSceneWithPanel(
         )
     }
     var showDetail by remember { mutableStateOf(false) }
-    var loadRequested by remember { mutableStateOf(false) }
+    var fallbackLoadRequested by remember { mutableStateOf(false) }
+    var geospatialLoadRequested by remember { mutableStateOf(false) }
     var showDebug by remember { mutableStateOf(false) }
     var lastAnchorError by remember { mutableStateOf<String?>(null) }
     var cameraLat by remember { mutableStateOf<Double?>(null) }
@@ -267,9 +397,20 @@ private fun ArCameraSceneWithPanel(
     val nodeMap = remember { mutableStateMapOf<Int, AnchorNode>() }
     val cubeMap = remember { mutableStateMapOf<Int, CubeNode>() }
     val labelMap = remember { mutableStateMapOf<Int, ViewNode2>() }
+    val fallbackNodeMap = remember { mutableStateMapOf<Int, Node>() }
+    val fallbackCubeMap = remember { mutableStateMapOf<Int, CubeNode>() }
+    val fallbackLabelMap = remember { mutableStateMapOf<Int, ViewNode2>() }
     val windowManager = remember { ViewNode2.WindowManager(context) }
     val scaffoldState = rememberBottomSheetScaffoldState()
     val coroutineScope = rememberCoroutineScope()
+
+    LaunchedEffect(showDetail, selectedBuilding?.buildingId) {
+        val id = selectedBuilding?.buildingId
+        if (showDetail && id != null) {
+            onLoadBuildingDetail(id)
+            onLoadBuildingTrades(id)
+        }
+    }
 
     // 탭 처리: SimpleOnGestureListener로 onSingleTapConfirmed만 override
     val gestureListener = remember(uiState.nearbyBuildings) {
@@ -286,14 +427,23 @@ private fun ArCameraSceneWithPanel(
     }
 
     // 선택 변경 시 큐브 scale 강조
-    LaunchedEffect(selectedBuilding?.buildingId, cubeMap.size) {
+    LaunchedEffect(selectedBuilding?.buildingId, cubeMap.size, fallbackCubeMap.size) {
         cubeMap.forEach { (id, cube) ->
+            cube.setScale(if (id == selectedBuilding?.buildingId) SELECTED_SCALE else DEFAULT_SCALE)
+        }
+        fallbackCubeMap.forEach { (id, cube) ->
             cube.setScale(if (id == selectedBuilding?.buildingId) SELECTED_SCALE else DEFAULT_SCALE)
         }
     }
 
     DisposableEffect(Unit) {
         onDispose {
+            clearFallbackMarkers(
+                fallbackNodeMap = fallbackNodeMap,
+                fallbackCubeMap = fallbackCubeMap,
+                fallbackLabelMap = fallbackLabelMap,
+                childNodes = childNodes,
+            )
             labelMap.values.forEach { runCatching { it.destroy() } }
             labelMap.clear()
             cubeMap.values.forEach { runCatching { it.destroy() } }
@@ -341,16 +491,75 @@ private fun ArCameraSceneWithPanel(
                     onTrackingFailureChanged = { reason -> trackingFailure = reason },
                     onSessionUpdated = { session, frame ->
                         trackingState = frame.camera.trackingState.name
-                        if (!BuildConfig.HAS_GEOSPATIAL_API_KEY) return@ARScene
+                        if (!fallbackLoadRequested) {
+                            fallbackLoadRequested = true
+                            loadNearbyFromDeviceOrOkgye(
+                                context = context,
+                                onLoadNearby = onLoadNearby,
+                            ) { lat, lon, source ->
+                                cameraLat = lat
+                                cameraLon = lon
+                                if (!BuildConfig.HAS_GEOSPATIAL_API_KEY) {
+                                    geospatialStatus = source
+                                }
+                            }
+                        }
+
+                        if (!BuildConfig.HAS_GEOSPATIAL_API_KEY) {
+                            geospatialStatus = "Geospatial: 키 없음 (옥계 fallback)"
+                            syncFallbackMarkers(
+                                buildings = uiState.nearbyBuildings,
+                                fallbackNodeMap = fallbackNodeMap,
+                                fallbackCubeMap = fallbackCubeMap,
+                                fallbackLabelMap = fallbackLabelMap,
+                                childNodes = childNodes,
+                                engine = engine,
+                                materialLoader = materialLoader,
+                                windowManager = windowManager,
+                                selectedId = selectedBuilding?.buildingId,
+                                onStatus = { anchorStatus = it },
+                            )
+                            return@ARScene
+                        }
                         val earth = session.earth
                         if (earth == null) {
                             geospatialStatus = "Geospatial: earth 미초기화"
+                            syncFallbackMarkers(
+                                buildings = uiState.nearbyBuildings,
+                                fallbackNodeMap = fallbackNodeMap,
+                                fallbackCubeMap = fallbackCubeMap,
+                                fallbackLabelMap = fallbackLabelMap,
+                                childNodes = childNodes,
+                                engine = engine,
+                                materialLoader = materialLoader,
+                                windowManager = windowManager,
+                                selectedId = selectedBuilding?.buildingId,
+                                onStatus = { anchorStatus = it },
+                            )
                             return@ARScene
                         }
                         if (earth.trackingState != TrackingState.TRACKING) {
                             geospatialStatus = "Earth: ${earth.trackingState.name}"
+                            syncFallbackMarkers(
+                                buildings = uiState.nearbyBuildings,
+                                fallbackNodeMap = fallbackNodeMap,
+                                fallbackCubeMap = fallbackCubeMap,
+                                fallbackLabelMap = fallbackLabelMap,
+                                childNodes = childNodes,
+                                engine = engine,
+                                materialLoader = materialLoader,
+                                windowManager = windowManager,
+                                selectedId = selectedBuilding?.buildingId,
+                                onStatus = { anchorStatus = it },
+                            )
                             return@ARScene
                         }
+                        clearFallbackMarkers(
+                            fallbackNodeMap = fallbackNodeMap,
+                            fallbackCubeMap = fallbackCubeMap,
+                            fallbackLabelMap = fallbackLabelMap,
+                            childNodes = childNodes,
+                        )
                         val pose = earth.cameraGeospatialPose
                         cameraLat = pose.latitude
                         cameraLon = pose.longitude
@@ -358,9 +567,8 @@ private fun ArCameraSceneWithPanel(
                             pose.latitude, pose.longitude, pose.altitude,
                         )
 
-                        // 첫 진입 시 nearby 1회 로드
-                        if (!loadRequested) {
-                            loadRequested = true
+                        if (!geospatialLoadRequested) {
+                            geospatialLoadRequested = true
                             onLoadNearby(pose.latitude, pose.longitude)
                         }
 
@@ -453,6 +661,21 @@ private fun ArCameraSceneWithPanel(
                 ) {
                     DetailPopupContent(
                         building = selectedBuilding,
+                        buildingDetail = uiState.selectedBuildingDetail
+                            ?.takeIf { it.buildingId == selectedBuilding?.buildingId },
+                        isDetailLoading = uiState.isDetailLoading &&
+                            uiState.detailBuildingId == selectedBuilding?.buildingId,
+                        detailError = uiState.detailError
+                            ?.takeIf { uiState.detailBuildingId == selectedBuilding?.buildingId },
+                        trades = if (uiState.tradesBuildingId == selectedBuilding?.buildingId) {
+                            uiState.selectedBuildingTrades
+                        } else {
+                            emptyList()
+                        },
+                        isTradesLoading = uiState.isTradesLoading &&
+                            uiState.tradesBuildingId == selectedBuilding?.buildingId,
+                        tradesError = uiState.tradesError
+                            ?.takeIf { uiState.tradesBuildingId == selectedBuilding?.buildingId },
                         onClose = { showDetail = false },
                         onMoveToMapPage = {
                             showDetail = false
@@ -482,6 +705,33 @@ private fun ArCameraSceneWithPanel(
 }
 
 private data class QuickCoord(val label: String, val lat: Double, val lon: Double)
+
+@SuppressLint("MissingPermission")
+private fun loadNearbyFromDeviceOrOkgye(
+    context: Context,
+    onLoadNearby: (Double, Double) -> Unit,
+    onCoordinate: (Double, Double, String) -> Unit,
+) {
+    onCoordinate(DEFAULT_OKGYE_LAT, DEFAULT_OKGYE_LON, "Fallback: 옥계 기본 좌표")
+    onLoadNearby(DEFAULT_OKGYE_LAT, DEFAULT_OKGYE_LON)
+
+    LocationServices.getFusedLocationProviderClient(context)
+        .lastLocation
+        .addOnSuccessListener { location ->
+            if (location == null) {
+                return@addOnSuccessListener
+            }
+            val lat = location.latitude
+            val lon = location.longitude
+            if (isGumiCoordinate(lat, lon)) {
+                onCoordinate(lat, lon, "Fallback: 기기 위치 %.5f, %.5f".format(lat, lon))
+                onLoadNearby(lat, lon)
+            }
+        }
+}
+
+private fun isGumiCoordinate(lat: Double, lon: Double): Boolean =
+    lat in 36.05..36.25 && lon in 128.20..128.50
 
 @Composable
 private fun DebugDialog(
@@ -578,6 +828,111 @@ private fun DebugDialog(
  * 매 프레임 호출되어 nodeMap/cubeMap/labelMap을 nearbyBuildings와 diff하여 노드를 추가/제거한다.
  * earth 객체는 onSessionUpdated 안에서만 안정적으로 접근 가능하므로 여기서 처리.
  */
+private fun syncFallbackMarkers(
+    buildings: List<BuildingSummary>,
+    fallbackNodeMap: androidx.compose.runtime.snapshots.SnapshotStateMap<Int, Node>,
+    fallbackCubeMap: androidx.compose.runtime.snapshots.SnapshotStateMap<Int, CubeNode>,
+    fallbackLabelMap: androidx.compose.runtime.snapshots.SnapshotStateMap<Int, ViewNode2>,
+    childNodes: androidx.compose.runtime.snapshots.SnapshotStateList<Node>,
+    engine: com.google.android.filament.Engine,
+    materialLoader: io.github.sceneview.loaders.MaterialLoader,
+    windowManager: ViewNode2.WindowManager,
+    selectedId: Int?,
+    onStatus: (String) -> Unit,
+) {
+    val incoming = buildings.take(FALLBACK_MARKER_LIMIT)
+    val incomingIds = incoming.map { it.buildingId }.toSet()
+
+    fallbackNodeMap.keys.filter { it !in incomingIds }.forEach { id ->
+        fallbackLabelMap[id]?.let { runCatching { it.destroy() } }
+        fallbackLabelMap.remove(id)
+        fallbackCubeMap[id]?.let { runCatching { it.destroy() } }
+        fallbackCubeMap.remove(id)
+        val node = fallbackNodeMap[id] ?: return@forEach
+        childNodes.remove(node)
+        runCatching { node.destroy() }
+        fallbackNodeMap.remove(id)
+    }
+
+    incoming.forEachIndexed { index, b ->
+        val node = fallbackNodeMap[b.buildingId]
+        if (node != null) {
+            node.position = fallbackMarkerPosition(index)
+            return@forEachIndexed
+        }
+
+        val fallbackNode = Node(engine = engine)
+        fallbackNode.name = b.buildingId.toString()
+        fallbackNode.position = fallbackMarkerPosition(index)
+
+        val cube = CubeNode(
+            engine = engine,
+            size = Size(0.7f, 1.4f, 0.7f),
+            center = Position(0f, -0.65f, 0f),
+            materialInstance = materialLoader.createColorInstance(
+                color = gradeColor(b.livabilityGrade),
+            ),
+        )
+        cube.name = b.buildingId.toString()
+        cube.setScale(if (b.buildingId == selectedId) SELECTED_SCALE else DEFAULT_SCALE)
+        fallbackNode.addChildNode(cube)
+
+        val label = ViewNode2(
+            engine = engine,
+            windowManager = windowManager,
+            materialLoader = materialLoader,
+            /* unlit */ true,
+            /* invertFrontFaceWinding */ false,
+        ) {
+            BuildingLabel(
+                dongName = b.dongName,
+                grade = b.livabilityGrade ?: "-",
+            )
+        }
+        label.name = b.buildingId.toString()
+        label.position = Position(0f, 0.4f, 0f)
+        label.pxPerUnits = 500f
+        label.viewSize = Float3(0.8f, 0.4f, 1f)
+        fallbackNode.addChildNode(label)
+
+        childNodes += fallbackNode
+        fallbackNodeMap[b.buildingId] = fallbackNode
+        fallbackCubeMap[b.buildingId] = cube
+        fallbackLabelMap[b.buildingId] = label
+    }
+
+    onStatus(
+        if (incoming.isEmpty()) "Fallback tags: nearby 데이터 대기"
+        else "Fallback tags: ${fallbackNodeMap.size}/${incoming.size} (Earth 대기)"
+    )
+}
+
+private fun fallbackMarkerPosition(index: Int): Float3 {
+    val column = index % 3
+    val row = index / 3
+    val x = (column - 1) * 1.0f
+    val y = -0.15f - row * 0.85f
+    val z = -3.0f - row * 0.35f
+    return Position(x, y, z)
+}
+
+private fun clearFallbackMarkers(
+    fallbackNodeMap: androidx.compose.runtime.snapshots.SnapshotStateMap<Int, Node>,
+    fallbackCubeMap: androidx.compose.runtime.snapshots.SnapshotStateMap<Int, CubeNode>,
+    fallbackLabelMap: androidx.compose.runtime.snapshots.SnapshotStateMap<Int, ViewNode2>,
+    childNodes: androidx.compose.runtime.snapshots.SnapshotStateList<Node>,
+) {
+    fallbackLabelMap.values.forEach { runCatching { it.destroy() } }
+    fallbackLabelMap.clear()
+    fallbackCubeMap.values.forEach { runCatching { it.destroy() } }
+    fallbackCubeMap.clear()
+    fallbackNodeMap.values.forEach { node ->
+        childNodes.remove(node)
+        runCatching { node.destroy() }
+    }
+    fallbackNodeMap.clear()
+}
+
 private fun syncMarkers(
     buildings: List<BuildingSummary>,
     nodeMap: androidx.compose.runtime.snapshots.SnapshotStateMap<Int, AnchorNode>,

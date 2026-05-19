@@ -19,17 +19,32 @@ public class LivabilityService {
 
     private final LivingInfraRepository livingInfraRepository;
 
+    public record NearbyResult(
+            List<LivabilityDto.InfraNearby> items,
+            long totalCount,
+            int radiusMeters,
+            int page,
+            int pageSize
+    ) {}
+
     @Transactional(readOnly = true)
-    public List<LivabilityDto.InfraNearby> findNearbyInfra(
+    public NearbyResult findNearbyInfra(
             double lat,
             double lon,
             int radiusMeters,
-            String category
+            String category,
+            int page,
+            int pageSize
     ) {
+        int clampedRadius = Math.min(Math.max(radiusMeters, 1), 3000);
+        int clampedPage = Math.max(page, 1);
+        int clampedPageSize = Math.min(Math.max(pageSize, 1), 100);
+        long offsetLong = (long) (clampedPage - 1) * clampedPageSize;
+        int offset = offsetLong > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) offsetLong;
         String normalizedCategory = normalizeCategory(category);
 
-        return livingInfraRepository
-                .findNearby(lat, lon, radiusMeters, normalizedCategory)
+        List<LivabilityDto.InfraNearby> items = livingInfraRepository
+                .findNearby(lat, lon, clampedRadius, normalizedCategory, clampedPageSize, offset)
                 .stream()
                 .map(p -> LivabilityDto.InfraNearby.builder()
                         .infraId(p.getInfraId())
@@ -42,6 +57,9 @@ public class LivabilityService {
                         .distanceMeters(p.getDistanceMeters())
                         .build())
                 .toList();
+        long totalCount = livingInfraRepository.countNearby(lat, lon, clampedRadius, normalizedCategory);
+
+        return new NearbyResult(items, totalCount, clampedRadius, clampedPage, clampedPageSize);
     }
 
     private String normalizeCategory(String category) {

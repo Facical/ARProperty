@@ -13,9 +13,9 @@
 
 | 영역 | 현재 상태 | 비고 |
 |------|-----------|------|
-| Android 앱 | Compose 기반 실 UI 동작 | `ar`/`map`/`livability`/`building` 4개 feature 모듈, DetailPopup/PanelContent, 카카오맵, ARCore Geospatial 통합, BaseUrl 런타임 오버라이드 다이얼로그 포함 |
-| 백엔드 | Spring Boot 앱 정상 가동 | 동작: `/health`, `GET /api/v1/buildings/nearby`, `GET /api/v1/livability/infra/nearby`. 스텁: `ComplexController`, `TradeController` (클래스만 존재) |
-| 데이터 적재 | 옥계동 단지/건물 sync 검증 완료 | `--sync-okgye-complex` (단지 17개), `--sync-okgye-buildings` (동 99개) 완료. Python 수집 스크립트 11종은 보조 경로로 유지 |
+| Android 앱 | Compose 기반 실 UI 동작 | `ar`/`map`/`livability`/`building` 4개 feature 모듈, DetailPopup/PanelContent, 카카오맵, ARCore Geospatial 통합, BaseUrl 런타임 오버라이드 다이얼로그 포함. AR DetailPopup은 선택 건물 상세 API 일부와 최근 거래 API를 추가 조회 |
+| 백엔드 | Spring Boot 앱 정상 가동 | 동작: `/health`, `GET /api/v1/buildings/nearby`, `GET /api/v1/buildings/{id}`, `GET /api/v1/buildings/{id}/trades`, `GET /api/v1/livability/infra/nearby`. 스텁: `ComplexController` (클래스만 존재) |
+| 데이터 적재 | 옥계동 단지/건물 sync 검증 완료 | `--sync-okgye-complex` (단지 17개), `--sync-okgye-buildings` (동 99개) 완료. Python 보조 스크립트는 구현된 편의시설 경로와 placeholder가 섞여 있음 |
 | 인프라 | `docker-compose up -d` 한 줄로 db/redis/backend 전부 가동 | `backend/.env`가 git에 포함되어 있어 clone 직후 즉시 부팅 가능 |
 | 문서 | 핵심 기준 문서 재정리 완료 | 과거 조사/초안 문서는 `docs/archive/`에 보존 |
 
@@ -24,11 +24,11 @@
 ### 현재 구현됨
 
 - PostgreSQL/PostGIS 초기 스키마: `backend/scripts/init_db.sql`
-- Spring Boot 백엔드: `/health`, `buildings/nearby`, `livability/infra/nearby` 동작
+- Spring Boot 백엔드: `/health`, `buildings/nearby`, `buildings/{id}`, `buildings/{id}/trades`, `livability/infra/nearby` 동작
 - 옥계동 데이터 적재 파이프라인: 공공데이터 K-apt → Kakao Local 좌표 → VWorld 동 폴리곤
 - Docker Compose로 `db`, `redis`, `backend` 일괄 가동 (`backend/.env` 포함)
-- Android Compose 앱: AR 카메라 + 카카오맵 + 동적 단지 마커(등급별 색상) + 단지 칩 선택 + DetailPopup + 런타임 BaseUrl 오버라이드
-- 데이터 수집 Python 스크립트 11종 (`data/collectors/`)
+- Android Compose 앱: AR 카메라 + 카카오맵 + 동적 단지 마커(등급별 색상) + 단지 칩 선택 + 상세/거래 API 기반 건물 상세 화면 + 상세/거래 API 보강 DetailPopup + 런타임 BaseUrl 오버라이드
+- 데이터 수집 Python 보조 스크립트 (`data/collectors/`): 일부는 구현됨, 일부는 `PLACEHOLDER`로 표시됨
 - 프로젝트 기준 문서와 API 계약 문서
 
 ### 설계상 목표
@@ -43,6 +43,16 @@
 ### 신규 PC에서 처음 셋업할 때
 
 private 리포지토리 가정으로 `local.properties` / `backend/.env`가 git에 포함되어 있습니다. 따라서 clone 직후 별도 키 입력 없이 빌드/실행이 가능합니다.
+
+### API 키 정책
+
+이 저장소는 **private 팀/학교 데모용 리포지토리**라는 전제로 shared development credential을 커밋합니다. 이는 신규 PC 셋업 시간을 줄이기 위한 의도적인 예외이며, 운영/상용 배포용 키가 아닙니다.
+
+- `backend/.env`: 공공데이터포털, VWorld, Kakao REST API 키를 포함합니다. 서버 사이드 수집/sync 작업과 Docker 실행에 사용합니다.
+- `android/local.properties`: ARProperty base URL과 Google ARCore Geospatial API 키를 포함합니다. Geospatial 키는 패키지명과 디버그 keystore SHA-1 제한을 전제로 사용합니다.
+- `android/app/build.gradle.kts`: Kakao Native 앱 키 fallback을 포함합니다. 카카오 콘솔의 Android 플랫폼 설정(패키지명/키해시)에 묶인 데모 키입니다.
+- 리포지토리는 private 상태를 유지합니다. 외부 공유, public 전환, 발표/시연 기간 종료 후에는 shared key를 rotate 또는 revoke합니다.
+- 새 운영용 키, 개인 결제 계정 키, 외부 공개 가능한 키는 커밋하지 않습니다. 그런 키가 필요하면 별도 환경변수나 로컬 override로 관리합니다.
 
 ```bash
 git clone <repo> ARProperty
@@ -124,7 +134,8 @@ cd backend && ./gradlew bootRun
 cd android
 ANDROID_HOME=~/Library/Android/sdk ./gradlew :app:installDebug   # macOS 예시
 
-# Python 수집 스크립트용 가상환경 준비 (백엔드 sync 외 보조 분석용)
+# Python 보조 스크립트용 가상환경 준비
+# 주의: `PLACEHOLDER` 표시가 있는 스크립트는 아직 실행 가능한 수집/적재 로직이 없음
 cd data/collectors
 python -m venv .venv
 source .venv/bin/activate
@@ -133,10 +144,10 @@ pip install -r requirements.txt
 
 ### 아직 불가능하거나 미완성인 것
 
-- 백엔드 컨트롤러 중 `ComplexController`, `TradeController`는 클래스만 있고 매핑이 비어 있습니다. `buildings/{id}`, `buildings/{id}/trades`, `complexes/*` 엔드포인트도 아직 없습니다.
+- 백엔드 컨트롤러 중 `ComplexController`는 클래스만 있고 매핑이 비어 있습니다. `complexes/*` 엔드포인트는 아직 없습니다.
 - Android AR 화면은 `nearby` API로 옥계동 주변 단지 마커를 동적으로 그리고 등급별 색상(녹/황/적)으로 표시하지만, 마커 직접 탭은 아직 없고 화면 하단 칩 목록에서 단지를 선택하는 방식입니다.
-- DetailPopup의 거래 이력 다건/건물 상세는 `buildings/{id}` 엔드포인트가 추가될 때 함께 채워집니다.
-- ARCore Geospatial API는 `local.properties`의 `GEOSPATIAL_API_KEY`가 채워지고 *현재 PC의 디버그 keystore SHA1*이 GCP 콘솔에 등록돼 있을 때만 활성화됩니다. 둘 중 하나라도 빠지면 카메라/세션은 정상 동작하고 Geospatial만 비활성으로 표시됩니다.
+- Android 건물 상세 화면은 `buildings/{id}`와 `buildings/{id}/trades` API에 연결됐습니다. AR DetailPopup도 선택 건물의 상세 API와 거래 API를 보강 조회해 층수, 높이, 구조, 세대수, 최근 거래 최대 3건, 가격 추세 그래프를 표시합니다.
+- ARCore Geospatial API는 `local.properties`의 `GEOSPATIAL_API_KEY`가 채워지고 *현재 PC의 디버그 keystore SHA1*이 GCP 콘솔에 등록돼 있을 때 실제 지리 앵커를 생성합니다. 키가 없거나 Earth tracking 전이면 기기 위치 또는 옥계 기본 좌표로 `nearby`를 먼저 불러오고, 카메라 화면에 fallback 태그를 표시합니다.
 
 ## 시연용 백엔드 외부 노출
 
@@ -175,6 +186,8 @@ ARPROPERTY_BASE_URL=https://<random>.trycloudflare.com/
 앱 실행 후 AR 화면 안의 **BaseUrl 다이얼로그**에서 URL을 입력합니다. `BaseUrlOverrideInterceptor`가 모든 Retrofit 요청을 즉시 새 호스트로 리라우트하므로 앱 재시작도 불필요합니다.
 
 ### 시연 직전 체크리스트
+
+전체 옥계동 AR 현장 QA 기준은 [docs/okgye-ar-qa.md](docs/okgye-ar-qa.md)를 우선합니다.
 
 ```bash
 # 단지 좌표 sync 완료 확인 (N>0이어야 함)

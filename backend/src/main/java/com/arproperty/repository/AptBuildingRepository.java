@@ -22,6 +22,23 @@ public interface AptBuildingRepository extends JpaRepository<AptBuilding, Intege
         SELECT
             b.building_id, b.complex_id, c.complex_name, b.dong_name,
             ST_Y(b.centroid) AS lat, ST_X(b.centroid) AS lon,
+            b.ground_floors, b.underground_floors, b.highest_floor,
+            b.building_height, b.structure_type, b.total_area, b.use_approval_date,
+            c.kapt_code, c.households, c.building_count, c.parking_count,
+            c.elevator_count, c.heating_type, c.constructor,
+            s.total_score AS livability_score, s.grade AS livability_grade
+        FROM apt_building_master b
+        JOIN apt_complex_master c ON c.complex_id = b.complex_id
+        LEFT JOIN building_livability_score s
+            ON s.building_id = b.building_id AND s.weight_preset = 'default'
+        WHERE b.building_id = :buildingId
+        """, nativeQuery = true)
+    List<Object[]> findDetail(@Param("buildingId") int buildingId);
+
+    @Query(value = """
+        SELECT
+            b.building_id, b.complex_id, c.complex_name, b.dong_name,
+            ST_Y(b.centroid) AS lat, ST_X(b.centroid) AS lon,
             b.ground_floors, b.underground_floors, b.highest_floor, b.building_height,
             s.grade AS livability_grade, s.total_score AS livability_score,
             ST_DistanceSphere(b.centroid, ST_SetSRID(ST_MakePoint(:lon, :lat), 4326)) AS distance_m,

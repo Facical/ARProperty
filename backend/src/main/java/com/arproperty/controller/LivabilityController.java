@@ -5,12 +5,14 @@ package com.arproperty.controller;
 import com.arproperty.dto.ApiResponse;
 import com.arproperty.dto.LivabilityDto;
 import com.arproperty.service.LivabilityService;
+import com.arproperty.service.LivabilityService.NearbyResult;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,17 +28,22 @@ public class LivabilityController {
             @RequestParam("lat") double lat,
             @RequestParam("lon") double lon,
             @RequestParam(name = "radius", defaultValue = "1000") int radius,
-            @RequestParam(name = "category", required = false) String category
+            @RequestParam(name = "category", required = false) String category,
+            @RequestParam(name = "page", defaultValue = "1") int page,
+            @RequestParam(name = "page_size", defaultValue = "100") int pageSize
     ) {
-        List<LivabilityDto.InfraNearby> data =
-                livabilityService.findNearbyInfra(lat, lon, radius, category);
+        RequestValidation.requireGumiCoordinates(lat, lon);
 
-        Map<String, Object> meta = Map.of(
-                "count", data.size(),
-                "radius_m", radius,
-                "center", Map.of("lat", lat, "lon", lon)
-        );
+        NearbyResult result = livabilityService.findNearbyInfra(lat, lon, radius, category, page, pageSize);
 
-        return ApiResponse.success(data, meta);
+        Map<String, Object> meta = new LinkedHashMap<>();
+        meta.put("count", result.items().size());
+        meta.put("total_count", result.totalCount());
+        meta.put("page", result.page());
+        meta.put("page_size", result.pageSize());
+        meta.put("radius_m", result.radiusMeters());
+        meta.put("center", Map.of("lat", lat, "lon", lon));
+
+        return ApiResponse.success(result.items(), meta);
     }
 }
